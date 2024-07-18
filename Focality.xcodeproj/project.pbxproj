@@ -12,6 +12,12 @@
 		703C66BC2C47FBF300B0AF52 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66BB2C47FBF300B0AF52 /* Item.swift */; };
 		703C66BE2C47FBF300B0AF52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703C66BD2C47FBF300B0AF52 /* Assets.xcassets */; };
 		703C66C12C47FBF300B0AF52 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703C66C02C47FBF300B0AF52 /* Preview Assets.xcassets */; };
+		70E0F9942C49181C0085BDAA /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F9932C49181B0085BDAA /* UserViewModel.swift */; };
+		70E0F9962C4918290085BDAA /* RewardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F9952C4918290085BDAA /* RewardViewModel.swift */; };
+		70E0F9982C4918620085BDAA /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F9972C4918620085BDAA /* ReminderViewModel.swift */; };
+		70E0F99A2C4918750085BDAA /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F9992C4918750085BDAA /* GoalViewModel.swift */; };
+		70E0F99C2C49189C0085BDAA /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F99B2C49189C0085BDAA /* ChallengeViewModel.swift */; };
+		70E0F99E2C4918AA0085BDAA /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F99D2C4918AA0085BDAA /* TimerViewModel.swift */; };
 		70F0EAA02C4810070098A202 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EA9F2C4810070098A202 /* User.swift */; };
 		70F0EAA22C48101A0098A202 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAA12C48101A0098A202 /* Reward.swift */; };
 		70F0EAA42C4810240098A202 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAA32C4810240098A202 /* Reminder.swift */; };
@@ -27,6 +33,12 @@
 		703C66BB2C47FBF300B0AF52 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		703C66BD2C47FBF300B0AF52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		703C66C02C47FBF300B0AF52 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70E0F9932C49181B0085BDAA /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		70E0F9952C4918290085BDAA /* RewardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewModel.swift; sourceTree = "<group>"; };
+		70E0F9972C4918620085BDAA /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
+		70E0F9992C4918750085BDAA /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
+		70E0F99B2C49189C0085BDAA /* ChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
+		70E0F99D2C4918AA0085BDAA /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		70F0EA9F2C4810070098A202 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		70F0EAA12C48101A0098A202 /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		70F0EAA32C4810240098A202 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
@@ -101,6 +113,12 @@
 		70F0EA9D2C480F410098A202 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				70E0F9932C49181B0085BDAA /* UserViewModel.swift */,
+				70E0F9952C4918290085BDAA /* RewardViewModel.swift */,
+				70E0F9972C4918620085BDAA /* ReminderViewModel.swift */,
+				70E0F9992C4918750085BDAA /* GoalViewModel.swift */,
+				70E0F99B2C49189C0085BDAA /* ChallengeViewModel.swift */,
+				70E0F99D2C4918AA0085BDAA /* TimerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -182,12 +200,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70E0F9982C4918620085BDAA /* ReminderViewModel.swift in Sources */,
 				70F0EAA02C4810070098A202 /* User.swift in Sources */,
 				703C66BA2C47FBF300B0AF52 /* ContentView.swift in Sources */,
 				703C66BC2C47FBF300B0AF52 /* Item.swift in Sources */,
+				70E0F9962C4918290085BDAA /* RewardViewModel.swift in Sources */,
+				70E0F9942C49181C0085BDAA /* UserViewModel.swift in Sources */,
 				70F0EAA42C4810240098A202 /* Reminder.swift in Sources */,
 				703C66B82C47FBF300B0AF52 /* FocalityApp.swift in Sources */,
 				70F0EAA82C4810380098A202 /* Challenge.swift in Sources */,
+				70E0F99A2C4918750085BDAA /* GoalViewModel.swift in Sources */,
+				70E0F99E2C4918AA0085BDAA /* TimerViewModel.swift in Sources */,
+				70E0F99C2C49189C0085BDAA /* ChallengeViewModel.swift in Sources */,
 				70F0EAAA2C4810490098A202 /* Timer.swift in Sources */,
 				70F0EAA22C48101A0098A202 /* Reward.swift in Sources */,
 				70F0EAA62C48102E0098A202 /* Goal.swift in Sources */,
