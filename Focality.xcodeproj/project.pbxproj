@@ -81,7 +81,6 @@
 				703C66B92C47FBF300B0AF52 /* ContentView.swift */,
 				703C66BB2C47FBF300B0AF52 /* Item.swift */,
 				70F0EA9C2C480F3A0098A202 /* Models */,
-				70F0EA9E2C480F5D0098A202 /* Views */,
 				70F0EA9D2C480F410098A202 /* ViewModels */,
 				703C66BD2C47FBF300B0AF52 /* Assets.xcassets */,
 				703C66BF2C47FBF300B0AF52 /* Preview Content */,
@@ -121,13 +120,6 @@
 				70E0F99D2C4918AA0085BDAA /* TimerViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		70F0EA9E2C480F5D0098A202 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
