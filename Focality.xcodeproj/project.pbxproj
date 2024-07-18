@@ -24,6 +24,7 @@
 		70F0EAA62C48102E0098A202 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAA52C48102E0098A202 /* Goal.swift */; };
 		70F0EAA82C4810380098A202 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAA72C4810380098A202 /* Challenge.swift */; };
 		70F0EAAA2C4810490098A202 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAA92C4810490098A202 /* Timer.swift */; };
+		E92E8F0F2C493CFE004B0403 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92E8F0E2C493CFE004B0403 /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		70F0EAA52C48102E0098A202 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		70F0EAA72C4810380098A202 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		70F0EAA92C4810490098A202 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		E92E8F0E2C493CFE004B0403 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		703C66B62C47FBF300B0AF52 /* Focality */ = {
 			isa = PBXGroup;
 			children = (
+				E92E8F0D2C493CE6004B0403 /* Views */,
 				703C66B72C47FBF300B0AF52 /* FocalityApp.swift */,
 				703C66B92C47FBF300B0AF52 /* ContentView.swift */,
 				703C66BB2C47FBF300B0AF52 /* Item.swift */,
@@ -120,6 +123,14 @@
 				70E0F99D2C4918AA0085BDAA /* TimerViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E92E8F0D2C493CE6004B0403 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E92E8F0E2C493CFE004B0403 /* TimerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +209,7 @@
 				703C66BC2C47FBF300B0AF52 /* Item.swift in Sources */,
 				70E0F9962C4918290085BDAA /* RewardViewModel.swift in Sources */,
 				70E0F9942C49181C0085BDAA /* UserViewModel.swift in Sources */,
+				E92E8F0F2C493CFE004B0403 /* TimerView.swift in Sources */,
 				70F0EAA42C4810240098A202 /* Reminder.swift in Sources */,
 				703C66B82C47FBF300B0AF52 /* FocalityApp.swift in Sources */,
 				70F0EAA82C4810380098A202 /* Challenge.swift in Sources */,
