@@ -6,3 +6,24 @@
 //
 
 import Foundation
+class User: Identifiable{
+    var id: UUID
+    var firstName: String
+    var lastName: String
+    var email: String
+    var password: String
+    var birthday: Date
+    var point: Int
+    var currentLevel: Int
+    
+    init(id: UUID, firstName: String, lastName: String, email: String, password: String, birthday: Date, point: Int, currentLevel: Int) {
+        self.id = id
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.password = password
+        self.birthday = birthday
+        self.point = point
+        self.currentLevel = currentLevel
+    }
+}
