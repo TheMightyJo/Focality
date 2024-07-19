@@ -24,6 +24,7 @@
 		70F0EAA62C48102E0098A202 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAA52C48102E0098A202 /* Goal.swift */; };
 		70F0EAA82C4810380098A202 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAA72C4810380098A202 /* Challenge.swift */; };
 		70F0EAAA2C4810490098A202 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAA92C4810490098A202 /* Timer.swift */; };
+		A500DFC82C4A753A006C144A /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500DFC72C4A753A006C144A /* RewardListView.swift */; };
 		E92E8F0F2C493CFE004B0403 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92E8F0E2C493CFE004B0403 /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		70F0EAA52C48102E0098A202 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		70F0EAA72C4810380098A202 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		70F0EAA92C4810490098A202 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		A500DFC72C4A753A006C144A /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
 		E92E8F0E2C493CFE004B0403 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				E92E8F0E2C493CFE004B0403 /* TimerView.swift */,
+				A500DFC72C4A753A006C144A /* RewardListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				70E0F99C2C49189C0085BDAA /* ChallengeViewModel.swift in Sources */,
 				70F0EAAA2C4810490098A202 /* Timer.swift in Sources */,
 				70F0EAA22C48101A0098A202 /* Reward.swift in Sources */,
+				A500DFC82C4A753A006C144A /* RewardListView.swift in Sources */,
 				70F0EAA62C48102E0098A202 /* Goal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
