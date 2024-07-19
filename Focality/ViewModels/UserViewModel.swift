@@ -22,7 +22,7 @@ class UserViewModel: ObservableObject{
 
     
     func addUser(firstName: String, lastName: String,email: String, password: String, birthday: Date){
-        if email.contains("@") && email.contains(".") && password.count == 8 {
+        if email.contains("@") && email.contains(".") && password.count >= 8 {
             let newUser = User(firstName: firstName, lastName: lastName, email: email, password: password, birthday: birthday, point: 0, currentLevel: 0)
             users.append(newUser)
         }else{
