@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct TimerViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class TimerViewModel: ObservableObject{
+    @Published var timers: Timer
+    init() {
+        self.timers = Timer(focusTime: 25, shortBreak: 5, longBreak: 15)
     }
+    func modifTimer(focusTime: Int, shortBreak: Int, longBreak: Int){
+        let newTimer = Timer(focusTime: focusTime, shortBreak: shortBreak, longBreak: longBreak)
+    }
+    
 }
-
-#Preview {
-    TimerViewModel()
-}
+ 
