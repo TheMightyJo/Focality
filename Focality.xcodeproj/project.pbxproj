@@ -81,10 +81,10 @@
 		703C66B62C47FBF300B0AF52 /* Focality */ = {
 			isa = PBXGroup;
 			children = (
-				E92E8F0D2C493CE6004B0403 /* Views */,
 				703C66B72C47FBF300B0AF52 /* FocalityApp.swift */,
 				703C66B92C47FBF300B0AF52 /* ContentView.swift */,
 				703C66BB2C47FBF300B0AF52 /* Item.swift */,
+				E92E8F0D2C493CE6004B0403 /* Views */,
 				70F0EA9C2C480F3A0098A202 /* Models */,
 				70F0EA9D2C480F410098A202 /* ViewModels */,
 				703C66BD2C47FBF300B0AF52 /* Assets.xcassets */,
