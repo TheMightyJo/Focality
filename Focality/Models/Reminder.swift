@@ -7,13 +7,13 @@
 
 import Foundation
 class Reminder : Identifiable{
-    var id: UUID
+    var id = UUID()
     var rappelTitle: String
     var rappelDate: Date
     var rappelDescription: String
     
-    init(id: UUID, rappelTitle: String, rappelDate: Date, rappelDescription: String) {
-        self.id = id
+    init(rappelTitle: String, rappelDate: Date, rappelDescription: String) {
+        self.id = UUID()
         self.rappelTitle = rappelTitle
         self.rappelDate = rappelDate
         self.rappelDescription = rappelDescription

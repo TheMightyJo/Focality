@@ -14,6 +14,10 @@ class ReminderViewModel: ObservableObject {
             Reminder(rappelTitle: "Math à 14h", rappelDate: Date(), rappelDescription: "Je dois travailler le théoreme de pythagore")
         ]
     }
+    func addReminder(rappelTitle: String, rappelDate: Date, rappelDescription: String){
+        let newReminder = Reminder(rappelTitle: rappelTitle, rappelDate: rappelDate, rappelDescription: rappelDescription)
+        reminders.append(newReminder)
+    }
     }
 
 
