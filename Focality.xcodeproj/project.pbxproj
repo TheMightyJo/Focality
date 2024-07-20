@@ -25,6 +25,13 @@
 		70F0EAA62C48102E0098A202 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAA52C48102E0098A202 /* Goal.swift */; };
 		70F0EAA82C4810380098A202 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAA72C4810380098A202 /* Challenge.swift */; };
 		70F0EAAA2C4810490098A202 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F0EAA92C4810490098A202 /* Timer.swift */; };
+		A5F899B02C4C37790052CBEB /* GamificationProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899AF2C4C37790052CBEB /* GamificationProfileView.swift */; };
+		A5F899B22C4C37C70052CBEB /* ChallengeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899B12C4C37C70052CBEB /* ChallengeRowView.swift */; };
+		A5F899B42C4C37D60052CBEB /* NextRewardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899B32C4C37D60052CBEB /* NextRewardCardView.swift */; };
+		A5F899B62C4C4AF50052CBEB /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899B52C4C4AF50052CBEB /* RewardListView.swift */; };
+		A5F899B82C4C4B6D0052CBEB /* RewardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899B72C4C4B6D0052CBEB /* RewardRowView.swift */; };
+		A5F899BA2C4C4D520052CBEB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899B92C4C4D520052CBEB /* CustomButton.swift */; };
+		A5F899BC2C4C510B0052CBEB /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899BB2C4C510B0052CBEB /* PointsView.swift */; };
 		E92E8F0F2C493CFE004B0403 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92E8F0E2C493CFE004B0403 /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +55,13 @@
 		70F0EAA52C48102E0098A202 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		70F0EAA72C4810380098A202 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		70F0EAA92C4810490098A202 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		A5F899AF2C4C37790052CBEB /* GamificationProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamificationProfileView.swift; sourceTree = "<group>"; };
+		A5F899B12C4C37C70052CBEB /* ChallengeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRowView.swift; sourceTree = "<group>"; };
+		A5F899B32C4C37D60052CBEB /* NextRewardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextRewardCardView.swift; sourceTree = "<group>"; };
+		A5F899B52C4C4AF50052CBEB /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
+		A5F899B72C4C4B6D0052CBEB /* RewardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardRowView.swift; sourceTree = "<group>"; };
+		A5F899B92C4C4D520052CBEB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		A5F899BB2C4C510B0052CBEB /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 		E92E8F0E2C493CFE004B0403 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,9 +141,40 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		A5F899BD2C4C5B430052CBEB /* Gamification */ = {
+			isa = PBXGroup;
+			children = (
+				A5F899BE2C4C5B6A0052CBEB /* Parents */,
+				A5F899BF2C4C5B7F0052CBEB /* Child */,
+			);
+			path = Gamification;
+			sourceTree = "<group>";
+		};
+		A5F899BE2C4C5B6A0052CBEB /* Parents */ = {
+			isa = PBXGroup;
+			children = (
+				A5F899AF2C4C37790052CBEB /* GamificationProfileView.swift */,
+			);
+			path = Parents;
+			sourceTree = "<group>";
+		};
+		A5F899BF2C4C5B7F0052CBEB /* Child */ = {
+			isa = PBXGroup;
+			children = (
+				A5F899B12C4C37C70052CBEB /* ChallengeRowView.swift */,
+				A5F899B52C4C4AF50052CBEB /* RewardListView.swift */,
+				A5F899B72C4C4B6D0052CBEB /* RewardRowView.swift */,
+				A5F899B92C4C4D520052CBEB /* CustomButton.swift */,
+				A5F899BB2C4C510B0052CBEB /* PointsView.swift */,
+				A5F899B32C4C37D60052CBEB /* NextRewardCardView.swift */,
+			);
+			path = Child;
+			sourceTree = "<group>";
+		};
 		E92E8F0D2C493CE6004B0403 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A5F899BD2C4C5B430052CBEB /* Gamification */,
 				E92E8F0E2C493CFE004B0403 /* TimerView.swift */,
 				615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */,
 			);
@@ -207,17 +252,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				70E0F9982C4918620085BDAA /* ReminderViewModel.swift in Sources */,
+				A5F899B02C4C37790052CBEB /* GamificationProfileView.swift in Sources */,
 				70F0EAA02C4810070098A202 /* User.swift in Sources */,
 				703C66BA2C47FBF300B0AF52 /* ContentView.swift in Sources */,
+				A5F899B82C4C4B6D0052CBEB /* RewardRowView.swift in Sources */,
+				A5F899B42C4C37D60052CBEB /* NextRewardCardView.swift in Sources */,
+				A5F899B62C4C4AF50052CBEB /* RewardListView.swift in Sources */,
+				A5F899B22C4C37C70052CBEB /* ChallengeRowView.swift in Sources */,
 				703C66BC2C47FBF300B0AF52 /* Item.swift in Sources */,
 				70E0F9962C4918290085BDAA /* RewardViewModel.swift in Sources */,
 				70E0F9942C49181C0085BDAA /* UserViewModel.swift in Sources */,
+				A5F899BC2C4C510B0052CBEB /* PointsView.swift in Sources */,
 				E92E8F0F2C493CFE004B0403 /* TimerView.swift in Sources */,
 				70F0EAA42C4810240098A202 /* Reminder.swift in Sources */,
 				615A54F52C4A5FF6001171CA /* inscriptionUserView.swift in Sources */,
 				703C66B82C47FBF300B0AF52 /* FocalityApp.swift in Sources */,
 				70F0EAA82C4810380098A202 /* Challenge.swift in Sources */,
 				70E0F99A2C4918750085BDAA /* GoalViewModel.swift in Sources */,
+				A5F899BA2C4C4D520052CBEB /* CustomButton.swift in Sources */,
 				70E0F99E2C4918AA0085BDAA /* TimerViewModel.swift in Sources */,
 				70E0F99C2C49189C0085BDAA /* ChallengeViewModel.swift in Sources */,
 				70F0EAAA2C4810490098A202 /* Timer.swift in Sources */,

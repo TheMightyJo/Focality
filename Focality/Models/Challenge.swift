@@ -2,40 +2,44 @@
 //  Challenge.swift
 //  Focality
 //
-//  Created by Apprenant 154 on 17/07/2024.
+//  Created by Johan Quille on 20/07/2024.
 //
 
 import Foundation
 
-/// Un modèle représentant un challenge dans l'application.
+/// Modèle représentant un défi.
 ///
-/// Les challenges sont des tâches ou des objectifs que l'utilisateur peut compléter.
-/// Chaque challenge a un titre, une description, et un état d'accomplissement.
-/// Ces objectifs sont lancés automatiquement lors de la création du compte utilisateur.
+/// Chaque défi contient des informations telles que le titre, la description,
+/// le statut d'achèvement et le nombre de points associés.
 struct Challenge: Identifiable, Codable {
-    /// L'identifiant unique du challenge.
+    /// L'identifiant unique du défi.
     let id: UUID
     
-    /// Le titre du challenge.
+    /// Le titre du défi.
     var title: String
     
-    /// Une description du challenge.
+    /// La description du défi.
     var description: String
     
-    /// Une valeur booléenne indiquant si le challenge est complété.
+    /// Indique si le défi est complété.
     var isCompleted: Bool
+    
+    /// Le nombre de points associés au défi.
+    var points: Int
 
-    /// Initialise un nouveau challenge avec les détails spécifiés.
+    /// Initialise un nouveau défi avec les valeurs spécifiées.
     ///
     /// - Parameters:
-    ///   - id: L'identifiant unique du challenge. Par défaut, il s'agit d'un nouvel UUID.
-    ///   - title: Le titre du challenge.
-    ///   - description: Une description du challenge.
-    ///   - isCompleted: Une valeur booléenne indiquant si le challenge est complété. Par défaut, elle est `false`.
-    init(id: UUID = UUID(), title: String, description: String, isCompleted: Bool = false) {
+    ///   - id: L'identifiant unique du défi. Par défaut, une nouvelle valeur UUID est générée.
+    ///   - title: Le titre du défi.
+    ///   - description: La description du défi.
+    ///   - isCompleted: Indique si le défi est complété. La valeur par défaut est `false`.
+    ///   - points: Le nombre de points associés au défi.
+    init(id: UUID = UUID(), title: String, description: String, isCompleted: Bool = false, points: Int) {
         self.id = id
         self.title = title
         self.description = description
         self.isCompleted = isCompleted
+        self.points = points
     }
 }

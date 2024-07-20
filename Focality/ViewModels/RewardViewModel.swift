@@ -9,33 +9,67 @@ class RewardViewModel: ObservableObject {
     /// Liste des récompenses.
     @Published var rewards: [Reward] = []
     
-    /// Liste des challenges.
-    @Published var challenges: [Challenge] = []
-    
     /// Utilisateur actuel.
     @Published var user: User?
     
-    /// Initialiseur pour charger les récompenses et les challenges initiaux.
-    init() {
+    /// Message d'erreur optionnel.
+    @Published var errorMessage: String? = nil
+
+    /// Initialiseur pour charger les récompenses et l'utilisateur initial.
+    init(userViewModel: UserViewModel) {
         loadRewards()
+        loadUser(from: userViewModel)
     }
-    
+
     /// Charge les récompenses initiales.
     ///
     /// Cette méthode simule le chargement des récompenses.
     func loadRewards() {
-        // Simulation de récompenses
         rewards = [
             Reward(title: "Bon d'achat Amazon", description: "Un bon d'achat de 10€ sur Amazon.", requiredPoints: 100),
             Reward(title: "Abonnement Spotify", description: "Un mois d'abonnement gratuit à Spotify Premium.", requiredPoints: 200),
             Reward(title: "Réduction chez McDonald's", description: "Une réduction de 5€ chez McDonald's.", requiredPoints: 150),
-            Reward(title: "Bon d'achat Fnac", description: "Un bon d'achat de 15€ à la Fnac.", requiredPoints: 300),
-            Reward(title: "Carte cadeau Starbucks", description: "Une carte cadeau de 10€ chez Starbucks.", requiredPoints: 250),
-            Reward(title: "Cours en ligne Udemy", description: "Un cours gratuit sur Udemy.", requiredPoints: 400),
-            Reward(title: "Réduction sur les livres", description: "Une réduction de 20% sur les livres chez un libraire local.", requiredPoints: 180),
-            Reward(title: "Bon plan cinéma", description: "Un ticket de cinéma gratuit.", requiredPoints: 220),
-            Reward(title: "Abonnement Netflix", description: "Un mois d'abonnement gratuit à Netflix.", requiredPoints: 500),
-            Reward(title: "Réduction sur les vêtements", description: "Une réduction de 10€ sur l'achat de vêtements.", requiredPoints: 350)
         ]
+    }
+    
+    /// Charge les informations de l'utilisateur à partir de UserViewModel.
+    ///
+    /// - Parameter userViewModel: Le UserViewModel contenant les informations utilisateur.
+    func loadUser(from userViewModel: UserViewModel) {
+        if let lastUser = userViewModel.users.last {
+            self.user = lastUser
+        }
+    }
+
+    /// Débloque les récompenses si les points requis sont atteints.
+    ///
+    /// - Parameter points: Le nombre de points de l'utilisateur.
+    func unlockRewardIfNeeded(points: Int) {
+        for i in 0..<rewards.count {
+            if points >= rewards[i].requiredPoints && !rewards[i].isUnlocked {
+                rewards[i].isUnlocked = true
+                print("Récompense débloquée : \(rewards[i].title)")
+            }
+        }
+    }
+
+    /// Ajoute des points à l'utilisateur et vérifie les récompenses.
+    ///
+    /// - Parameter points: Le nombre de points à ajouter.
+    func addPoints(_ points: Int) {
+        guard let user = user else { return }
+        user.point += points
+        unlockRewardIfNeeded(points: user.point)
+    }
+
+    /// Ajoute une nouvelle récompense.
+    ///
+    /// - Parameters:
+    ///   - title: Le titre de la récompense.
+    ///   - description: La description de la récompense.
+    ///   - requiredPoints: Le nombre de points requis pour déverrouiller la récompense.
+    func addReward(title: String, description: String, requiredPoints: Int) {
+        let newReward = Reward(title: title, description: description, requiredPoints: requiredPoints)
+        rewards.append(newReward)
     }
 }
