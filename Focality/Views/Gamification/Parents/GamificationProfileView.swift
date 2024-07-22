@@ -13,18 +13,19 @@ struct GamificationProfileView: View {
     @ObservedObject var userViewModel: UserViewModel
     
     var body: some View {
-        VStack {
-            HStack {
-                Image("Logo")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                Spacer()
-                Image("ProfilePicture")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 50, height: 50)
-                    .clipShape(Circle())
-            }
+        ScrollView {
+            VStack {
+                HStack {
+                    Image("Logo")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                    Spacer()
+                    Image("ProfilePicture")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                }
                 HStack {
                     Image("Medal")
                         .resizable()
@@ -34,11 +35,9 @@ struct GamificationProfileView: View {
                             .foregroundStyle(.accent)
                             .font(.system(size: 50)).bold()
                         Text("Points")
-                            .foregroundStyle(.secondary).bold()
+                            .foregroundStyle(.secondaire).bold()
                     }
                 }
-            
-            ScrollView {
                 if let nextReward = rewardViewModel.rewards.first(where: { !$0.isUnlocked }) {
                     NextRewardCardView(reward: nextReward)
                 }
@@ -53,8 +52,8 @@ struct GamificationProfileView: View {
                     }
                 }
             }
+            .padding()
         }
-        .padding()
     }
 }
 
