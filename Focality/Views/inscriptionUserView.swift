@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct inscriptionUserView : View {
-    @StateObject var userViewModel = UserViewModel()
+//    @StateObject var userViewModel = UserViewModel()
     
-//    @ObservedObject  var userViewModel = UserViewModel()
+    @ObservedObject  var userViewModel : UserViewModel
     
 //    var user = User(firstName: "Dembo", lastName: "Babar", email: "dembo@gmail.com", password: "Teamcook5*", birthday: Date(), point: 55, currentLevel: 150)
 //    var firstName = ""
@@ -36,7 +36,9 @@ struct inscriptionUserView : View {
         
         HStack{
             List{
-//                TextField(userViewModel.users,text: $firstName)
+                TextField("FirstName", text: $userViewModel.users.firstName)
+                .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                
                 
                 
