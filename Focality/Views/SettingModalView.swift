@@ -41,12 +41,14 @@ struct SettingModalView: View {
                 
                 Spacer() // Espace flexible pour pousser le contenu vers la gauche
             }
-            .padding(.top)
-            
             // Ligne de séparation
             Divider()
                 .frame(height: 1)
                 .background(Color.black)
+            Spacer()
+            Text("Sélectionner un objectif:")
+                .fontWeight(.medium)
+                .font(.system(size: 20))
             
             // Formulaire avec un picker pour sélectionner un objectif
        
@@ -56,7 +58,6 @@ struct SettingModalView: View {
                         ForEach(objectif, id: \.self) {
                             Text($0) // Affiche le texte de chaque objectif
                         }
-                    
                     }
                     .pickerStyle(.wheel) // Style du picker en forme de roue
                 }
@@ -81,7 +82,6 @@ struct SettingModalView: View {
                     TextField("", text: $textField2)
                               .frame(width: 110, height: 60)
                               .textFieldStyle(RoundedBorderTextFieldStyle())
-                         
                 }
                       // Troisième TextField
                 VStack {
@@ -93,12 +93,12 @@ struct SettingModalView: View {
                               .textFieldStyle(RoundedBorderTextFieldStyle())
                      }
                   }
-                  .padding()
+               Spacer()
                 }
         HStack {
             Button("Annnuler") {
                           print("Bouton tapé!")
-            }.frame(width: 129, height:  48,alignment:.center)
+            }.frame(width: 130, height:  48,alignment:.center)
                            .background(Color.primaire)
                            .foregroundColor(Color.white)
                        .cornerRadius(16)
@@ -110,6 +110,7 @@ struct SettingModalView: View {
                            .foregroundColor(Color.white)
                        .cornerRadius(16)
         }.padding()
+        Spacer()
     }
 }
 #Preview {
