@@ -3,43 +3,46 @@ import SwiftUI
 struct AuthView: View {
     @ObservedObject var authViewModel = AuthViewModel()
     @State private var isSignUpMode = false
+    @State private var isPasswordVisible = false
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 25.0) {
+                Spacer()
                 Image("Logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 150, height: 150)
                     .padding(.bottom, 20)
                 
-                if isSignUpMode {
-                    TextField("Prénom", text: $authViewModel.firstName)
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                        .cornerRadius(10)
-                    
-                    TextField("Nom", text: $authViewModel.lastName)
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                        .cornerRadius(10)
-                    
-                    DatePicker("Date de naissance", selection: $authViewModel.birthday, displayedComponents: .date)
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                        .cornerRadius(10)
-                }
-                
                 TextField("Email", text: $authViewModel.email)
                     .padding()
                     .background(Color(.secondarySystemBackground))
                     .cornerRadius(10)
                     .keyboardType(.emailAddress)
-                
-                SecureField("Mot de passe", text: $authViewModel.password)
-                    .padding()
-                    .background(Color(.secondarySystemBackground))
-                    .cornerRadius(10)
+                ZStack {
+                    if isPasswordVisible {
+                        TextField("Mot de passe", text: $authViewModel.password)
+                            .padding()
+                            .background(Color(.secondarySystemBackground))
+                            .cornerRadius(10)
+                    } else {
+                        SecureField("Mot de passe", text: $authViewModel.password)
+                            .padding()
+                            .background(Color(.secondarySystemBackground))
+                            .cornerRadius(10)
+                    }
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            isPasswordVisible.toggle()
+                        }) {
+                            Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
+                                .foregroundColor(.secondaire)
+                        }
+                        .padding(.trailing, 16)
+                    }
+                }
                 
                 if let errorMessage = authViewModel.errorMessage {
                     Text(errorMessage)
@@ -52,10 +55,11 @@ struct AuthView: View {
                 }) {
                     Text(isSignUpMode ? "S'inscrire" : "Se connecter")
                         .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
+                        .foregroundColor(.text)
                         .padding()
-                        .background(Color.blue)
+                        .background(Color.accentColor)
                         .cornerRadius(10)
+                    
                 }
                 .padding(.top, 10)
                 
@@ -63,18 +67,16 @@ struct AuthView: View {
                     isSignUpMode.toggle()
                 }) {
                     Text(isSignUpMode ? "Déjà inscrit ? Se connecter" : "Pas encore inscrit ? S'inscrire")
-                        .font(.footnote)
-                        .foregroundColor(.blue)
+                        .font(.system(size: 15))
+                        .foregroundColor(.text)
                 }
-                .padding(.top, 10)
                 
                 if !isSignUpMode {
                     NavigationLink(destination: ForgotPasswordView(authViewModel: authViewModel)) {
                         Text("Mot de passe oublié ?")
-                            .font(.footnote)
-                            .foregroundColor(.blue)
+                            .font(.system(size: 15))
+                            .foregroundColor(.text)
                     }
-                    .padding(.top, 10)
                 }
                 
                 Spacer()

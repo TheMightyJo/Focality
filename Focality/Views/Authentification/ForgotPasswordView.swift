@@ -33,18 +33,6 @@ struct ForgotPasswordView: View {
                 CustomButton(title: "Réinitialiser le mot de passe", backgroundColor: .accentColor, action: { authViewModel.resetPassword()})
                     .padding()
                 
-//                Button(action: {
-//                    authViewModel.resetPassword()
-//                }) {
-//                    Text("Réinitialiser le mot de passe")
-//                        .frame(maxWidth: .infinity)
-//                        .foregroundColor(.white)
-//                        .padding()
-//                        .background(Color.blue)
-//                        .cornerRadius(10)
-//                }
-//                .padding(.top, 10)
-                
                 Spacer()
             }
             .padding()
