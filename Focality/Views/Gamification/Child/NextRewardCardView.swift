@@ -11,26 +11,25 @@ struct NextRewardCardView: View {
     let reward: Reward
     
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading) {
-                Text("Prochaine Récompense")
-                    .textCase(.uppercase)
-                    .font(.headline).bold()
-                    .padding(.bottom, 5)
-                Text(reward.title)
-                    .font(.title2)
-                Text(reward.description)
-                    .font(.body)
-                CustomButton(title: "\(reward.requiredPoints) points", backgroundColor: .accent) {
-                    
-                }
+        VStack(alignment: .leading) {
+            Text("Prochaine Récompense")
+                .textCase(.uppercase)
+                .font(.headline).bold()
+                .padding(.bottom, 5)
+            Text(reward.title)
+                .font(.title2)
+            Text(reward.description)
+                .font(.body)
+            CustomButton(title: "\(reward.requiredPoints) points", backgroundColor: .accent) {
+                
             }
-            .padding()
-            .foregroundStyle(.white)
-            .background(Color(.secondaire))
-            .cornerRadius(20)
-            
         }
+        .padding()
+        .foregroundStyle(.white)
+        .background(Color(.secondaire))
+        .cornerRadius(20)
+        
+        
         .padding()
     }
 }
