@@ -17,3 +17,4 @@ struct inscriptionUserView: View {
 #Preview {
     inscriptionUserView()
 }
+
