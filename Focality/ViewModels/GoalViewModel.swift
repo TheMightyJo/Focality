@@ -8,7 +8,7 @@
 import SwiftUI
 
 class GoalViewModel: ObservableObject {
-    @Published private var goals: [Goal] = []
+    @Published var goals: [Goal] = []
     init(goals: [Goal]) {
         
         self.goals = [
