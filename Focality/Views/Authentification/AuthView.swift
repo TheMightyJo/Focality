@@ -8,8 +8,6 @@ struct AuthView: View {
     init(userViewModel: UserViewModel) {
         _authViewModel = ObservedObject(wrappedValue: AuthViewModel(userViewModel: userViewModel, email: "emiliano@gmail.com", password: "Teamcook5*"))
     }
-
-    
     
     var body: some View {
         NavigationStack {
@@ -74,6 +72,7 @@ struct AuthView: View {
                         challengeViewModel: ChallengeViewModel(),
                         userViewModel: UserViewModel()
                     )
+                    .navigationBarBackButtonHidden(true)
                 }
                 
                 Button(action: {
@@ -90,6 +89,7 @@ struct AuthView: View {
                             .font(.system(size: 15))
                             .foregroundColor(.text)
                     }
+                    
                 }
                 
                 Spacer()
