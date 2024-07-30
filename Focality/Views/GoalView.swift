@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct GoalView: View {
+    @StateObject var viewGoals = GoalViewModel(goals: [])
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text("Objectifs")
+                .font(.title)
+            Spacer()
+            Image(systemName: "plus.circle.fill")
+                .font(.title)
+        }
+        List(viewGoals.goals) { goal in
+            
+        
+            
+        }
+        
     }
 }
 
