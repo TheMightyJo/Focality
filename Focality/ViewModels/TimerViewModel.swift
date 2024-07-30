@@ -15,6 +15,5 @@ class TimerViewModel: ObservableObject{
     func modifTimer(focusTime: Int, shortBreak: Int, longBreak: Int){
         let newTimer = Timer(focusTime: focusTime, shortBreak: shortBreak, longBreak: longBreak)
     }
-    
 }
  
