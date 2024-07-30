@@ -28,6 +28,7 @@
 		769BE1A72C58DB1C00CA6B95 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769BE1A62C58DB1C00CA6B95 /* GoalView.swift */; };
 		769BE1A92C58DC5800CA6B95 /* MainGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 769BE1A82C58DC5800CA6B95 /* MainGoal.storyboard */; };
 		769BE1AB2C58DCE700CA6B95 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769BE1AA2C58DCE700CA6B95 /* GoalViewController.swift */; };
+		A59A41962C58E4CE00029633 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A41952C58E4CE00029633 /* SplashView.swift */; };
 		A5F899B02C4C37790052CBEB /* GamificationProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899AF2C4C37790052CBEB /* GamificationProfileView.swift */; };
 		A5F899B22C4C37C70052CBEB /* ChallengeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899B12C4C37C70052CBEB /* ChallengeRowView.swift */; };
 		A5F899B42C4C37D60052CBEB /* NextRewardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899B32C4C37D60052CBEB /* NextRewardCardView.swift */; };
@@ -63,6 +64,7 @@
 		769BE1A62C58DB1C00CA6B95 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		769BE1A82C58DC5800CA6B95 /* MainGoal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainGoal.storyboard; sourceTree = "<group>"; };
 		769BE1AA2C58DCE700CA6B95 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		A59A41952C58E4CE00029633 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		A5F899AF2C4C37790052CBEB /* GamificationProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamificationProfileView.swift; sourceTree = "<group>"; };
 		A5F899B12C4C37C70052CBEB /* ChallengeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRowView.swift; sourceTree = "<group>"; };
 		A5F899B32C4C37D60052CBEB /* NextRewardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextRewardCardView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				703C66B72C47FBF300B0AF52 /* FocalityApp.swift */,
 				703C66B92C47FBF300B0AF52 /* ContentView.swift */,
+				A59A41952C58E4CE00029633 /* SplashView.swift */,
 				703C66BB2C47FBF300B0AF52 /* Item.swift */,
 				E92E8F0D2C493CE6004B0403 /* Views */,
 				70F0EA9C2C480F3A0098A202 /* Models */,
@@ -293,6 +296,7 @@
 				70E0F99E2C4918AA0085BDAA /* TimerViewModel.swift in Sources */,
 				70E0F99C2C49189C0085BDAA /* ChallengeViewModel.swift in Sources */,
 				70F0EAAA2C4810490098A202 /* Timer.swift in Sources */,
+				A59A41962C58E4CE00029633 /* SplashView.swift in Sources */,
 				70F0EAA22C48101A0098A202 /* Reward.swift in Sources */,
 				70F0EAA62C48102E0098A202 /* Goal.swift in Sources */,
 			);
