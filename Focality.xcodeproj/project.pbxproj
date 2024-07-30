@@ -33,6 +33,7 @@
 		A5F899BA2C4C4D520052CBEB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899B92C4C4D520052CBEB /* CustomButton.swift */; };
 		A5F899BC2C4C510B0052CBEB /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899BB2C4C510B0052CBEB /* PointsView.swift */; };
 		E92E8F0F2C493CFE004B0403 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92E8F0E2C493CFE004B0403 /* TimerView.swift */; };
+		E9F5CC342C5790ED0098BACA /* SettingModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F5CC332C5790ED0098BACA /* SettingModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		A5F899B92C4C4D520052CBEB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A5F899BB2C4C510B0052CBEB /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 		E92E8F0E2C493CFE004B0403 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		E9F5CC332C5790ED0098BACA /* SettingModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				A5F899BD2C4C5B430052CBEB /* Gamification */,
 				E92E8F0E2C493CFE004B0403 /* TimerView.swift */,
 				615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */,
+				E9F5CC332C5790ED0098BACA /* SettingModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				A5F899B22C4C37C70052CBEB /* ChallengeRowView.swift in Sources */,
 				703C66BC2C47FBF300B0AF52 /* Item.swift in Sources */,
 				70E0F9962C4918290085BDAA /* RewardViewModel.swift in Sources */,
+				E9F5CC342C5790ED0098BACA /* SettingModalView.swift in Sources */,
 				70E0F9942C49181C0085BDAA /* UserViewModel.swift in Sources */,
 				A5F899BC2C4C510B0052CBEB /* PointsView.swift in Sources */,
 				E92E8F0F2C493CFE004B0403 /* TimerView.swift in Sources */,
