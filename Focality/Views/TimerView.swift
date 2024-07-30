@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TimerView: View {
-    @State private var showModal = false
+    @State private var showingSheet = false
     
     var body: some View {
         VStack {
@@ -30,6 +30,7 @@ struct TimerView: View {
                     Ellipse()
                     .fill(.primaire)
                     .frame(width: 54, height: 54)
+                    .padding()
                     Image("Button Play")
                         .resizable()
                         .scaledToFit()
@@ -40,7 +41,7 @@ struct TimerView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20, height: 25.26)
-            }
+            }.padding(.leading,30)
             Spacer()
             HStack {
                 Ellipse()
@@ -67,6 +68,13 @@ struct TimerView: View {
                     .fill(.primaire)
                 .frame(width: 40, height: 40)
                 Image("Button Setting")
+            }
+            .onTapGesture {
+                showingSheet.toggle()
+                        }
+            .sheet(isPresented: $showingSheet) {
+                SettingModalView()
+    
             }
             Spacer()
         }
