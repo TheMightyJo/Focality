@@ -1,12 +1,18 @@
 import SwiftUI
 
 struct AuthView: View {
-    @ObservedObject var authViewModel = AuthViewModel()
+    @ObservedObject var authViewModel: AuthViewModel
     @State private var isSignUpMode = false
     @State private var isPasswordVisible = false
     
+    init(userViewModel: UserViewModel) {
+        _authViewModel = ObservedObject(wrappedValue: AuthViewModel(userViewModel: userViewModel, email: "emiliano@gmail.com", password: "Teamcook5*"))
+    }
+
+    
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 25.0) {
                 Spacer()
                 Image("Logo")
@@ -62,6 +68,13 @@ struct AuthView: View {
                     
                 }
                 .padding(.top, 10)
+                .navigationDestination(isPresented: $authViewModel.isSignInSuccess) {
+                    GamificationProfileView(
+                        rewardViewModel: RewardViewModel(userViewModel: UserViewModel()),
+                        challengeViewModel: ChallengeViewModel(),
+                        userViewModel: UserViewModel()
+                    )
+                }
                 
                 Button(action: {
                     isSignUpMode.toggle()
@@ -88,6 +101,6 @@ struct AuthView: View {
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView()
+        AuthView(userViewModel: UserViewModel())
     }
 }

@@ -1,8 +1,12 @@
 import SwiftUI
 
 struct ForgotPasswordView: View {
-    @ObservedObject var authViewModel = AuthViewModel()
-    
+    @ObservedObject var authViewModel: AuthViewModel
+
+    init(authViewModel: AuthViewModel) {
+        self.authViewModel = authViewModel
+    }
+
     var body: some View {
         NavigationView {
             VStack {
@@ -30,7 +34,7 @@ struct ForgotPasswordView: View {
                         .padding()
                 }
                 
-                CustomButton(title: "Réinitialiser le mot de passe", backgroundColor: .accentColor, action: { authViewModel.resetPassword()})
+                CustomButton(title: "Réinitialiser le mot de passe", backgroundColor: .accentColor, action: { authViewModel.resetPassword() })
                     .padding()
                 
                 Spacer()
@@ -43,6 +47,6 @@ struct ForgotPasswordView: View {
 
 struct ForgotPasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        ForgotPasswordView()
+        ForgotPasswordView(authViewModel: AuthViewModel(userViewModel: UserViewModel()))
     }
 }

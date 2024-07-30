@@ -25,7 +25,7 @@ struct FocalityApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AuthView()
+            AuthView(userViewModel: UserViewModel())
         }
         .modelContainer(sharedModelContainer)
     }
