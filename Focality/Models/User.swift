@@ -6,7 +6,8 @@
 //
 
 import Foundation
-class User: Identifiable{
+
+class User: Identifiable  {
     var id = UUID()
     var firstName: String
     var lastName: String
