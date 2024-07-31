@@ -8,44 +8,98 @@
 import SwiftUI
 
 struct inscriptionUserView : View {
-//    @StateObject var userViewModel = UserViewModel()
     
     @ObservedObject  var userViewModel : UserViewModel
-    
-//    var user = User(firstName: "Dembo", lastName: "Babar", email: "dembo@gmail.com", password: "Teamcook5*", birthday: Date(), point: 55, currentLevel: 150)
-//    var firstName = ""
-//    var lastName = ""
-//    var email = ""
-//    var password = ""
-//    var birthday = Date()
-//    var point = 0
-//    var currentLevel = 0
+    @State private var firstName = ""
+    @State private var lastName = ""
+    @State private var email = ""
+    @State private var password = ""
+    @State private var birthday = Date()
+    @State private var point = 0
+    @State private var currentLevel = 0
    
     var body: some View {
 
         VStack{
-            Text("Inscription")
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .font(.system(size: 36))
+            HStack{
+                Text("Inscription")
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .font(.system(size: 30))
+                Spacer()
+                
+            }
             
-            Image("Logo")
-                .resizable()
-                .frame(width: 200, height: 200)
+            
+            HStack{
+                Image("Logo")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+            }
+            
         }
-        
         
         HStack{
             List{
-                TextField("FirstName", text: $userViewModel.users.firstName)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                HStack{
+                    Text("FirstName")
+                    TextField("FirstName", text: $firstName)
+                     .padding()
+                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
                
+                HStack{
+                    Text("LastName")
+                    TextField("LasttName", text: $lastName)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+               
+               
+                HStack{
+                    Text("Email")
+                    TextField("Email", text: $email)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                
+                HStack{
+                    Text("Password")
+                    TextField("Password", text: $password)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                
+                HStack{
+                    Text("Birthday")
+                    DatePicker("Birthday", selection: $birthday, displayedComponents: .date)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+                
+                HStack{
+                    Text("Points")
+                    TextField("Points", value: $point, formatter: NumberFormatter())
+                    .keyboardType(.numberPad)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
+               
+                HStack{
+                    Text("Current Level")
+                    TextField("Current Level", value: $currentLevel, formatter: NumberFormatter())
+                    .keyboardType(.numberPad)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                }
                 
                 
-                
-                
-                
-                    
+                Button(action: {userViewModel.addUser(firstName: firstName, lastName: lastName, email: email, password: password, birthday: birthday)
+                    }, label:{
+                        Text("Création")})
+                .background(Color.primaire)
+                .foregroundColor(.black)
+                .frame(maxWidth: .infinity)
+                .font(.custom("arial", size: 30))
                 
             }
                 
