@@ -12,12 +12,12 @@ class GoalViewModel: ObservableObject {
     init(goals: [Goal]) {
         
         self.goals = [
-            Goal.init(goalTitle: "Anglais", startDate: Date(), endDate: Date(), goalDescription: "Passage de B1 a C1 en 9 mois")
+            Goal.init(goalTitle: "Anglais", startDate: "11/01/2024", endDate: "29/09/2024", goalDescription: "Passage de B1 a C1 en 9 mois")
         ]
         
     }
-    func addGoal(goalTitle: String, starteDate: Date, endDate: Date, goalDescription: String) {
-        let newGoal = Goal.init(goalTitle: goalTitle, startDate: Date(), endDate: Date(), goalDescription: goalDescription)
+    func addGoal(goalTitle: String, startDate: String, endDate: String, goalDescription: String) {
+        let newGoal = Goal.init(goalTitle: goalTitle, startDate: startDate, endDate: endDate, goalDescription: goalDescription)
         goals.append(newGoal)
     }
 }
