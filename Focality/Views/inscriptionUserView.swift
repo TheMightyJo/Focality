@@ -70,7 +70,7 @@ struct inscriptionUserView : View {
                 }
                 
                 HStack{
-                    Text("Birthday")
+                    
                     DatePicker("Birthday", selection: $birthday, displayedComponents: .date)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
