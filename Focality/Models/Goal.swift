@@ -9,11 +9,11 @@ import Foundation
 class Goal: Identifiable {
     var id = UUID()
     var goalTitle: String
-    var startDate: Date
-    var endDate: Date
+    var startDate: String
+    var endDate: String
     var goalDescription: String
     
-    init(goalTitle: String, startDate: Date, endDate: Date, goalDescription: String) {
+    init(goalTitle: String, startDate: String, endDate: String, goalDescription: String) {
         self.id = UUID()
         self.goalTitle = goalTitle
         self.startDate = startDate

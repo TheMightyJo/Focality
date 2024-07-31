@@ -22,9 +22,9 @@ class ChallengeViewModel: ObservableObject {
     /// Cette méthode simule le chargement des challenges.
     func loadChallenges() {
         challenges = [
-            Challenge(title: "Terminer une séance de respiration/expiration", description: "Compléter une séance de respiration/expiration de 5 minutes."),
-            Challenge(title: "Terminer un timer", description: "Compléter un cycle de travail de 25 minutes avec le timer Pomodoro."),
-            Challenge(title: "Atteindre un objectif donné", description: "Compléter tous les objectifs de la semaine.")
+            Challenge(title: "Terminer une séance de respiration/expiration", description: "Compléter une séance de respiration/expiration de 5 minutes.", points: 10),
+            Challenge(title: "Terminer un timer", description: "Compléter un cycle de travail de 25 minutes avec le timer Pomodoro.", points: 20),
+            Challenge(title: "Atteindre un objectif donné", description: "Compléter tous les objectifs de la semaine.", points: 30)
         ]
     }
 }
