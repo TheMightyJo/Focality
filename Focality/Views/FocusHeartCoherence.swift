@@ -18,6 +18,7 @@ struct FocusHeartCoherence: View {
             
             }
             
+            
             HStack{
                 Text("Focus")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
