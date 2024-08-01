@@ -9,9 +9,9 @@ struct CustomButton: View {
         Button(action: action) {
             Text(title)
                 .frame(maxWidth: .infinity)
-                .foregroundColor(.white)
+                .foregroundColor(.white).bold()
                 .padding()
-                .background(.accent)
+                .background(.secondaire)
                 .cornerRadius(10)
         }
     }

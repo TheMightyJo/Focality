@@ -26,7 +26,7 @@ struct TextFieldView: View {
                         isPasswordVisible.toggle()
                     }) {
                         Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
-                            .foregroundColor(.secondary)
+                            .foregroundColor(.accent)
                     }
                     .padding(.trailing, 16)
                 }

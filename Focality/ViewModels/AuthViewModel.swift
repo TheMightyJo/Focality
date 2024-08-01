@@ -6,6 +6,8 @@ import Combine
 /// Le ViewModel utilise `@Published` pour rendre les propriétés réactives, ce qui permet
 /// aux vues SwiftUI de se mettre à jour automatiquement en réponse aux changements de données.
 class AuthViewModel: ObservableObject {
+    // MARK: - Published Properties
+    
     /// L'email de l'utilisateur.
     @Published var email: String
     
@@ -36,8 +38,20 @@ class AuthViewModel: ObservableObject {
     /// Indique si la connexion a été réussie.
     @Published var isSignInSuccess: Bool = false
     
+    // MARK: - Private Properties
+    
     /// ViewModel pour gérer les utilisateurs.
-    var userViewModel: UserViewModel
+    private var userViewModel: UserViewModel
+    
+    // MARK: - Constants
+    
+    private let minimumPasswordLength = 8
+    private let emailErrorMessage = "Email ou mot de passe invalide"
+    private let signUpErrorMessage = "Veuillez remplir correctement tous les champs"
+    private let resetPasswordSuccessMessage = "Un lien de réinitialisation de mot de passe a été envoyé à"
+    private let emailNotFoundMessage = "Email non trouvé"
+    
+    // MARK: - Initializer
     
     /// Initialise le ViewModel avec une instance de `UserViewModel`.
     ///
@@ -51,6 +65,8 @@ class AuthViewModel: ObservableObject {
         self.password = password
     }
     
+    // MARK: - Methods
+    
     /// Tente de connecter l'utilisateur avec les informations fournies.
     ///
     /// Met à jour `isSignInSuccess` à `true` si les informations d'identification sont correctes,
@@ -61,7 +77,7 @@ class AuthViewModel: ObservableObject {
             isSignInSuccess = true
             errorMessage = nil
         } else {
-            errorMessage = "Email ou mot de passe invalide"
+            errorMessage = emailErrorMessage
         }
     }
     
@@ -70,14 +86,15 @@ class AuthViewModel: ObservableObject {
     /// Met à jour `isSignUpSuccess` à `true` si l'inscription est réussie,
     /// sinon met à jour `errorMessage` avec un message d'erreur.
     func signUp() {
-        if !email.isEmpty && !password.isEmpty && password.count >= 8 {
-            let newUser = User(firstName: firstName, lastName: lastName, email: email, password: password, birthday: birthday, point: 0, currentLevel: 0)
-            userViewModel.users.append(newUser)
-            isSignUpSuccess = true
-            errorMessage = nil
-        } else {
-            errorMessage = "Veuillez remplir correctement tous les champs"
+        guard !email.isEmpty, !password.isEmpty, password.count >= minimumPasswordLength else {
+            errorMessage = signUpErrorMessage
+            return
         }
+        
+        let newUser = User(firstName: firstName, lastName: lastName, email: email, password: password, birthday: birthday, point: 0, currentLevel: 0)
+        userViewModel.users.append(newUser)
+        isSignUpSuccess = true
+        errorMessage = nil
     }
     
     /// Réinitialise le mot de passe de l'utilisateur avec l'email fourni.
@@ -86,10 +103,14 @@ class AuthViewModel: ObservableObject {
     /// sinon met à jour `errorMessage` avec un message d'erreur.
     func resetPassword() {
         if let user = userViewModel.users.first(where: { $0.email == email }) {
-            resetPasswordMessage = "Un lien de réinitialisation de mot de passe a été envoyé à \(user.email)"
+            resetPasswordMessage = "\(resetPasswordSuccessMessage) \(user.email)"
             errorMessage = nil
         } else {
-            errorMessage = "Email non trouvé"
+            errorMessage = emailNotFoundMessage
         }
+    }
+    /// Renvoie l'instance de `UserViewModel`.
+    func getUserViewModel() -> UserViewModel {
+        return userViewModel
     }
 }

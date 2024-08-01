@@ -3,6 +3,7 @@ import SwiftUI
 struct AuthView: View {
     @ObservedObject var authViewModel: AuthViewModel
     @State private var isSignUpMode = false
+    @State private var isPasswordVisible = false
     
     init(userViewModel: UserViewModel) {
         _authViewModel = ObservedObject(wrappedValue: AuthViewModel(userViewModel: userViewModel, email: "emiliano@gmail.com", password: "Teamcook5*"))
@@ -33,26 +34,24 @@ struct AuthView: View {
                 .padding(.top, 10)
                 .navigationDestination(isPresented: $authViewModel.isSignInSuccess) {
                     GamificationProfileView(
-                        rewardViewModel: RewardViewModel(userViewModel: authViewModel.userViewModel),
+                        rewardViewModel: RewardViewModel(userViewModel: authViewModel.getUserViewModel()),
                         challengeViewModel: ChallengeViewModel(),
-                        userViewModel: authViewModel.userViewModel
+                        userViewModel: authViewModel.getUserViewModel()
                     )
                     .navigationBarBackButtonHidden(true)
                 }
                 
-                NavigationLink(destination: inscriptionUserView(userViewModel: authViewModel.userViewModel)) {
+                NavigationLink(destination: inscriptionUserView(userViewModel: authViewModel.getUserViewModel())) {
                     Text("Pas encore inscrit ? S'inscrire")
                         .font(.footnote)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.secondaire).bold()
                 }
-                .padding(.top, 10)
                 
                 NavigationLink(destination: ForgotPasswordView(authViewModel: authViewModel)) {
                     Text("Mot de passe oublié ?")
                         .font(.footnote)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.secondaire).bold()
                 }
-                .padding(.top, 10)
                 
                 Spacer()
             }
