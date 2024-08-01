@@ -29,6 +29,7 @@
 		769BE1A72C58DB1C00CA6B95 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769BE1A62C58DB1C00CA6B95 /* GoalView.swift */; };
 		769BE1A92C58DC5800CA6B95 /* MainGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 769BE1A82C58DC5800CA6B95 /* MainGoal.storyboard */; };
 		769BE1AB2C58DCE700CA6B95 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769BE1AA2C58DCE700CA6B95 /* GoalViewController.swift */; };
+		A50A04782C5B70C60057D436 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A04772C5B70C60057D436 /* SplashView.swift */; };
 		A59A41992C58E60B00029633 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A41982C58E60B00029633 /* AuthView.swift */; };
 		A59A419B2C58E62100029633 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A419A2C58E62100029633 /* AuthViewModel.swift */; };
 		A59A419D2C58E6AC00029633 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A419C2C58E6AC00029633 /* ForgotPasswordView.swift */; };
@@ -68,6 +69,7 @@
 		769BE1A62C58DB1C00CA6B95 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		769BE1A82C58DC5800CA6B95 /* MainGoal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainGoal.storyboard; sourceTree = "<group>"; };
 		769BE1AA2C58DCE700CA6B95 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		A50A04772C5B70C60057D436 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		A59A41982C58E60B00029633 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		A59A419A2C58E62100029633 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		A59A419C2C58E6AC00029633 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				703C66B72C47FBF300B0AF52 /* FocalityApp.swift */,
 				703C66B92C47FBF300B0AF52 /* ContentView.swift */,
 				703C66BB2C47FBF300B0AF52 /* Item.swift */,
+				A50A04772C5B70C60057D436 /* SplashView.swift */,
 				E92E8F0D2C493CE6004B0403 /* Views */,
 				70F0EA9C2C480F3A0098A202 /* Models */,
 				70F0EA9D2C480F410098A202 /* ViewModels */,
@@ -310,6 +313,7 @@
 				6146057A2C5A74370090846B /* FocusHeartCoherence.swift in Sources */,
 				A59A41992C58E60B00029633 /* AuthView.swift in Sources */,
 				A59A419B2C58E62100029633 /* AuthViewModel.swift in Sources */,
+				A50A04782C5B70C60057D436 /* SplashView.swift in Sources */,
 				70F0EAA82C4810380098A202 /* Challenge.swift in Sources */,
 				70E0F99A2C4918750085BDAA /* GoalViewModel.swift in Sources */,
 				769BE1AB2C58DCE700CA6B95 /* GoalViewController.swift in Sources */,
