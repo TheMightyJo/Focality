@@ -37,7 +37,7 @@ class AuthViewModel: ObservableObject {
     @Published var isSignInSuccess: Bool = false
     
     /// ViewModel pour gérer les utilisateurs.
-    private var userViewModel: UserViewModel
+    var userViewModel: UserViewModel
     
     /// Initialise le ViewModel avec une instance de `UserViewModel`.
     ///
