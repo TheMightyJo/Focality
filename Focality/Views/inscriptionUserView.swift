@@ -21,24 +21,19 @@ struct inscriptionUserView : View {
     var body: some View {
 
         VStack{
-            HStack{
+            
                 Text("Inscription")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .font(.system(size: 30))
-                Spacer()
+                    .padding(.trailing, 200)
                 
-            }
             
             
-            HStack{
+            
+            
                 Image("Logo")
                     .resizable()
                     .frame(width: 100, height: 100)
-            }
-            
-        }
-        
-        HStack{
             List{
                 HStack{
                     Text("FirstName")
@@ -92,19 +87,28 @@ struct inscriptionUserView : View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 
-                
-                Button(action: {userViewModel.addUser(firstName: firstName, lastName: lastName, email: email, password: password, birthday: birthday)
-                    }, label:{
-                        Text("Création")})
-                .background(Color.primaire)
-                .foregroundColor(.black)
-                .frame(maxWidth: .infinity)
-                .font(.custom("arial", size: 30))
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.primaire)
+                        .frame(width: 300, height: 50)
+                    Button(action: {userViewModel.addUser(firstName: firstName, lastName: lastName, email: email, password: password, birthday: birthday)
+                        }, label:{
+                            Text("Création")})
+                    .foregroundColor(.black)
+
+                    .font(.custom("arial", size: 30))
+                }
+               
                 
             }
-                
             
         }
+        
+        
+       
+                
+            
+        
     }
 }
 

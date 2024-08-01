@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6146057A2C5A74370090846B /* FocusHeartCoherence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614605792C5A74370090846B /* FocusHeartCoherence.swift */; };
+		6146057D2C5B7ECE0090846B /* FocusHeartCoherenceTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6146057C2C5B7ECE0090846B /* FocusHeartCoherenceTimer.swift */; };
+		6146057F2C5B84E20090846B /* FocusHeartCoherenceBreathInBreathOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6146057E2C5B84E20090846B /* FocusHeartCoherenceBreathInBreathOut.swift */; };
 		615A54F52C4A5FF6001171CA /* inscriptionUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */; };
 		703C66B82C47FBF300B0AF52 /* FocalityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66B72C47FBF300B0AF52 /* FocalityApp.swift */; };
 		703C66BA2C47FBF300B0AF52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66B92C47FBF300B0AF52 /* ContentView.swift */; };
@@ -47,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		614605792C5A74370090846B /* FocusHeartCoherence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherence.swift; sourceTree = "<group>"; };
+		6146057C2C5B7ECE0090846B /* FocusHeartCoherenceTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherenceTimer.swift; sourceTree = "<group>"; };
+		6146057E2C5B84E20090846B /* FocusHeartCoherenceBreathInBreathOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherenceBreathInBreathOut.swift; sourceTree = "<group>"; };
 		615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inscriptionUserView.swift; sourceTree = "<group>"; };
 		703C66B42C47FBF300B0AF52 /* Focality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		703C66B72C47FBF300B0AF52 /* FocalityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocalityApp.swift; sourceTree = "<group>"; };
@@ -96,6 +100,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6146057B2C5B7AFC0090846B /* FocusHeartCoherence */ = {
+			isa = PBXGroup;
+			children = (
+				614605792C5A74370090846B /* FocusHeartCoherence.swift */,
+				6146057C2C5B7ECE0090846B /* FocusHeartCoherenceTimer.swift */,
+				6146057E2C5B84E20090846B /* FocusHeartCoherenceBreathInBreathOut.swift */,
+			);
+			path = FocusHeartCoherence;
+			sourceTree = "<group>";
+		};
 		703C66AB2C47FBF200B0AF52 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +219,7 @@
 		E92E8F0D2C493CE6004B0403 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6146057B2C5B7AFC0090846B /* FocusHeartCoherence */,
 				A59A41972C58E5A900029633 /* Authentification */,
 				A5F899BD2C4C5B430052CBEB /* Gamification */,
 				E92E8F0E2C493CFE004B0403 /* TimerView.swift */,
@@ -214,7 +229,6 @@
 				769BE1A62C58DB1C00CA6B95 /* GoalView.swift */,
 				769BE1AA2C58DCE700CA6B95 /* GoalViewController.swift */,
 				769BE1A82C58DC5800CA6B95 /* MainGoal.storyboard */,
-				614605792C5A74370090846B /* FocusHeartCoherence.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,10 +330,12 @@
 				A50A04782C5B70C60057D436 /* SplashView.swift in Sources */,
 				70F0EAA82C4810380098A202 /* Challenge.swift in Sources */,
 				70E0F99A2C4918750085BDAA /* GoalViewModel.swift in Sources */,
+				6146057F2C5B84E20090846B /* FocusHeartCoherenceBreathInBreathOut.swift in Sources */,
 				769BE1AB2C58DCE700CA6B95 /* GoalViewController.swift in Sources */,
 				A5F899BA2C4C4D520052CBEB /* CustomButton.swift in Sources */,
 				70E0F99E2C4918AA0085BDAA /* TimerViewModel.swift in Sources */,
 				70E0F99C2C49189C0085BDAA /* ChallengeViewModel.swift in Sources */,
+				6146057D2C5B7ECE0090846B /* FocusHeartCoherenceTimer.swift in Sources */,
 				70F0EAAA2C4810490098A202 /* Timer.swift in Sources */,
 				70F0EAA22C48101A0098A202 /* Reward.swift in Sources */,
 				70F0EAA62C48102E0098A202 /* Goal.swift in Sources */,
