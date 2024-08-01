@@ -9,7 +9,7 @@ import Foundation
 
 //class User: Identifiable  {
 
-class User: ObservableObject{
+class User: Identifiable{
     @Published var id = UUID()
     @Published var firstName: String
     @Published var lastName: String
