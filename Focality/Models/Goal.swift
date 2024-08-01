@@ -12,12 +12,14 @@ class Goal: Identifiable {
     var startDate: String
     var endDate: String
     var goalDescription: String
+    var isCompleted: Bool = false
     
-    init(goalTitle: String, startDate: String, endDate: String, goalDescription: String) {
+    init(goalTitle: String, startDate: String, endDate: String, goalDescription: String, isCompleted: Bool) {
         self.id = UUID()
         self.goalTitle = goalTitle
         self.startDate = startDate
         self.endDate = endDate
         self.goalDescription = goalDescription
+        self.isCompleted = isCompleted
     }
 }

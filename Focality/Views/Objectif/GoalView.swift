@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GoalView: View {
-    @StateObject var viewGoals = GoalViewModel(goals: [])
+    @StateObject var viewGoals = GoalViewModel()
     
     var body: some View {
         HStack {
@@ -18,12 +18,15 @@ struct GoalView: View {
             Image(systemName: "plus.circle.fill")
                 .font(.title)
         }
-        List(viewGoals.goals) { goal in
-            
-        
-            
+        NavigationStack {
+            List(viewGoals.goals) { goal in
+                NavigationLink {
+                    GoalDetailView(goals: goal)
+                } label: {
+                    GoalRowView(titreObj: goal.goalTitle, icon: goal.goalDescription)
+                }
+            }
         }
-        
     }
 }
 
