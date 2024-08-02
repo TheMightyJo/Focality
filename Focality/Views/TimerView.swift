@@ -8,39 +8,61 @@
 import SwiftUI
 
 struct TimerView: View {
-    @State private var showingSheet = false
+    @StateObject private var viewModel = TimerViewModel(isRunning: false, currentTime: 0) // Instance du ViewModel pour gérer l'état
+    @State private var showingSheet = false // État pour déterminer si la feuille de paramètres est affichée
     
     var body: some View {
         VStack {
             ZStack {
                 Ellipse()
-                    .stroke(.primaire, lineWidth: 4)
+                    .stroke(Color.primaire, lineWidth: 4) // Bordure de l'ellipse
                     .fill(.white)
-                .frame(width: 227, height: 227)
+                    .frame(width: 227, height: 227)
                 VStack {
-                    Text("25:00")
-                        .foregroundStyle(.primaire)
-                    Text("Lecture")
-                        .foregroundStyle(.primaire)
+                    Text(formatTime(viewModel.currentTime)) // Affichage du temps formaté
+                        .font(.system(size: 65))
+                        .foregroundColor(Color.primaire)
+                        .padding()
+                    Text("Lecture") // Label statique pour cet exemple
+                        .foregroundColor(Color.black)
+                        .font(.title)
                 }
             }
             Spacer()
+            // Barre de contrôles (Play/Pause et Skip Forward)
             HStack {
-                ZStack {
-                    Ellipse()
-                    .fill(.primaire)
-                    .frame(width: 54, height: 54)
-                    .padding()
-                    Image("Button Play")
+                // Bouton Play/Pause
+                Button(action: {
+                    // Toggle entre démarrer et mettre en pause le timer
+                    viewModel.setCurrentTime()// ajouté avec zora
+                    if viewModel.isRunning {
+                        viewModel.pauseTimer()
+                    } else {
+                        viewModel.startTimer()
+                    }
+                }) {
+                    ZStack {
+                        Ellipse()
+                            .fill(Color.primaire)
+                            .frame(width: 54, height: 54)
+                            .padding()
+                        Image(systemName: viewModel.isRunning ? "pause.fill" : "play.fill") // Icône dynamique
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 26, height: 26)
+                            .foregroundColor(Color(.black))
+                            .padding(.leading, 5)
+                    }
+                }
+                // Bouton Skip Forward
+                Button(action: {
+                   viewModel.skipForward()
+                }) {
+                   Image("Skip Forward")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 26, height: 26)
-                        .padding(.leading,5)
-                }
-                Image("Skip Forward")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20, height: 25.26)
+                        .frame(width: 20, height: 25.26)
+                               }
             }.padding(.leading,30)
             Spacer()
             HStack {
@@ -73,11 +95,17 @@ struct TimerView: View {
                 showingSheet.toggle()
                         }
             .sheet(isPresented: $showingSheet) {
-                SettingModalView()
+                SettingModalView(viewModel: viewModel)
     
             }
             Spacer()
         }
+    }
+    // Fonction pour formater le temps en minutes et secondes
+    private func formatTime(_ seconds: Int) -> String {
+        let minutes = seconds / 60
+        let remainingSeconds = seconds % 60
+        return String(format: "%02d:%02d", minutes, remainingSeconds) // Formatage pour afficher sous forme MM:SS
     }
 }
 
