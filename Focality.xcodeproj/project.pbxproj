@@ -187,30 +187,14 @@
 		A5F899BD2C4C5B430052CBEB /* Gamification */ = {
 			isa = PBXGroup;
 			children = (
-				A5F899BE2C4C5B6A0052CBEB /* Parents */,
-				A5F899BF2C4C5B7F0052CBEB /* Child */,
-			);
-			path = Gamification;
-			sourceTree = "<group>";
-		};
-		A5F899BE2C4C5B6A0052CBEB /* Parents */ = {
-			isa = PBXGroup;
-			children = (
 				A5F899AF2C4C37790052CBEB /* GamificationProfileView.swift */,
-			);
-			path = Parents;
-			sourceTree = "<group>";
-		};
-		A5F899BF2C4C5B7F0052CBEB /* Child */ = {
-			isa = PBXGroup;
-			children = (
 				A5F899B12C4C37C70052CBEB /* ChallengeRowView.swift */,
 				A5F899B52C4C4AF50052CBEB /* RewardListView.swift */,
 				A5F899B72C4C4B6D0052CBEB /* RewardRowView.swift */,
 				A5F899BB2C4C510B0052CBEB /* PointsView.swift */,
 				A5F899B32C4C37D60052CBEB /* NextRewardCardView.swift */,
 			);
-			path = Child;
+			path = Gamification;
 			sourceTree = "<group>";
 		};
 		E92E8F0D2C493CE6004B0403 /* Views */ = {
