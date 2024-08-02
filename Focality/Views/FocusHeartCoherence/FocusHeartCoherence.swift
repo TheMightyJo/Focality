@@ -11,48 +11,53 @@ struct FocusHeartCoherence: View {
     var body: some View {
         VStack{
             
-            HStack{
+            
                 Image("Logo")
                     .resizable()
                     .frame(width: 100, height: 100)
+                    .padding(.bottom, 10)
             
-            }
+                   
             
-            
-            HStack{
                 Text("Focus")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .font(.system(size: 30))
-            }
+                    .padding(.bottom, 70)
+        
             
-            HStack{
+            
                 Image("Focus")
                     .resizable()
                     .frame(width: 200, height: 200)
+                    .padding(.bottom, 40)
             
-            }
             
-            HStack{
+            
+            
                 Text("breathing focus")
                     .fontWeight(.semibold)
                     .font(.system(size: 20))
-            }
+                    .padding(.bottom, 30)
             
-            HStack{
+            
+            
                 Text("5 min")
                     .fontWeight(.semibold)
                     .font(.system(size: 15))
-            }
-            ZStack{
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.secondaire)
-                    .frame(width: 300, height: 50)
+                    .padding(.bottom, 20)
+            
+            
                 Button(action: {
-                    }, label:{
-                        Text("Commencer")})
-                .foregroundColor(.white)
+                }, label:{
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.secondaire)
+                            .frame(width: 300, height: 50)
+                        Text("Commencer")
+                            .foregroundColor(.white)
+                    }})
                 
-            }
+            
            
         
             TabView{
