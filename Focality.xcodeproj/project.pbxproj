@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6146057A2C5A74370090846B /* FocusHeartCoherence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614605792C5A74370090846B /* FocusHeartCoherence.swift */; };
 		615A54F52C4A5FF6001171CA /* inscriptionUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */; };
 		70229E2C2C5D2013009AF806 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70229E2B2C5D2013009AF806 /* OnboardingView.swift */; };
 		703C66B82C47FBF300B0AF52 /* FocalityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66B72C47FBF300B0AF52 /* FocalityApp.swift */; };
@@ -48,7 +47,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		614605792C5A74370090846B /* FocusHeartCoherence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherence.swift; sourceTree = "<group>"; };
 		615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inscriptionUserView.swift; sourceTree = "<group>"; };
 		70229E2B2C5D2013009AF806 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		703C66B42C47FBF300B0AF52 /* Focality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focality.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,7 +210,6 @@
 				769BE1A62C58DB1C00CA6B95 /* GoalView.swift */,
 				769BE1AA2C58DCE700CA6B95 /* GoalViewController.swift */,
 				769BE1A82C58DC5800CA6B95 /* MainGoal.storyboard */,
-				614605792C5A74370090846B /* FocusHeartCoherence.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,7 +307,6 @@
 				615A54F52C4A5FF6001171CA /* inscriptionUserView.swift in Sources */,
 				703C66B82C47FBF300B0AF52 /* FocalityApp.swift in Sources */,
 				A50A047E2C5BBCF90057D436 /* ForgotPasswordView.swift in Sources */,
-				6146057A2C5A74370090846B /* FocusHeartCoherence.swift in Sources */,
 				A59A41992C58E60B00029633 /* AuthView.swift in Sources */,
 				A59A419B2C58E62100029633 /* AuthViewModel.swift in Sources */,
 				A50A04782C5B70C60057D436 /* SplashView.swift in Sources */,
