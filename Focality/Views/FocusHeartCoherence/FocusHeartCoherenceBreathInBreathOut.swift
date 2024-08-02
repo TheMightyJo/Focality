@@ -21,8 +21,9 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
             HStack{Text("Focus")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .font(.system(size: 30))}
+            .padding(.bottom, 100)
             
-            Spacer()
+            
             
             Circle()
                 .fill(RadialGradient(gradient: Gradient(colors: [Color.primaire ,.secondaire, Color.secondaire.opacity(10)]),center: .center, startRadius: 5, endRadius: 200))
@@ -31,16 +32,25 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
                         .onAppear {
                             withAnimation(Animation.easeInOut(duration: 4.0).repeatForever(autoreverses: true)) {self.scale = 1.5}
                                  }
+                        .padding(.bottom, 140)
+            
 
-                       Spacer()
+                       
 
-                       Text("Inspirez")
-                           .font(.headline)
-                           .padding()
+            
+            
+            
+            
+            Button {
+                    
+            } label: {
+                Image("PlayFocusHeartCoherence")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 48, height: 48)
+                .padding(.bottom, 70)
 
-                       Text("Expirez ")
-                           .font(.headline)
-                           .padding()
+            }
         }
         
         
