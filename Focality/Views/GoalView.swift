@@ -20,8 +20,6 @@ struct GoalView: View {
         }
         List(viewGoals.goals) { goal in
             
-        
-            
         }
         
     }
