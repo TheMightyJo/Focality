@@ -11,8 +11,7 @@ class TimerViewModel: ObservableObject {
     @Published var timers: TimerPomodoro // Instance de Timer contenant les paramètres
     @Published var isRunning: Bool = false // État pour savoir si le timer est en cours
     @Published var currentTime: Int = 0// Temps restant en secondes
-    private var timer: Timer.TimerPublisher? // Timer pour gérer le compte à rebours
-    private var cancellable: AnyCancellable? // Pour annuler le Timer
+  
     
     init(timers: TimerPomodoro = TimerPomodoro(focusTime: 15, shortBreak: 5, longBreak: 15), isRunning: Bool, currentTime: Int) {
         self.timers = timers
