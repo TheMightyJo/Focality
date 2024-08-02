@@ -20,7 +20,7 @@ struct NextRewardCardView: View {
                 .font(.title2)
             Text(reward.description)
                 .font(.body)
-            CustomButton(title: "\(reward.requiredPoints) points", backgroundColor: .accent) {
+            CustomButton(title: "\(reward.requiredPoints) points", backgroundColor: .accentColor) {
                 
             }
         }

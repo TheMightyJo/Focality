@@ -13,15 +13,13 @@ struct ChallengeRowView: View {
                 .font(.headline)
             Text(challenge.description)
                 .font(.subheadline)
-            
+        
             PointsView(userViewModel: userViewModel)
-                .padding(.top, 10)
         }
         .padding()
         .foregroundStyle(.white)
         .background(Color.secondaire)
         .cornerRadius(20)
-        .shadow(radius: 3)
     }
 }
 
