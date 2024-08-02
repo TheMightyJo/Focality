@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		615A54F52C4A5FF6001171CA /* inscriptionUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */; };
 		70229E2C2C5D2013009AF806 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70229E2B2C5D2013009AF806 /* OnboardingView.swift */; };
+		70229E312C5D2FDA009AF806 /* FocusHeartCoherence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70229E2D2C5D2FDA009AF806 /* FocusHeartCoherence.swift */; };
+		70229E322C5D2FDA009AF806 /* FocusHeartCoherenceBreathInBreathOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70229E2E2C5D2FDA009AF806 /* FocusHeartCoherenceBreathInBreathOut.swift */; };
+		70229E332C5D2FDA009AF806 /* FocusHeartCoherenceTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70229E2F2C5D2FDA009AF806 /* FocusHeartCoherenceTimer.swift */; };
 		703C66B82C47FBF300B0AF52 /* FocalityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66B72C47FBF300B0AF52 /* FocalityApp.swift */; };
 		703C66BA2C47FBF300B0AF52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66B92C47FBF300B0AF52 /* ContentView.swift */; };
 		703C66BC2C47FBF300B0AF52 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66BB2C47FBF300B0AF52 /* Item.swift */; };
@@ -49,6 +52,9 @@
 /* Begin PBXFileReference section */
 		615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inscriptionUserView.swift; sourceTree = "<group>"; };
 		70229E2B2C5D2013009AF806 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		70229E2D2C5D2FDA009AF806 /* FocusHeartCoherence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherence.swift; sourceTree = "<group>"; };
+		70229E2E2C5D2FDA009AF806 /* FocusHeartCoherenceBreathInBreathOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherenceBreathInBreathOut.swift; sourceTree = "<group>"; };
+		70229E2F2C5D2FDA009AF806 /* FocusHeartCoherenceTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherenceTimer.swift; sourceTree = "<group>"; };
 		703C66B42C47FBF300B0AF52 /* Focality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		703C66B72C47FBF300B0AF52 /* FocalityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocalityApp.swift; sourceTree = "<group>"; };
 		703C66B92C47FBF300B0AF52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70229E302C5D2FDA009AF806 /* FocusHeartCoherence */ = {
+			isa = PBXGroup;
+			children = (
+				70229E2D2C5D2FDA009AF806 /* FocusHeartCoherence.swift */,
+				70229E2E2C5D2FDA009AF806 /* FocusHeartCoherenceBreathInBreathOut.swift */,
+				70229E2F2C5D2FDA009AF806 /* FocusHeartCoherenceTimer.swift */,
+			);
+			path = FocusHeartCoherence;
+			sourceTree = "<group>";
+		};
 		703C66AB2C47FBF200B0AF52 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +216,7 @@
 		E92E8F0D2C493CE6004B0403 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70229E302C5D2FDA009AF806 /* FocusHeartCoherence */,
 				70229E2B2C5D2013009AF806 /* OnboardingView.swift */,
 				A59A41972C58E5A900029633 /* Authentification */,
 				A5F899BD2C4C5B430052CBEB /* Gamification */,
@@ -288,6 +305,7 @@
 				70E0F9982C4918620085BDAA /* ReminderViewModel.swift in Sources */,
 				A5F899B02C4C37790052CBEB /* GamificationProfileView.swift in Sources */,
 				70F0EAA02C4810070098A202 /* User.swift in Sources */,
+				70229E312C5D2FDA009AF806 /* FocusHeartCoherence.swift in Sources */,
 				A50A047B2C5BBC0D0057D436 /* TextFieldView.swift in Sources */,
 				703C66BA2C47FBF300B0AF52 /* ContentView.swift in Sources */,
 				A5F899B82C4C4B6D0052CBEB /* RewardRowView.swift in Sources */,
@@ -312,12 +330,14 @@
 				A50A04782C5B70C60057D436 /* SplashView.swift in Sources */,
 				70F0EAA82C4810380098A202 /* Challenge.swift in Sources */,
 				70E0F99A2C4918750085BDAA /* GoalViewModel.swift in Sources */,
+				70229E322C5D2FDA009AF806 /* FocusHeartCoherenceBreathInBreathOut.swift in Sources */,
 				769BE1AB2C58DCE700CA6B95 /* GoalViewController.swift in Sources */,
 				A5F899BA2C4C4D520052CBEB /* CustomButton.swift in Sources */,
 				70E0F99E2C4918AA0085BDAA /* TimerViewModel.swift in Sources */,
 				70E0F99C2C49189C0085BDAA /* ChallengeViewModel.swift in Sources */,
 				70F0EAAA2C4810490098A202 /* TimerPomodoro.swift in Sources */,
 				70F0EAA22C48101A0098A202 /* Reward.swift in Sources */,
+				70229E332C5D2FDA009AF806 /* FocusHeartCoherenceTimer.swift in Sources */,
 				70F0EAA62C48102E0098A202 /* Goal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
