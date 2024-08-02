@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6146057A2C5A74370090846B /* FocusHeartCoherence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614605792C5A74370090846B /* FocusHeartCoherence.swift */; };
 		615A54F52C4A5FF6001171CA /* inscriptionUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */; };
+		70229E2C2C5D2013009AF806 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70229E2B2C5D2013009AF806 /* OnboardingView.swift */; };
 		703C66B82C47FBF300B0AF52 /* FocalityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66B72C47FBF300B0AF52 /* FocalityApp.swift */; };
 		703C66BA2C47FBF300B0AF52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66B92C47FBF300B0AF52 /* ContentView.swift */; };
 		703C66BC2C47FBF300B0AF52 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66BB2C47FBF300B0AF52 /* Item.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		614605792C5A74370090846B /* FocusHeartCoherence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherence.swift; sourceTree = "<group>"; };
 		615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inscriptionUserView.swift; sourceTree = "<group>"; };
+		70229E2B2C5D2013009AF806 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		703C66B42C47FBF300B0AF52 /* Focality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		703C66B72C47FBF300B0AF52 /* FocalityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocalityApp.swift; sourceTree = "<group>"; };
 		703C66B92C47FBF300B0AF52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		E92E8F0D2C493CE6004B0403 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70229E2B2C5D2013009AF806 /* OnboardingView.swift */,
 				A59A41972C58E5A900029633 /* Authentification */,
 				A5F899BD2C4C5B430052CBEB /* Gamification */,
 				E92E8F0E2C493CFE004B0403 /* TimerView.swift */,
@@ -298,6 +301,7 @@
 				A5F899B22C4C37C70052CBEB /* ChallengeRowView.swift in Sources */,
 				703C66BC2C47FBF300B0AF52 /* Item.swift in Sources */,
 				70E0F9962C4918290085BDAA /* RewardViewModel.swift in Sources */,
+				70229E2C2C5D2013009AF806 /* OnboardingView.swift in Sources */,
 				E9F5CC342C5790ED0098BACA /* SettingModalView.swift in Sources */,
 				70E0F9942C49181C0085BDAA /* UserViewModel.swift in Sources */,
 				A5F899BC2C4C510B0052CBEB /* PointsView.swift in Sources */,
