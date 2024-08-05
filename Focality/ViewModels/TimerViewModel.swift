@@ -13,7 +13,7 @@ class TimerViewModel: ObservableObject {
     @Published var currentTime: Int = 0// Temps restant en secondes
   
     
-    init(timers: TimerPomodoro = TimerPomodoro(focusTime: 15, shortBreak: 5, longBreak: 15), isRunning: Bool, currentTime: Int) {
+    init(timers: TimerPomodoro = TimerPomodoro(focusTime: 25, shortBreak: 5, longBreak: 15), isRunning: Bool, currentTime: Int) {
         self.timers = timers
         self.isRunning = isRunning
         self.currentTime = currentTime //Initialiser currentTime
