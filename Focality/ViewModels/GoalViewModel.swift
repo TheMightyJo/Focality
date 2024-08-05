@@ -13,9 +13,20 @@ class GoalViewModel: ObservableObject {
         
         self.goals = goals
     }
-    func addGoal(goalTitle: String, startDate: String, endDate: String, goalDescription: String, isCompleted: Bool) {
-        let newGoal = Goal.init(goalTitle: goalTitle, startDate: startDate, endDate: endDate, goalDescription: goalDescription, isCompleted: true)
+    func addGoal(goalTitle: String, startDate: Date, endDate: Date, goalDescription: String, isCompleted: Bool) {
+        let newGoal = Goal(goalTitle: goalTitle, startDate: startDate, endDate: endDate, goalDescription: goalDescription, isCompleted: true)
         goals.append(newGoal)
+    }
+    func removeGoal(at offsets: IndexSet) {
+        goals.remove(atOffsets: offsets)
+    }
+    func checkMarkGoal(goal: Goal) {
+        if let index = goals.firstIndex(where: { $0.id == goal.id}) {
+            goals[index].isCompleted = true
+        }
+    }
+    var completedGoals: [Goal] {
+        goals.filter { $0.isCompleted }
     }
 }
 

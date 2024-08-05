@@ -26,7 +26,8 @@ struct GoalView: View {
                 NavigationLink {
                     GoalDetailView(goals: goal)
                 } label: {
-                    GoalRowView(titreObj: goal.goalTitle, icon: "circle.badge.checkmark.fill")
+//                    GoalRowView(titreObj: goal.goalTitle, icon: "")
+                    Text("Anglais")
                 }
             }
         }
