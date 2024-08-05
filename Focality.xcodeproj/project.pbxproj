@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		614605812C60F4680090846B /* FocusHeartCoherenceModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614605802C60F4680090846B /* FocusHeartCoherenceModal.swift */; };
 		615A54F52C4A5FF6001171CA /* inscriptionUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */; };
 		70229E2C2C5D2013009AF806 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70229E2B2C5D2013009AF806 /* OnboardingView.swift */; };
 		70229E312C5D2FDA009AF806 /* FocusHeartCoherence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70229E2D2C5D2FDA009AF806 /* FocusHeartCoherence.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		614605802C60F4680090846B /* FocusHeartCoherenceModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherenceModal.swift; sourceTree = "<group>"; };
 		615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inscriptionUserView.swift; sourceTree = "<group>"; };
 		70229E2B2C5D2013009AF806 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		70229E2D2C5D2FDA009AF806 /* FocusHeartCoherence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherence.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				70229E2D2C5D2FDA009AF806 /* FocusHeartCoherence.swift */,
 				70229E2F2C5D2FDA009AF806 /* FocusHeartCoherenceTimer.swift */,
 				70229E2E2C5D2FDA009AF806 /* FocusHeartCoherenceBreathInBreathOut.swift */,
+				614605802C60F4680090846B /* FocusHeartCoherenceModal.swift */,
 			);
 			path = FocusHeartCoherence;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				A50A04782C5B70C60057D436 /* SplashView.swift in Sources */,
 				70F0EAA82C4810380098A202 /* Challenge.swift in Sources */,
 				70E0F99A2C4918750085BDAA /* GoalViewModel.swift in Sources */,
+				614605812C60F4680090846B /* FocusHeartCoherenceModal.swift in Sources */,
 				70229E322C5D2FDA009AF806 /* FocusHeartCoherenceBreathInBreathOut.swift in Sources */,
 				A5F899BA2C4C4D520052CBEB /* CustomButton.swift in Sources */,
 				70E0F99E2C4918AA0085BDAA /* TimerViewModel.swift in Sources */,

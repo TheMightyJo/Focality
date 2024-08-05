@@ -10,6 +10,8 @@ import SwiftUI
 struct FocusHeartCoherenceBreathInBreathOut: View {
     @State private var scale: CGFloat = 1.0
     @State private var isAnimating = false
+    @State private var timeRemaining: Double = 300
+    @State private var selectedDuration: Double = 0.00
     
     var body: some View {
         VStack {
@@ -32,14 +34,7 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
                         .onAppear {
                             withAnimation(Animation.easeInOut(duration: 4.0).repeatForever(autoreverses: true)) {self.scale = 1.5}
                                  }
-                        .padding(.bottom, 140)
-            
-
-                       
-
-            
-            
-            
+                        .padding(.bottom, 100)
             
             Button {
                     
@@ -48,14 +43,22 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 48, height: 48)
-                .padding(.bottom, 70)
+                .padding(.bottom, 10)
 
             }
+            HStack {
+                    Text("0:00")
+                    Slider(value: $selectedDuration, in: 0...5, step: 0.1)
+                    Text("5:00")
+                    }
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 70)
+        }
         }
         
         
     }
-}
+
 
 #Preview {
     FocusHeartCoherenceBreathInBreathOut()
