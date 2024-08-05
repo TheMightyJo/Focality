@@ -1,50 +1,66 @@
+//
+//  AddGoal.swift
+//  Focality
+//
+//  Created by Apprenant 165 on 02/08/2024.
+//
+
 import SwiftUI
 
 struct AddGoal: View {
-    @ObservedObject var goalViewModel: GoalViewModel
-    @State private var goalTitle = ""
-    @State private var startDate = Date()
-    @State private var endDate = Date()
-    @State private var goalDescription = ""
-    @State private var isCompleted = false
+    @ObservedObject var viewModel: GoalViewModel
     @Environment(\.presentationMode) var presentationMode
-    
+    @State private var titre = ""
+    @State private var dateDebut = Date()
+    @State private var dateFin = Date()
+    @State private var description = ""
+    @State private var completer = Bool()
+   
+
     var body: some View {
         NavigationView {
+            VStack {
             Form {
-                Section(header: Text("Détails de l'objectif")) {
-                    TextField("Titre de l'objectif", text: $goalTitle)
-                    DatePicker("Date de début", selection: $startDate, displayedComponents: .date)
-                    DatePicker("Date de fin", selection: $endDate, displayedComponents: .date)
-                    TextField("Description de l'objectif", text: $goalDescription)
-                    Toggle("Complété", isOn: $isCompleted)
+                Text("Quel est ton objectif ?")
+                   
+                  
+                TextField("Titre", text: $titre)
+                    .padding(.bottom)
+                    .padding(.top)
+                Text("Periode de temps :")
+                  
+                HStack {
+                    Text("Du :")
+                DatePicker("", selection: $dateDebut, displayedComponents: .date)
+                    Text("au :")
+                DatePicker("", selection: $dateFin, displayedComponents: .date)
                 }
                 
-                Button(action: {
-                    goalViewModel.addGoal(
-                        goalTitle: goalTitle,
-                        startDate: startDate,
-                        endDate: endDate,
-                        goalDescription: goalDescription,
-                        isCompleted: isCompleted
-                    )
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Ajouter l'objectif")
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                }
+                Text("DÃ©tails de ton objectif :")
+                  
+                TextField("Description", text: $description)
+                    .padding(.bottom).padding(.bottom)
+                    .padding(.bottom)   .padding(.bottom)
             }
-            .navigationBarTitle("Nouvel Objectif", displayMode: .inline)
+                Button(action: {
+                    viewModel.addGoal(goalTitle: titre, startDate: dateDebut, endDate: dateFin, goalDescription: description, isCompleted: false)
+                }, label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 150, height: 50)
+                    Text("Ajouter")
+                            .font(.title)
+                        .foregroundStyle(.black)
+                    }
+                })
+            }
+            .navigationTitle("Defini ton objectif")
         }
     }
 }
 
 struct AddGoal_Previews: PreviewProvider {
     static var previews: some View {
-        AddGoal(goalViewModel: GoalViewModel())
+        AddGoal(viewModel: GoalViewModel())
     }
 }

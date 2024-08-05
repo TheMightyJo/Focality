@@ -9,25 +9,18 @@ import UIKit
 
 class GoalViewController: UIViewController {
     
-   // @IBOutlet weak var labelTitre: UILabel!
-   // @IBOutlet weak var labelQuelObjectif: UILabel!
-    @IBOutlet weak var textFieldObjectif: UITextField!
-   // @IBOutlet weak var labelPeriodeDeTemps: UILabel!
-   // @IBOutlet weak var labelDescription: UILabel!
-    @IBOutlet weak var textFieldDescription: UITextField!
-   // @IBOutlet weak var buttonAjouter: UIButton!
-    @IBOutlet weak var textFieldEndDate: UITextField!
-    @IBOutlet weak var textFieldStartDate: UITextField!
-    var objectif : Goal = Goal(goalTitle: "", startDate: "", endDate: "", goalDescription: "", isCompleted: Bool())
+    @IBOutlet weak var titreObjectif: UILabel!
+    @IBOutlet weak var objectifCompleter: UIImageView!
+    @IBOutlet weak var descriptionObjectif: UITextView!
+    var objectif : Goal = Goal(goalTitle: "", startDate: Date(), endDate: Date(), goalDescription: "", isCompleted: Bool())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
        
-        textFieldObjectif.text = objectif.goalTitle
-        textFieldStartDate.text = objectif.startDate
-        textFieldEndDate.text = objectif.endDate
-        textFieldDescription.text = objectif.goalDescription
+        titreObjectif.text = objectif.goalTitle
+        descriptionObjectif.text = objectif.goalDescription
+        objectifCompleter.image = UIImage(named: "checkmark.circle.fill")
       
     }
 }

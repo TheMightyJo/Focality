@@ -18,12 +18,12 @@
 		703C66BC2C47FBF300B0AF52 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66BB2C47FBF300B0AF52 /* Item.swift */; };
 		703C66BE2C47FBF300B0AF52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703C66BD2C47FBF300B0AF52 /* Assets.xcassets */; };
 		703C66C12C47FBF300B0AF52 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703C66C02C47FBF300B0AF52 /* Preview Assets.xcassets */; };
-		70A69D482C61148A009FD298 /* MainGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A69D422C61148A009FD298 /* MainGoal.storyboard */; };
 		70A69D492C61148A009FD298 /* GoalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D432C61148A009FD298 /* GoalRowView.swift */; };
 		70A69D4A2C61148A009FD298 /* GoalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D442C61148A009FD298 /* GoalDetailView.swift */; };
 		70A69D4B2C61148A009FD298 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D452C61148A009FD298 /* GoalViewController.swift */; };
 		70A69D4C2C61148A009FD298 /* AddGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D462C61148A009FD298 /* AddGoal.swift */; };
 		70A69D4D2C61148A009FD298 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D472C61148A009FD298 /* GoalView.swift */; };
+		70A69D4F2C6116B9009FD298 /* MainGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A69D4E2C6116B9009FD298 /* MainGoal.storyboard */; };
 		70E0F9942C49181C0085BDAA /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F9932C49181B0085BDAA /* UserViewModel.swift */; };
 		70E0F9962C4918290085BDAA /* RewardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F9952C4918290085BDAA /* RewardViewModel.swift */; };
 		70E0F9982C4918620085BDAA /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F9972C4918620085BDAA /* ReminderViewModel.swift */; };
@@ -75,12 +75,12 @@
 		703C66BB2C47FBF300B0AF52 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		703C66BD2C47FBF300B0AF52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		703C66C02C47FBF300B0AF52 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		70A69D422C61148A009FD298 /* MainGoal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainGoal.storyboard; sourceTree = "<group>"; };
 		70A69D432C61148A009FD298 /* GoalRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalRowView.swift; sourceTree = "<group>"; };
 		70A69D442C61148A009FD298 /* GoalDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailView.swift; sourceTree = "<group>"; };
 		70A69D452C61148A009FD298 /* GoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		70A69D462C61148A009FD298 /* AddGoal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoal.swift; sourceTree = "<group>"; };
 		70A69D472C61148A009FD298 /* GoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
+		70A69D4E2C6116B9009FD298 /* MainGoal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainGoal.storyboard; sourceTree = "<group>"; };
 		70E0F9932C49181B0085BDAA /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		70E0F9952C4918290085BDAA /* RewardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewModel.swift; sourceTree = "<group>"; };
 		70E0F9972C4918620085BDAA /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
@@ -200,8 +200,8 @@
 				70A69D442C61148A009FD298 /* GoalDetailView.swift */,
 				70A69D432C61148A009FD298 /* GoalRowView.swift */,
 				70A69D472C61148A009FD298 /* GoalView.swift */,
+				70A69D4E2C6116B9009FD298 /* MainGoal.storyboard */,
 				70A69D452C61148A009FD298 /* GoalViewController.swift */,
-				70A69D422C61148A009FD298 /* MainGoal.storyboard */,
 			);
 			path = Objectif;
 			sourceTree = "<group>";
@@ -363,8 +363,8 @@
 				703C66C12C47FBF300B0AF52 /* Preview Assets.xcassets in Resources */,
 				E9B17B812C60FD9F0019E4FE /* MainReminder.storyboard in Resources */,
 				E9CDB5E42C610E0800E82078 /* MainTimerPat.storyboard in Resources */,
-				70A69D482C61148A009FD298 /* MainGoal.storyboard in Resources */,
 				703C66BE2C47FBF300B0AF52 /* Assets.xcassets in Resources */,
+				70A69D4F2C6116B9009FD298 /* MainGoal.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
