@@ -49,6 +49,9 @@
 		A5F899BC2C4C510B0052CBEB /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899BB2C4C510B0052CBEB /* PointsView.swift */; };
 		E92E8F0F2C493CFE004B0403 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92E8F0E2C493CFE004B0403 /* TimerView.swift */; };
 		E95F359B2C58D2D40047BB19 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95F359A2C58D2D40047BB19 /* ReminderView.swift */; };
+		E9B17B7D2C60F6D90019E4FE /* ReminderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B17B7C2C60F6D90019E4FE /* ReminderListView.swift */; };
+		E9B17B7F2C60F7300019E4FE /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B17B7E2C60F7300019E4FE /* AddReminderView.swift */; };
+		E9B17B812C60FD9F0019E4FE /* MainReminder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B17B802C60FD9F0019E4FE /* MainReminder.storyboard */; };
 		E9F5CC342C5790ED0098BACA /* SettingModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F5CC332C5790ED0098BACA /* SettingModalView.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +99,9 @@
 		A5F899BB2C4C510B0052CBEB /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 		E92E8F0E2C493CFE004B0403 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		E95F359A2C58D2D40047BB19 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		E9B17B7C2C60F6D90019E4FE /* ReminderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListView.swift; sourceTree = "<group>"; };
+		E9B17B7E2C60F7300019E4FE /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
+		E9B17B802C60FD9F0019E4FE /* MainReminder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainReminder.storyboard; sourceTree = "<group>"; };
 		E9F5CC332C5790ED0098BACA /* SettingModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +233,10 @@
 				A59A41972C58E5A900029633 /* Authentification */,
 				A5F899BD2C4C5B430052CBEB /* Gamification */,
 				E92E8F0E2C493CFE004B0403 /* TimerView.swift */,
+				E9B17B822C6100FC0019E4FE /* Reminder */,
+				E9B17B802C60FD9F0019E4FE /* MainReminder.storyboard */,
+				E9B17B7C2C60F6D90019E4FE /* ReminderListView.swift */,
+				E9B17B7E2C60F7300019E4FE /* AddReminderView.swift */,
 				E95F359A2C58D2D40047BB19 /* ReminderView.swift */,
 				615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */,
 				E9F5CC332C5790ED0098BACA /* SettingModalView.swift */,
@@ -238,6 +248,13 @@
 				769BE1B52C60BD8D00CA6B95 /* MainGoal.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E9B17B822C6100FC0019E4FE /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reminder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				703C66C12C47FBF300B0AF52 /* Preview Assets.xcassets in Resources */,
+				E9B17B812C60FD9F0019E4FE /* MainReminder.storyboard in Resources */,
 				769BE1BA2C60BD8D00CA6B95 /* MainGoal.storyboard in Resources */,
 				703C66BE2C47FBF300B0AF52 /* Assets.xcassets in Resources */,
 			);
@@ -315,9 +333,11 @@
 				A5F899B02C4C37790052CBEB /* GamificationProfileView.swift in Sources */,
 				70F0EAA02C4810070098A202 /* User.swift in Sources */,
 				70229E312C5D2FDA009AF806 /* FocusHeartCoherence.swift in Sources */,
+				E9B17B7D2C60F6D90019E4FE /* ReminderListView.swift in Sources */,
 				A50A047B2C5BBC0D0057D436 /* TextFieldView.swift in Sources */,
 				703C66BA2C47FBF300B0AF52 /* ContentView.swift in Sources */,
 				A5F899B82C4C4B6D0052CBEB /* RewardRowView.swift in Sources */,
+				E9B17B7F2C60F7300019E4FE /* AddReminderView.swift in Sources */,
 				A5F899B42C4C37D60052CBEB /* NextRewardCardView.swift in Sources */,
 				E95F359B2C58D2D40047BB19 /* ReminderView.swift in Sources */,
 				769BE1A72C58DB1C00CA6B95 /* GoalView.swift in Sources */,
