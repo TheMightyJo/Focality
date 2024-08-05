@@ -188,6 +188,19 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		769BE1BE2C60BF5000CA6B95 /* Objectifs */ = {
+			isa = PBXGroup;
+			children = (
+				769BE1B52C60BD8D00CA6B95 /* MainGoal.storyboard */,
+				769BE1B82C60BD8D00CA6B95 /* GoalViewController.swift */,
+				769BE1B72C60BD8D00CA6B95 /* GoalRowView.swift */,
+				769BE1B62C60BD8D00CA6B95 /* GoalDetailView.swift */,
+				769BE1B42C60BD8D00CA6B95 /* AddGoal.swift */,
+				769BE1A62C58DB1C00CA6B95 /* GoalView.swift */,
+			);
+			path = Objectifs;
+			sourceTree = "<group>";
+		};
 		A50A04792C5BBB8E0057D436 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,12 +243,7 @@
 				E95F359A2C58D2D40047BB19 /* ReminderView.swift */,
 				615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */,
 				E9F5CC332C5790ED0098BACA /* SettingModalView.swift */,
-				769BE1A62C58DB1C00CA6B95 /* GoalView.swift */,
-				769BE1B42C60BD8D00CA6B95 /* AddGoal.swift */,
-				769BE1B62C60BD8D00CA6B95 /* GoalDetailView.swift */,
-				769BE1B72C60BD8D00CA6B95 /* GoalRowView.swift */,
-				769BE1B82C60BD8D00CA6B95 /* GoalViewController.swift */,
-				769BE1B52C60BD8D00CA6B95 /* MainGoal.storyboard */,
+				769BE1BE2C60BF5000CA6B95 /* Objectifs */,
 			);
 			path = Views;
 			sourceTree = "<group>";

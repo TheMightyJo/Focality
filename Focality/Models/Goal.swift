@@ -9,12 +9,12 @@ import Foundation
 class Goal: Identifiable {
     var id = UUID()
     var goalTitle: String
-    var startDate: String
-    var endDate: String
+    var startDate: Date
+    var endDate: Date
     var goalDescription: String
     var isCompleted: Bool = false
     
-    init(goalTitle: String, startDate: String, endDate: String, goalDescription: String, isCompleted: Bool) {
+    init(goalTitle: String, startDate: Date, endDate: Date, goalDescription: String, isCompleted: Bool) {
         self.id = UUID()
         self.goalTitle = goalTitle
         self.startDate = startDate
