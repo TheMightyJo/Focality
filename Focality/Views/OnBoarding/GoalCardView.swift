@@ -8,7 +8,7 @@ struct GoalCardView: View {
             Text(goal.goalTitle)
                 .font(.headline)
                 .foregroundColor(.accentColor)
-            Text("Fin: \(goal.endDate)")
+            Text("Fin: \(goal.endDate, formatter: dateFormatter)")
                 .font(.subheadline)
                 .foregroundColor(.white)
             
@@ -24,15 +24,22 @@ struct GoalCardView: View {
         }
         .padding()
         .foregroundColor(.white)
-        .background(Color.secondaire)
+        .background(Color.secondary)
         .cornerRadius(10)
         .frame(width: UIScreen.main.bounds.width - 40)
     }
 }
 
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .short
+    formatter.timeStyle = .none
+    return formatter
+}()
+
 struct GoalCardView_Previews: PreviewProvider {
     static var previews: some View {
-        GoalCardView(goal: Goal(goalTitle: "Apprendre SwiftUI", startDate: "01/08/2024", endDate: "31/08/2024", goalDescription: "Suivre un cours en ligne pour maîtriser SwiftUI", isCompleted: false))
+        GoalCardView(goal: Goal(goalTitle: "Apprendre SwiftUI", startDate: Date(), endDate: Date(), goalDescription: "Suivre un cours en ligne pour maîtriser SwiftUI", isCompleted: false))
             .previewLayout(.sizeThatFits)
             .padding()
     }

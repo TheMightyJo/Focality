@@ -36,33 +36,33 @@ struct OnboardingView: View {
                 GamificationCardView(rewardViewModel: rewardViewModel, userViewModel: userViewModel)
                 
                 HStack {
-                              Text("Objectifs")
-                                  .font(.title2).bold()
-                              Spacer()
-                              Button(action: {
-                                  showingAddGoalView = true
-                              }) {
-                                  Image(systemName: "plus.circle.fill")
-                                      .font(.title)
-                                      .foregroundColor(.blue)
-                              }
-                              .sheet(isPresented: $showingAddGoalView) {
-                                  AddGoalView(goalViewModel: goalViewModel)
-                              }
-                          }
-                          .padding(.horizontal)
-                          
-                          if goalViewModel.goals.count >= 1 {
-                              VStack(spacing: 20) {
-                                  ForEach(goalViewModel.goals) { goal in
-                                      GoalCardView(goal: goal)
-                                  }
-                              }
-                              .padding(.horizontal)
-                          } else {
-                              Text("Pas d'objectifs disponibles.")
-                          }
-                          
+                    Text("Objectifs")
+                        .font(.title2).bold()
+                    Spacer()
+                    Button(action: {
+                        showingAddGoalView = true
+                    }) {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.title)
+                            .foregroundColor(.blue)
+                    }
+//                    .sheet(isPresented: $showingAddGoalView) {
+//                        AddGoal(goalViewModel: goalViewModel)
+//                    }
+                }
+                .padding(.horizontal)
+                
+                if goalViewModel.goals.count >= 1 {
+                    VStack(spacing: 20) {
+                        ForEach(goalViewModel.goals) { goal in
+                            GoalCardView(goal: goal)
+                        }
+                    }
+                    .padding(.horizontal)
+                } else {
+                    Text("Pas d'objectifs disponibles.")
+                }
+                
                 
                 Text("Mes Timers :")
                     .font(.title2).bold()
@@ -81,11 +81,12 @@ struct OnboardingView: View {
                     .bold()
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 10) {
-                        ForEach(reminderViewModel.reminders.prefix(4)) { reminder in
+                    HStack(spacing: 20) {
+                        ForEach(reminderViewModel.rappels.prefix(4)) { reminder in
                             ReminderCardView(reminder: reminder)
                         }
                     }
+                    .padding(.horizontal)
                 }
             }
             .padding()
@@ -93,14 +94,23 @@ struct OnboardingView: View {
     }
 }
 
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd/MM/yyyy"
+    return formatter
+}()
+
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView(
+        let startDate = dateFormatter.date(from: "01/08/2024") ?? Date()
+        let endDate = dateFormatter.date(from: "31/08/2024") ?? Date()
+        
+        return OnboardingView(
             challengeViewModel: ChallengeViewModel(),
             userViewModel: UserViewModel(),
-            reminderViewModel: ReminderViewModel(),
+            reminderViewModel: ReminderViewModel(rappels: [Reminder(titre: "Math à 14h", description: "Je dois travailler le théoreme de pythagore", date: Date())]),
             rewardViewModel: RewardViewModel(userViewModel: UserViewModel()),
-            goalViewModel: GoalViewModel(goals: [Goal(goalTitle: "Apprendre SwiftUI", startDate: "01/08/2024", endDate: "31/08/2024", goalDescription: "Suivre un cours en ligne pour maîtriser SwiftUI", isCompleted: false)])
+            goalViewModel: GoalViewModel(goals: [Goal(goalTitle: "Apprendre SwiftUI", startDate: startDate, endDate: endDate, goalDescription: "Suivre un cours en ligne pour maîtriser SwiftUI", isCompleted: false)])
         )
     }
 }

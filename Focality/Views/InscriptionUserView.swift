@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct inscriptionUserView : View {
+struct InscriptionUserView : View {
     
     @ObservedObject  var userViewModel : UserViewModel
     @State private var firstName = ""
@@ -116,6 +116,6 @@ struct inscriptionUserView : View {
 }
 
 #Preview {
-    inscriptionUserView(userViewModel: UserViewModel())
+    InscriptionUserView(userViewModel: UserViewModel())
 }
 

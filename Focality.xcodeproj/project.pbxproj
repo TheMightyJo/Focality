@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		614605812C60F4680090846B /* FocusHeartCoherenceModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614605802C60F4680090846B /* FocusHeartCoherenceModal.swift */; };
-		615A54F52C4A5FF6001171CA /* inscriptionUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */; };
+		615A54F52C4A5FF6001171CA /* InscriptionUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A54F42C4A5FF6001171CA /* InscriptionUserView.swift */; };
 		70229E2C2C5D2013009AF806 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70229E2B2C5D2013009AF806 /* OnboardingView.swift */; };
 		70229E312C5D2FDA009AF806 /* FocusHeartCoherence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70229E2D2C5D2FDA009AF806 /* FocusHeartCoherence.swift */; };
 		70229E322C5D2FDA009AF806 /* FocusHeartCoherenceBreathInBreathOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70229E2E2C5D2FDA009AF806 /* FocusHeartCoherenceBreathInBreathOut.swift */; };
@@ -59,7 +59,7 @@
 
 /* Begin PBXFileReference section */
 		614605802C60F4680090846B /* FocusHeartCoherenceModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherenceModal.swift; sourceTree = "<group>"; };
-		615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inscriptionUserView.swift; sourceTree = "<group>"; };
+		615A54F42C4A5FF6001171CA /* InscriptionUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InscriptionUserView.swift; sourceTree = "<group>"; };
 		70229E2B2C5D2013009AF806 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		70229E2D2C5D2FDA009AF806 /* FocusHeartCoherence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherence.swift; sourceTree = "<group>"; };
 		70229E2E2C5D2FDA009AF806 /* FocusHeartCoherenceBreathInBreathOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusHeartCoherenceBreathInBreathOut.swift; sourceTree = "<group>"; };
@@ -255,7 +255,7 @@
 				E9B17B7C2C60F6D90019E4FE /* ReminderListView.swift */,
 				E9B17B7E2C60F7300019E4FE /* AddReminderView.swift */,
 				E95F359A2C58D2D40047BB19 /* ReminderView.swift */,
-				615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */,
+				615A54F42C4A5FF6001171CA /* InscriptionUserView.swift */,
 				E9F5CC332C5790ED0098BACA /* SettingModalView.swift */,
 				E9CDB5E52C610E2000E82078 /* TimerViewController.swift */,
 				E9CDB5E32C610E0800E82078 /* MainTimerPat.storyboard */,
@@ -367,7 +367,7 @@
 				A5F899BC2C4C510B0052CBEB /* PointsView.swift in Sources */,
 				E92E8F0F2C493CFE004B0403 /* TimerView.swift in Sources */,
 				70F0EAA42C4810240098A202 /* Reminder.swift in Sources */,
-				615A54F52C4A5FF6001171CA /* inscriptionUserView.swift in Sources */,
+				615A54F52C4A5FF6001171CA /* InscriptionUserView.swift in Sources */,
 				703C66B82C47FBF300B0AF52 /* FocalityApp.swift in Sources */,
 				A50A047E2C5BBCF90057D436 /* ForgotPasswordView.swift in Sources */,
 				A59A41992C58E60B00029633 /* AuthView.swift in Sources */,

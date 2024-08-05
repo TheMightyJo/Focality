@@ -35,12 +35,15 @@ struct AuthView: View {
                 .navigationDestination(isPresented: $authViewModel.isSignInSuccess) {
                     OnboardingView(
                         challengeViewModel: ChallengeViewModel(),
-                        userViewModel: authViewModel.getUserViewModel()
+                        userViewModel: authViewModel.getUserViewModel(),
+                        reminderViewModel: ReminderViewModel(),
+                        rewardViewModel: RewardViewModel(userViewModel: authViewModel.getUserViewModel()),
+                        goalViewModel: GoalViewModel()
                     )
                     .navigationBarBackButtonHidden(true)
                 }
                 
-                NavigationLink(destination: inscriptionUserView(userViewModel: authViewModel.getUserViewModel())) {
+                NavigationLink(destination: InscriptionUserView(userViewModel: authViewModel.getUserViewModel())) {
                     Text("Pas encore inscrit ? S'inscrire")
                         .font(.footnote)
                         .foregroundColor(.secondaire).bold()
