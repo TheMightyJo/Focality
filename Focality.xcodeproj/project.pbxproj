@@ -34,7 +34,7 @@
 		70FC1C442C60D35C00B86F38 /* ReminderCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FC1C432C60D35C00B86F38 /* ReminderCardView.swift */; };
 		70FC1C462C60F22500B86F38 /* GamificationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FC1C452C60F22500B86F38 /* GamificationCardView.swift */; };
 		70FC1C482C61024100B86F38 /* GoalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FC1C472C61024100B86F38 /* GoalCardView.swift */; };
-		769BE1C02C610AE900CA6B95 /* Objectifs in Resources */ = {isa = PBXBuildFile; fileRef = 769BE1BF2C610AE800CA6B95 /* Objectifs */; };
+		769BE1C02C610AE900CA6B95 /* Objectif in Resources */ = {isa = PBXBuildFile; fileRef = 769BE1BF2C610AE800CA6B95 /* Objectif */; };
 		A50A04782C5B70C60057D436 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A04772C5B70C60057D436 /* SplashView.swift */; };
 		A50A047B2C5BBC0D0057D436 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A047A2C5BBC0D0057D436 /* TextFieldView.swift */; };
 		A50A047E2C5BBCF90057D436 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A047D2C5BBCF90057D436 /* ForgotPasswordView.swift */; };
@@ -84,7 +84,7 @@
 		70FC1C432C60D35C00B86F38 /* ReminderCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCardView.swift; sourceTree = "<group>"; };
 		70FC1C452C60F22500B86F38 /* GamificationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamificationCardView.swift; sourceTree = "<group>"; };
 		70FC1C472C61024100B86F38 /* GoalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardView.swift; sourceTree = "<group>"; };
-		769BE1BF2C610AE800CA6B95 /* Objectifs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Objectifs; path = ../../../../../Desktop/Objectifs; sourceTree = "<group>"; };
+		769BE1BF2C610AE800CA6B95 /* Objectif */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Objectif; sourceTree = "<group>"; };
 		A50A04772C5B70C60057D436 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		A50A047A2C5BBC0D0057D436 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		A50A047D2C5BBCF90057D436 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 				E95F359A2C58D2D40047BB19 /* ReminderView.swift */,
 				615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */,
 				E9F5CC332C5790ED0098BACA /* SettingModalView.swift */,
-				769BE1BF2C610AE800CA6B95 /* Objectifs */,
+				769BE1BF2C610AE800CA6B95 /* Objectif */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 			files = (
 				703C66C12C47FBF300B0AF52 /* Preview Assets.xcassets in Resources */,
 				E9B17B812C60FD9F0019E4FE /* MainReminder.storyboard in Resources */,
-				769BE1C02C610AE900CA6B95 /* Objectifs in Resources */,
+				769BE1C02C610AE900CA6B95 /* Objectif in Resources */,
 				703C66BE2C47FBF300B0AF52 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
