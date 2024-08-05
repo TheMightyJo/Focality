@@ -33,8 +33,7 @@ struct AuthView: View {
                 }
                 .padding(.top, 10)
                 .navigationDestination(isPresented: $authViewModel.isSignInSuccess) {
-                    GamificationProfileView(
-                        rewardViewModel: RewardViewModel(userViewModel: authViewModel.getUserViewModel()),
+                    OnboardingView(
                         challengeViewModel: ChallengeViewModel(),
                         userViewModel: authViewModel.getUserViewModel()
                     )
