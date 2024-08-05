@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHK-Oq-j8F">
+                                <rect key="frame" x="96.666666666666686" y="75" width="200" height="35"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EllipseProg" translatesAutoresizingMaskIntoConstraints="NO" id="0Nz-1K-6Qr">
+                                        <rect key="frame" x="22" y="3.6666666666666714" width="28" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="3P2-VU-4yU"/>
+                                            <constraint firstAttribute="width" constant="28" id="zHp-XC-8Lq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EllipseProg" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xkh-wt-is7">
+                                        <rect key="frame" x="71.999999999999986" y="3.6666666666666714" width="28" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="foi-K6-nll"/>
+                                            <constraint firstAttribute="width" constant="28" id="lIf-4H-tQU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kOm-F7-Dyf">
+                                        <rect key="frame" x="9.3333333333333144" y="-47" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="0Nz-1K-6Qr" firstAttribute="centerY" secondItem="dHK-Oq-j8F" secondAttribute="centerY" id="4bg-hC-JAF"/>
+                                    <constraint firstItem="Xkh-wt-is7" firstAttribute="centerY" secondItem="dHK-Oq-j8F" secondAttribute="centerY" id="7rf-Mz-6Fv"/>
+                                    <constraint firstAttribute="height" constant="35" id="IFS-lL-JnZ"/>
+                                    <constraint firstItem="Xkh-wt-is7" firstAttribute="leading" secondItem="0Nz-1K-6Qr" secondAttribute="trailing" constant="22" id="KWp-m6-qKV"/>
+                                    <constraint firstItem="0Nz-1K-6Qr" firstAttribute="leading" secondItem="dHK-Oq-j8F" secondAttribute="leading" constant="22" id="iL4-6i-Ug2"/>
+                                    <constraint firstAttribute="width" constant="200" id="jM8-nD-7RW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dHK-Oq-j8F" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="5sH-DN-unb"/>
+                            <constraint firstItem="dHK-Oq-j8F" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Lee-eE-wOK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="-49"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="EllipseProg" width="29" height="29"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
