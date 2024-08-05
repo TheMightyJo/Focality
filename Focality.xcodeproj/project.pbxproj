@@ -52,6 +52,8 @@
 		E9B17B7D2C60F6D90019E4FE /* ReminderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B17B7C2C60F6D90019E4FE /* ReminderListView.swift */; };
 		E9B17B7F2C60F7300019E4FE /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B17B7E2C60F7300019E4FE /* AddReminderView.swift */; };
 		E9B17B812C60FD9F0019E4FE /* MainReminder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B17B802C60FD9F0019E4FE /* MainReminder.storyboard */; };
+		E9CDB5E42C610E0800E82078 /* MainTimerPat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9CDB5E32C610E0800E82078 /* MainTimerPat.storyboard */; };
+		E9CDB5E62C610E2000E82078 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CDB5E52C610E2000E82078 /* TimerViewController.swift */; };
 		E9F5CC342C5790ED0098BACA /* SettingModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F5CC332C5790ED0098BACA /* SettingModalView.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +104,8 @@
 		E9B17B7C2C60F6D90019E4FE /* ReminderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListView.swift; sourceTree = "<group>"; };
 		E9B17B7E2C60F7300019E4FE /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
 		E9B17B802C60FD9F0019E4FE /* MainReminder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainReminder.storyboard; sourceTree = "<group>"; };
+		E9CDB5E32C610E0800E82078 /* MainTimerPat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainTimerPat.storyboard; path = ../../../../../Desktop/MainTimerPat.storyboard; sourceTree = "<group>"; };
+		E9CDB5E52C610E2000E82078 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerViewController.swift; path = ../../../../../Desktop/TimerViewController.swift; sourceTree = "<group>"; };
 		E9F5CC332C5790ED0098BACA /* SettingModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,6 +257,8 @@
 				E95F359A2C58D2D40047BB19 /* ReminderView.swift */,
 				615A54F42C4A5FF6001171CA /* inscriptionUserView.swift */,
 				E9F5CC332C5790ED0098BACA /* SettingModalView.swift */,
+				E9CDB5E52C610E2000E82078 /* TimerViewController.swift */,
+				E9CDB5E32C610E0800E82078 /* MainTimerPat.storyboard */,
 				769BE1BF2C610AE800CA6B95 /* Objectif */,
 			);
 			path = Views;
@@ -326,6 +332,7 @@
 				703C66C12C47FBF300B0AF52 /* Preview Assets.xcassets in Resources */,
 				E9B17B812C60FD9F0019E4FE /* MainReminder.storyboard in Resources */,
 				769BE1C02C610AE900CA6B95 /* Objectif in Resources */,
+				E9CDB5E42C610E0800E82078 /* MainTimerPat.storyboard in Resources */,
 				703C66BE2C47FBF300B0AF52 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +385,7 @@
 				70F0EAA22C48101A0098A202 /* Reward.swift in Sources */,
 				70229E332C5D2FDA009AF806 /* FocusHeartCoherenceTimer.swift in Sources */,
 				70FC1C442C60D35C00B86F38 /* ReminderCardView.swift in Sources */,
+				E9CDB5E62C610E2000E82078 /* TimerViewController.swift in Sources */,
 				70F0EAA62C48102E0098A202 /* Goal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
