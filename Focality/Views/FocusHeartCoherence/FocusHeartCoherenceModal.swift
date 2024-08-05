@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct FocusHeartCoherenceModal: View {
-    
+
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 42)
