@@ -114,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				70229E2D2C5D2FDA009AF806 /* FocusHeartCoherence.swift */,
-				70229E2E2C5D2FDA009AF806 /* FocusHeartCoherenceBreathInBreathOut.swift */,
 				70229E2F2C5D2FDA009AF806 /* FocusHeartCoherenceTimer.swift */,
+				70229E2E2C5D2FDA009AF806 /* FocusHeartCoherenceBreathInBreathOut.swift */,
 			);
 			path = FocusHeartCoherence;
 			sourceTree = "<group>";
