@@ -9,16 +9,16 @@ import UIKit
 
 class GoalViewController: UIViewController {
     
-    @IBOutlet weak var labelTitre: UILabel!
-    @IBOutlet weak var labelQuelObjectif: UILabel!
+   // @IBOutlet weak var labelTitre: UILabel!
+   // @IBOutlet weak var labelQuelObjectif: UILabel!
     @IBOutlet weak var textFieldObjectif: UITextField!
-    @IBOutlet weak var labelPeriodeDeTemps: UILabel!
-        @IBOutlet weak var labelDescription: UILabel!
+   // @IBOutlet weak var labelPeriodeDeTemps: UILabel!
+   // @IBOutlet weak var labelDescription: UILabel!
     @IBOutlet weak var textFieldDescription: UITextField!
-    @IBOutlet weak var buttonAjouter: UIButton!
+   // @IBOutlet weak var buttonAjouter: UIButton!
     @IBOutlet weak var textFieldEndDate: UITextField!
     @IBOutlet weak var textFieldStartDate: UITextField!
-    var objectif : Goal = Goal(goalTitle: "", startDate: "", endDate: "", goalDescription: "")
+    var objectif : Goal = Goal(goalTitle: "", startDate: "", endDate: "", goalDescription: "", isCompleted: Bool())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,7 @@ class GoalViewController: UIViewController {
         textFieldObjectif.text = objectif.goalTitle
         textFieldStartDate.text = objectif.startDate
         textFieldEndDate.text = objectif.endDate
+        textFieldDescription.text = objectif.goalDescription
       
     }
 }
