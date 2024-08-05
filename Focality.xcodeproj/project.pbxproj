@@ -104,8 +104,8 @@
 		E9B17B7C2C60F6D90019E4FE /* ReminderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListView.swift; sourceTree = "<group>"; };
 		E9B17B7E2C60F7300019E4FE /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
 		E9B17B802C60FD9F0019E4FE /* MainReminder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainReminder.storyboard; sourceTree = "<group>"; };
-		E9CDB5E32C610E0800E82078 /* MainTimerPat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainTimerPat.storyboard; path = ../../../../../Desktop/MainTimerPat.storyboard; sourceTree = "<group>"; };
-		E9CDB5E52C610E2000E82078 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerViewController.swift; path = ../../../../../Desktop/TimerViewController.swift; sourceTree = "<group>"; };
+		E9CDB5E32C610E0800E82078 /* MainTimerPat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTimerPat.storyboard; sourceTree = "<group>"; };
+		E9CDB5E52C610E2000E82078 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		E9F5CC332C5790ED0098BACA /* SettingModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
