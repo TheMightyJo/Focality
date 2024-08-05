@@ -20,6 +20,7 @@ struct inscriptionUserView : View {
    
     var body: some View {
 
+        
         VStack{
             
                 Text("Inscription")
@@ -27,8 +28,7 @@ struct inscriptionUserView : View {
                     .font(.system(size: 30))
                     .padding(.trailing, 200)
                 
-            
-            
+
             
             
                 Image("Logo")
@@ -101,6 +101,9 @@ struct inscriptionUserView : View {
                
                 
             }
+            
+           
+            .scrollContentBackground(.hidden)
             
         }
         

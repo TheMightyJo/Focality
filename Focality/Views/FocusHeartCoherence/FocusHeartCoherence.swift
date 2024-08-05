@@ -56,6 +56,7 @@ struct FocusHeartCoherence: View {
                         Text("Commencer")
                             .foregroundColor(.white)
                     }})
+            
                 
             
            
