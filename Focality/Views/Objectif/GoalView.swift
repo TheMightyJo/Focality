@@ -14,16 +14,19 @@ struct GoalView: View {
         HStack {
             Text("Objectifs")
                 .font(.title)
+                .padding()
             Spacer()
             Image(systemName: "plus.circle.fill")
-                .font(.title)
+                .resizable()
+                .frame(width: 50, height: 50)
+                .padding()
         }
         NavigationStack {
             List(viewGoals.goals) { goal in
                 NavigationLink {
                     GoalDetailView(goals: goal)
                 } label: {
-                    GoalRowView(titreObj: goal.goalTitle, icon: goal.goalDescription)
+                    GoalRowView(titreObj: goal.goalTitle, icon: "circle.badge.checkmark.fill")
                 }
             }
         }

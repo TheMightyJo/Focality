@@ -12,15 +12,16 @@ struct GoalRowView: View {
     let icon: String
     
     var body: some View {
-        HStack(spacing: 210) {
-            Text(titreObj)
-                .font(.largeTitle)
-            
+        HStack(spacing: 15) {
             Image(systemName:icon)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 50, height: 50)
+                .frame(width: 40, height: 40)
                 .foregroundStyle(.blue)
+            
+            Text(titreObj)
+                .font(.largeTitle)
+
         }
     }
 }
