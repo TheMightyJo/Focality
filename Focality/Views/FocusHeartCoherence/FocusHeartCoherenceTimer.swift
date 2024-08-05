@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FocusHeartCoherenceTimer: View {
     @State private var timeRemaining = 3
+    @State private var selectedDuration: Double = 0.00
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
@@ -23,7 +24,7 @@ struct FocusHeartCoherenceTimer: View {
             Text("Focus")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .font(.system(size: 30))
-                    .padding(.bottom, 80)
+                    .padding(.bottom, 60)
             
                 Circle()
                     .fill(RadialGradient(gradient: Gradient(colors: [Color.primaire ,.secondaire, Color.secondaire.opacity(10)]),
@@ -33,7 +34,7 @@ struct FocusHeartCoherenceTimer: View {
                                     )
                                 )
                                 .frame(width: 200, height: 200)
-                                .padding(.bottom, 50)
+                                .padding(.bottom, 30)
                 
                                 .onReceive(timer) { time in
                                     if timeRemaining > 0 {
@@ -45,7 +46,7 @@ struct FocusHeartCoherenceTimer: View {
                 .foregroundStyle(.black)
                 .padding(.horizontal, 20)
                 .padding(.vertical, 5)
-                .padding(.bottom, 40)
+                .padding(.bottom, 30)
             
             Button {
                     
@@ -54,8 +55,16 @@ struct FocusHeartCoherenceTimer: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 48, height: 48)
-                    .padding(.bottom, 70)
+                    .padding(.bottom, 10)
             }
+            
+            HStack {
+                    Text("0:00")
+                    Slider(value: $selectedDuration, in: 0...5, step: 0.1)
+                    Text("5:00")
+                    }
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 70)
         }
     }
 }
