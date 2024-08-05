@@ -6,16 +6,11 @@
 //
 
 import Foundation
-class Reminder : Identifiable{
+
+struct Reminder: Identifiable {
     var id = UUID()
-    var rappelTitle: String
-    var rappelDate: Date
-    var rappelDescription: String
-    
-    init(rappelTitle: String, rappelDate: Date, rappelDescription: String) {
-        self.id = UUID()
-        self.rappelTitle = rappelTitle
-        self.rappelDate = rappelDate
-        self.rappelDescription = rappelDescription
-    }
+    var titre: String
+    var description: String
+    var date: Date
+    var isCompleted: Bool = false
 }

@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct TimerView: View {
-    @StateObject private var viewModel = TimerViewModel(isRunning: false, currentTime: 0) // Instance du ViewModel pour gérer l'état
+    @ObservedObject var viewModel = TimerViewModel(isRunning: false, currentTime: 1500) // Instance du ViewModel pour gérer l'état
     @State private var showingSheet = false // État pour déterminer si la feuille de paramètres est affichée
+    
     
     var body: some View {
         VStack {

@@ -36,7 +36,7 @@ struct AddGoal: View {
                 DatePicker("", selection: $dateFin, displayedComponents: .date)
                 }
                 
-                Text("DÃ©tails de ton objectif :")
+                Text("Détails de ton objectif :")
                   
                 TextField("Description", text: $description)
                     .padding(.bottom).padding(.bottom)

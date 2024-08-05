@@ -5,20 +5,39 @@
 //  Created by Apprenant 154 on 18/07/2024.
 //
 
-import SwiftUI
+import Foundation
 
 class ReminderViewModel: ObservableObject {
-    @Published var reminders: [Reminder] = []
-    init() {
-        self.reminders = [
-            Reminder(rappelTitle: "Math à 14h", rappelDate: Date(), rappelDescription: "Je dois travailler le théoreme de pythagore")
-        ]
+    @Published var rappels: [Reminder]
+
+    init(rappels: [Reminder] = []) {
+        self.rappels = rappels
     }
-    func addReminder(rappelTitle: String, rappelDate: Date, rappelDescription: String){
-        let newReminder = Reminder(rappelTitle: rappelTitle, rappelDate: rappelDate, rappelDescription: rappelDescription)
-        reminders.append(newReminder)
+
+    func addRappel(titre: String, description: String, date: Date) {
+        let newRappel = Reminder(titre: titre, description: description, date: date)
+        rappels.append(newRappel)
     }
+
+    func markAsCompleted(rappel: Reminder) {
+        if let index = rappels.firstIndex(where: { $0.id == rappel.id }) {
+            rappels[index].isCompleted = true
+        }
     }
+
+    func removeRappel(at offsets: IndexSet) {
+        rappels.remove(atOffsets: offsets)
+    }
+
+    var todayRappels: [Reminder] {
+        let today = Calendar.current.startOfDay(for: Date())
+        return rappels.filter { Calendar.current.isDate($0.date, inSameDayAs: today) }
+    }
+
+    var completedRappels: [Reminder] {
+        rappels.filter { $0.isCompleted }
+    }
+}
 
 
 
