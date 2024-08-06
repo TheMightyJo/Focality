@@ -109,6 +109,7 @@ class AuthViewModel: ObservableObject {
             errorMessage = emailNotFoundMessage
         }
     }
+    
     /// Renvoie l'instance de `UserViewModel`.
     func getUserViewModel() -> UserViewModel {
         return userViewModel
