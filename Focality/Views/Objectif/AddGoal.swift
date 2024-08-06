@@ -14,7 +14,7 @@ struct AddGoal: View {
     @State private var dateDebut = Date()
     @State private var dateFin = Date()
     @State private var description = ""
-    @State private var completer = true
+    @State private var completer = false
    
 
     var body: some View {
@@ -47,6 +47,7 @@ struct AddGoal: View {
             }
                 Button(action: {
                     viewModel.addGoal(goalTitle: titre, startDate: dateDebut, endDate: dateFin, goalDescription: description, isCompleted: completer)
+                    presentationMode.wrappedValue.dismiss()
                 }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
