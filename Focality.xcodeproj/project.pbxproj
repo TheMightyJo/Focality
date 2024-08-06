@@ -24,6 +24,7 @@
 		70A69D4C2C61148A009FD298 /* AddGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D462C61148A009FD298 /* AddGoal.swift */; };
 		70A69D4D2C61148A009FD298 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D472C61148A009FD298 /* GoalView.swift */; };
 		70A69D4F2C6116B9009FD298 /* MainGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A69D4E2C6116B9009FD298 /* MainGoal.storyboard */; };
+		70DA914B2C62608900252A56 /* PointsUIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA914A2C62608900252A56 /* PointsUIViewRepresentable.swift */; };
 		70E0F9942C49181C0085BDAA /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F9932C49181B0085BDAA /* UserViewModel.swift */; };
 		70E0F9962C4918290085BDAA /* RewardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F9952C4918290085BDAA /* RewardViewModel.swift */; };
 		70E0F9982C4918620085BDAA /* ReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F9972C4918620085BDAA /* ReminderViewModel.swift */; };
@@ -81,6 +82,7 @@
 		70A69D462C61148A009FD298 /* AddGoal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoal.swift; sourceTree = "<group>"; };
 		70A69D472C61148A009FD298 /* GoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		70A69D4E2C6116B9009FD298 /* MainGoal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainGoal.storyboard; sourceTree = "<group>"; };
+		70DA914A2C62608900252A56 /* PointsUIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsUIViewRepresentable.swift; sourceTree = "<group>"; };
 		70E0F9932C49181B0085BDAA /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		70E0F9952C4918290085BDAA /* RewardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewModel.swift; sourceTree = "<group>"; };
 		70E0F9972C4918620085BDAA /* ReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewModel.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			children = (
 				A5F899AF2C4C37790052CBEB /* GamificationProfileView.swift */,
 				A5F899B12C4C37C70052CBEB /* ChallengeRowView.swift */,
+				70DA914A2C62608900252A56 /* PointsUIViewRepresentable.swift */,
 				A5F899B52C4C4AF50052CBEB /* RewardListView.swift */,
 				A5F899B72C4C4B6D0052CBEB /* RewardRowView.swift */,
 				A5F899BB2C4C510B0052CBEB /* PointsView.swift */,
@@ -408,6 +411,7 @@
 				A59A419B2C58E62100029633 /* AuthViewModel.swift in Sources */,
 				A50A04782C5B70C60057D436 /* SplashView.swift in Sources */,
 				70FC1C462C60F22500B86F38 /* GamificationCardView.swift in Sources */,
+				70DA914B2C62608900252A56 /* PointsUIViewRepresentable.swift in Sources */,
 				70F0EAA82C4810380098A202 /* Challenge.swift in Sources */,
 				70E0F99A2C4918750085BDAA /* GoalViewModel.swift in Sources */,
 				614605812C60F4680090846B /* FocusHeartCoherenceModal.swift in Sources */,

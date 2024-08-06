@@ -3,7 +3,7 @@ import SwiftUI
 struct ChallengeRowView: View {
     @ObservedObject var userViewModel: UserViewModel
     let challenge: Challenge
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 11.0) {
             Image("Lotus")
@@ -13,8 +13,10 @@ struct ChallengeRowView: View {
                 .font(.headline)
             Text(challenge.description)
                 .font(.subheadline)
-        
-            PointsView(userViewModel: userViewModel)
+            if let user = userViewModel.users.first {
+                PointsUIViewRepresentable(points: user.point)
+                    .frame(height: 20) // Adjust the frame as needed
+            }
         }
         .padding()
         .foregroundStyle(.white)
