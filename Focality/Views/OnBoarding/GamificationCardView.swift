@@ -5,12 +5,7 @@ struct GamificationCardView: View {
     @ObservedObject var userViewModel: UserViewModel
     
     var body: some View {
-        VStack(spacing: 15.0) {
-            if let user = userViewModel.users.first {
-                Text("Mes Points : \(user.point)")
-                    .font(.title).bold()
-                    .foregroundStyle(.accent)
-            }
+        VStack(alignment: .leading, spacing: 10.0) {
             if let nextReward = rewardViewModel.rewards.first(where: { !$0.isUnlocked }) {
                 VStack(alignment: .leading, spacing: 10.0) {
                     Text("Prochaine Récompense")
@@ -35,7 +30,8 @@ struct GamificationCardView: View {
         .padding()
         .foregroundColor(.white)
         .cornerRadius(10)
-        .frame(width: UIScreen.main.bounds.width - 40)
+        
+        
     }
 }
 

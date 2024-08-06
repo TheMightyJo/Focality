@@ -7,18 +7,18 @@ struct ReminderCardView: View {
         VStack(alignment: .leading) {
             Text(reminder.titre)
                 .font(.headline)
+                .foregroundStyle(.accent)
             Text("Date: \(reminder.date, formatter: dateFormatter)")
                 .font(.subheadline)
-                .foregroundColor(.gray)
+                .foregroundColor(.white)
             Text(reminder.description)
                 .font(.body)
                 .foregroundColor(.white)
         }
         .padding()
         .foregroundColor(.white)
-        .background(Color.blue)
+        .background(Color.secondaire)
         .cornerRadius(10)
-        .frame(width: 150, height: 100) // Adjust the width and height as needed
     }
 }
 
