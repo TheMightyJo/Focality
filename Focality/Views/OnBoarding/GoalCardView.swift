@@ -8,23 +8,23 @@ struct GoalCardView: View {
             Text(goal.goalTitle)
                 .font(.headline)
                 .foregroundColor(.accentColor)
-            Text("Fin: \(goal.endDate, formatter: dateFormatter)")
+            Text("Fin : \(goal.endDate, formatter: dateFormatter)")
                 .font(.subheadline)
                 .foregroundColor(.white)
             
             if goal.isCompleted {
                 Text("Completé")
-                    .font(.caption)
+                    .font(.caption).bold()
                     .foregroundColor(.green)
             } else {
                 Text("En cours")
-                    .font(.caption)
+                    .font(.caption).bold()
                     .foregroundColor(.white)
             }
         }
         .padding()
         .foregroundColor(.white)
-        .background(Color.secondary)
+        .background(Color.secondaire)
         .cornerRadius(10)
         .frame(width: UIScreen.main.bounds.width - 40)
     }
