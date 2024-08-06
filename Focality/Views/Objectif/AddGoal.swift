@@ -14,7 +14,7 @@ struct AddGoal: View {
     @State private var dateDebut = Date()
     @State private var dateFin = Date()
     @State private var description = ""
-    @State private var completer = Bool()
+    @State private var completer = true
    
 
     var body: some View {
@@ -36,14 +36,17 @@ struct AddGoal: View {
                 DatePicker("", selection: $dateFin, displayedComponents: .date)
                 }
                 
-                Text("DÃ©tails de ton objectif :")
+                Text("Details de ton objectif :")
                   
                 TextField("Description", text: $description)
                     .padding(.bottom).padding(.bottom)
                     .padding(.bottom)   .padding(.bottom)
+                Toggle(isOn: $completer) {
+                    Text("Completer")
+                }
             }
                 Button(action: {
-                    viewModel.addGoal(goalTitle: titre, startDate: dateDebut, endDate: dateFin, goalDescription: description, isCompleted: false)
+                    viewModel.addGoal(goalTitle: titre, startDate: dateDebut, endDate: dateFin, goalDescription: description, isCompleted: completer)
                 }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)

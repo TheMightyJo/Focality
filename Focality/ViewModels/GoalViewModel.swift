@@ -9,12 +9,12 @@ import SwiftUI
 
 class GoalViewModel: ObservableObject {
     @Published var goals: [Goal]
-    init(goals: [Goal] = []) {
+    init(goals: [Goal] = [Goal(goalTitle: "Anglais", startDate: Date(), endDate: Date(), goalDescription: "egfeg", isCompleted: false)]) {
         
         self.goals = goals
     }
     func addGoal(goalTitle: String, startDate: Date, endDate: Date, goalDescription: String, isCompleted: Bool) {
-        let newGoal = Goal(goalTitle: goalTitle, startDate: startDate, endDate: endDate, goalDescription: goalDescription, isCompleted: true)
+        let newGoal = Goal(goalTitle: goalTitle, startDate: startDate, endDate: endDate, goalDescription: goalDescription, isCompleted: isCompleted)
         goals.append(newGoal)
     }
     func removeGoal(at offsets: IndexSet) {
@@ -26,7 +26,10 @@ class GoalViewModel: ObservableObject {
         }
     }
     var completedGoals: [Goal] {
-        goals.filter { $0.isCompleted }
+        goals.filter { $0.isCompleted == true }
+    }
+    var nonCompletedGoals: [Goal] {
+        goals.filter { $0.isCompleted == false }
     }
 }
 

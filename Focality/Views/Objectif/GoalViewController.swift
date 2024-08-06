@@ -16,11 +16,6 @@ class GoalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
-        titreObjectif.text = objectif.goalTitle
-        descriptionObjectif.text = objectif.goalDescription
-        objectifCompleter.image = UIImage(named: "checkmark.circle.fill")
-      
+
     }
 }

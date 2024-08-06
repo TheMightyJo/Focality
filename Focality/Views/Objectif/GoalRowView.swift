@@ -23,6 +23,21 @@ struct GoalRowView: View {
                 .font(.largeTitle)
 
         }
+//                        HStack {
+//                        Image(systemName: "circle.badge.checkmark.fill")
+//                                .resizable()
+//                                .frame(width:35, height: 30)
+//                                .foregroundStyle(.blue)
+//                        VStack(alignment: .leading) {
+//                            Text(GoalDetailView).font(.headline)
+//                            HStack{
+//                        Text(GoalDetailView.startDate, style: .date).font(.caption)
+//                                Text("-")
+//                        Text(GoalDetailView.endDate, style: .date).font(.caption)
+//                            }
+//                        }
+//        
+//                        }
     }
 }
 

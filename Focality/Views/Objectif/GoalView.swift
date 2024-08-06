@@ -24,7 +24,7 @@ struct GoalView: View {
         NavigationStack {
             List(viewGoals.goals) { goal in
                 NavigationLink {
-                    GoalDetailView(goals: goal)
+                    GoalDetailView(goals: Goal(goalTitle: String(), startDate: Date(), endDate: Date(), goalDescription: String(), isCompleted: Bool()))
                 } label: {
                     GoalRowView(titreObj: goal.goalTitle, icon: "circle.badge.checkmark.fill")
                 }
