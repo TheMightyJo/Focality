@@ -35,32 +35,29 @@ struct OnboardingView: View {
                 }
                 GamificationCardView(rewardViewModel: rewardViewModel, userViewModel: userViewModel)
                 
-                HStack {
-                    Text("Objectifs")
+            HStack {
+                    Text("Mes Objectifs")
                         .font(.title2).bold()
                     Spacer()
-                    Button(action: {
-                        showingAddGoalView = true
-                    }) {
+                    NavigationLink(destination: AddGoal(viewModel: goalViewModel)) {
                         Image(systemName: "plus.circle.fill")
                             .font(.title)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.accent)
                     }
-//                    .sheet(isPresented: $showingAddGoalView) {
-//                        AddGoal(goalViewModel: goalViewModel)
-//                    }
                 }
                 .padding(.horizontal)
                 
                 if goalViewModel.goals.count >= 1 {
-                    VStack(spacing: 20) {
+                    HStack {
                         ForEach(goalViewModel.goals) { goal in
                             GoalCardView(goal: goal)
                         }
                     }
-                    .padding(.horizontal)
+                    .padding()
                 } else {
-                    Text("Pas d'objectifs disponibles.")
+                    Text("Pas d'objectifs disponibles 🤷")
+                        .font(.title2)
+                        .padding()
                 }
                 
                 
