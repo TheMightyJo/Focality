@@ -18,6 +18,8 @@ struct AddGoal: View {
    
 
     var body: some View {
+        
+        
         NavigationView {
             VStack {
             Form {
