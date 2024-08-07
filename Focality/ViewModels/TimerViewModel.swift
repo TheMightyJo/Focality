@@ -7,60 +7,70 @@
 
 import SwiftUI
 
+/// ViewModel pour le chronomètre Pomodoro
 class TimerViewModel: ObservableObject {
-    @Published var timers: TimerPomodoro // Instance de Timer contenant les paramètres
-    @Published var isRunning: Bool = false // État pour savoir si le timer est en cours
-    @Published var currentTime: Int = 0// Temps restant en secondes
+    /// Instance de Timer contenant les paramètres
+    @Published var timers: TimerPomodoro
+    /// État pour savoir si le timer est en cours
+    @Published var isRunning: Bool = false
+    /// Temps restant en secondes
+    @Published var currentTime: Int = 0
     
-    private var timer: Timer? // Référence au Timer pour gérer le compte à rebours
+    private var timer: Timer?
     
-    init(timers: TimerPomodoro = TimerPomodoro(focusTime: 25, shortBreak: 5, longBreak: 15), isRunning: Bool, currentTime: Int = 0) {
+    /// Initialisateur
+    /// - Parameters:
+    ///   - timers: Instance de TimerPomodoro
+    ///   - isRunning: État initial du timer
+    ///   - currentTime: Temps initial en secondes
+    init(timers: TimerPomodoro = TimerPomodoro(focusTime: 25, shortBreak: 5, longBreak: 15), isRunning: Bool, currentTime: Int) {
         self.timers = timers
         self.isRunning = isRunning
-        self.currentTime = currentTime //Initialiser currentTime
-        if isRunning {
-                    startTimer() // Démarrer le timer si l'état est en cours
-                }
+        self.currentTime = currentTime
     }
-    // Méthode pour définir le currentTime basé sur focusTime
-        func setCurrentTime() {
-            self.currentTime = timers.focusTime * 60 // Convertir le focusTime en secondes pour le timer
+    
+    /// Méthode pour définir le currentTime basé sur focusTime
+    func setCurrentTime() {
+        self.currentTime = timers.focusTime * 60
     }
-    // Démarrer le timer
+    
+    /// Démarrer le timer
     func startTimer() {
-        guard !isRunning else { return } // Ne pas démarrer si déjà en cours
-
-               isRunning = true
-               timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-                   self?.tick()
-               }
-    }
-    
-    // Mettre en pause le timer
-    func pauseTimer() {
-           isRunning = false
-           timer?.invalidate() // Arrêter le Timer
-           timer = nil // Réinitialiser la référence au Timer
-       }
-    
-    // Avancer le timer
-    func skipForward() {
-        pauseTimer()
-        self.currentTime = 0
-    }
-    
-    // Mettre à jour les paramètres du timer
-    func updateTimer(focusTime: Int, shortBreak: Int, longBreak: Int) {
-            self.timers = TimerPomodoro(focusTime: focusTime, shortBreak: shortBreak, longBreak: longBreak)
-            setCurrentTime() // Réinitialiser le temps restant en fonction du nouveau focusTime
+        isRunning = true
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            self?.tick()
         }
-
-        // Méthode appelée chaque seconde pour décrémenter le temps
-        private func tick() {
-            if currentTime > 0 {
-                currentTime -= 1
-            } else {
-                pauseTimer() // Arrêter le timer lorsqu'il atteint zéro
-            }
+    }
+    
+    /// Mettre en pause le timer
+    func pauseTimer() {
+        isRunning = false
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    /// Avancer le timer
+    func skipForward() {
+        // Logique pour avancer le timer
+    }
+    
+    /// Mettre à jour les paramètres du timer
+    /// - Parameters:
+    ///   - focusTime: Nouveau temps de concentration
+    ///   - shortBreak: Nouveau temps de pause courte
+    ///   - longBreak: Nouveau temps de pause longue
+    func updateTimer(focusTime: Int, shortBreak: Int, longBreak: Int) {
+        self.timers = TimerPomodoro(focusTime: focusTime, shortBreak: shortBreak, longBreak: longBreak)
+        self.currentTime = focusTime * 60
+    }
+    
+    /// Méthode appelée chaque seconde pour mettre à jour le temps restant
+    private func tick() {
+        if currentTime > 0 {
+            currentTime -= 1
+        } else {
+            pauseTimer()
+        }
     }
 }
+

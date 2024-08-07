@@ -52,6 +52,7 @@
 		A5F899B82C4C4B6D0052CBEB /* RewardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899B72C4C4B6D0052CBEB /* RewardRowView.swift */; };
 		A5F899BA2C4C4D520052CBEB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899B92C4C4D520052CBEB /* CustomButton.swift */; };
 		A5F899BC2C4C510B0052CBEB /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F899BB2C4C510B0052CBEB /* PointsView.swift */; };
+		E9192B392C622C90001E3B14 /* TimerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9192B382C622C90001E3B14 /* TimerDetailView.swift */; };
 		E92E8F0F2C493CFE004B0403 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92E8F0E2C493CFE004B0403 /* TimerView.swift */; };
 		E95F359B2C58D2D40047BB19 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95F359A2C58D2D40047BB19 /* ReminderView.swift */; };
 		E9B17B7D2C60F6D90019E4FE /* ReminderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B17B7C2C60F6D90019E4FE /* ReminderListView.swift */; };
@@ -109,6 +110,7 @@
 		A5F899B72C4C4B6D0052CBEB /* RewardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardRowView.swift; sourceTree = "<group>"; };
 		A5F899B92C4C4D520052CBEB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A5F899BB2C4C510B0052CBEB /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
+		E9192B382C622C90001E3B14 /* TimerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDetailView.swift; sourceTree = "<group>"; };
 		E92E8F0E2C493CFE004B0403 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		E95F359A2C58D2D40047BB19 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		E9B17B7C2C60F6D90019E4FE /* ReminderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListView.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				E9F5CC332C5790ED0098BACA /* SettingModalView.swift */,
 				E9CDB5E52C610E2000E82078 /* TimerViewController.swift */,
 				E9CDB5E32C610E0800E82078 /* MainTimerPat.storyboard */,
+				E9192B382C622C90001E3B14 /* TimerDetailView.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				A59A419B2C58E62100029633 /* AuthViewModel.swift in Sources */,
 				A50A04782C5B70C60057D436 /* SplashView.swift in Sources */,
 				70FC1C462C60F22500B86F38 /* GamificationCardView.swift in Sources */,
+				E9192B392C622C90001E3B14 /* TimerDetailView.swift in Sources */,
 				70F0EAA82C4810380098A202 /* Challenge.swift in Sources */,
 				70E0F99A2C4918750085BDAA /* GoalViewModel.swift in Sources */,
 				614605812C60F4680090846B /* FocusHeartCoherenceModal.swift in Sources */,
