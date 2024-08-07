@@ -14,19 +14,7 @@ struct ReminderView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack{
-                    Text("Rappels")
-                        .bold()
-                        .font(.system(size: 40))
-                        .padding(.trailing, 100)
-                        
-                        
-                    
-                    Image("Logo")
-                        .resizable()
-                            .frame(width: 120.0, height: 120.0)
-                            
-                }
+                Reminderrr()
                 VStack {
                     NavigationLink(destination: ReminderListView(viewModel: viewModel, filter: .today)) {
                         Rectangle()
@@ -79,5 +67,19 @@ struct ReminderView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ReminderView()
+    }
+}
+
+struct Reminderrr: UIViewControllerRepresentable{
+
+    func makeUIViewController(context: Context) -> some ReminderViewController {
+        let storyboard = UIStoryboard(name: "MainReminder", bundle: .main)
+        guard let reminderVC = storyboard.instantiateViewController(identifier: "ReminderViewController") as? ReminderViewController else {
+            fatalError("cannot instanciate ReminderViewController")
+        }
+        return reminderVC
+    }
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        
     }
 }

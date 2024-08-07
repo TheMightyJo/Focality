@@ -8,16 +8,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Reminder View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReminderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ReminderViewController" customModule="Focality" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RAPPEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ie7-S5-09g">
-                                <rect key="frame" x="45" y="102" width="98" height="21"/>
+                                <rect key="frame" x="45" y="102" width="98" height="31.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="iLY-k2-WjI"/>
+                                    <constraint firstAttribute="height" constant="31.329999999999998" id="sv0-Ou-feA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -33,13 +37,16 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ie7-S5-09g" secondAttribute="bottom" constant="695" id="5MG-nQ-ulO"/>
                             <constraint firstItem="Ie7-S5-09g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="45" id="N7P-aw-dXB"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Bb4-5p-GFx" secondAttribute="trailing" constant="35" id="l0h-pi-GdT"/>
                             <constraint firstItem="Ie7-S5-09g" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="43" id="p57-XU-qs2"/>
                             <constraint firstItem="Bb4-5p-GFx" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="43" id="rq5-07-CHf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgLogo" destination="Bb4-5p-GFx" id="4fM-Wp-01D"/>
+                        <outlet property="labelTitle" destination="Ie7-S5-09g" id="EJu-H9-sGz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
