@@ -24,20 +24,15 @@ class UserViewModel: ObservableObject{
             User( firstName: "Emiliano", lastName: "Babar", email: "emiliano@gmail.com", password: "Teamcook5*", birthday: Date(), point: 55, currentLevel: 150)
         ]
     }
-    
-<<<<<<< Updated upstream
+
 
 /// Ajoute un nouvel utilisateur à la liste users.
 ///
-=======
     func addPoints(to user: User, points: Int) {
         if let index = users.firstIndex(where: { $0.id == user.id }) {
             users[index].point += points
         }
     }
-    
-    
->>>>>>> Stashed changes
     func addUser(firstName: String, lastName: String,email: String, password: String, birthday: Date){
 /// On vérifie que l'email contient un "@" et un ".", et que le mot de passe a au moins 8 caractères avant d'ajouter l'utilisateur.
         if email.contains("@") && email.contains(".") && password.count >= 8 {
