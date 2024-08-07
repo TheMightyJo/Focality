@@ -90,6 +90,7 @@ struct SettingModalView: View {
             .padding()
             Spacer()
         }
+        .padding()
     }
     // Vue pour les champs de saisie de temps
     struct TimeSettingView: View {

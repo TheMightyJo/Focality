@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             OnboardingView(
-                challengeViewModel: ChallengeViewModel(), timerViewModel: TimerViewModel(isRunning: false), authViewModel: AuthViewModel(userViewModel: UserViewModel()),
+                challengeViewModel: ChallengeViewModel(), timerViewModel: TimerViewModel(isRunning: false, currentTime: 0), authViewModel: AuthViewModel(userViewModel: UserViewModel()),
                 userViewModel: authViewModel.getUserViewModel(),
                 reminderViewModel: ReminderViewModel(),
                 rewardViewModel: RewardViewModel(userViewModel: authViewModel.getUserViewModel()),

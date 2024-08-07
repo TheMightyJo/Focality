@@ -13,6 +13,8 @@ struct AddReminderView: View {
     @State private var titre = ""
     @State private var description = ""
     @State private var date = Date()
+    
+    var onSave: (() -> Void)?
 
     var body: some View {
         NavigationView {

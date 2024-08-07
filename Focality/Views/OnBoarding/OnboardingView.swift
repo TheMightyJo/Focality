@@ -42,8 +42,8 @@ struct OnboardingView: View {
                 }
                 
                 HStack {
-                    NavigationLink(destination: GoalView()) {
-                        Text("🎯 Mes Objectifs")
+                    NavigationLink(destination: ListGoalView()) {
+                        Text("🎯 Gamification")
                             .font(.title2).bold()
                             .foregroundStyle(.text)
                     }
@@ -56,7 +56,7 @@ struct OnboardingView: View {
                 Divider().padding(.vertical)
                 
                 HStack {
-                    NavigationLink(destination: GoalView()) {
+                    NavigationLink(destination: ListGoalView()) {
                         Text("🎯 Mes Objectifs")
                             .font(.title2).bold()
                             .foregroundStyle(.text)
@@ -80,7 +80,7 @@ struct OnboardingView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(goalViewModel.goals) { goal in
-                                NavigationLink(destination: GoalDetailView(goal: goal)) {
+                                NavigationLink(destination: GoalDetailView(goals: goal)) {
                                     GoalCardView(goal: goal)
                                 }
                             }
@@ -112,7 +112,7 @@ struct OnboardingView: View {
                         .foregroundColor(.accent)
                 }
                 .sheet(isPresented: $showingSettingModalView) {
-                    SettingModalView(viewModel: TimerViewModel( isRunning: false))
+                    SettingModalView(viewModel: TimerViewModel( isRunning: false, currentTime: 0))
                 }
             }
             .padding(.horizontal)
@@ -172,7 +172,7 @@ struct OnboardingView: View {
                     .cornerRadius(10)
             }
         }
-        .padding(.horizontal)
+        
     }
 }
 
@@ -188,7 +188,7 @@ struct OnboardingView_Previews: PreviewProvider {
         let endDate = dateFormatter.date(from: "31/08/2024") ?? Date()
         
         return OnboardingView(
-            challengeViewModel: ChallengeViewModel(), timerViewModel: TimerViewModel( isRunning: false), authViewModel: AuthViewModel(userViewModel: UserViewModel()),
+            challengeViewModel: ChallengeViewModel(), timerViewModel: TimerViewModel( isRunning: false, currentTime: 0), authViewModel: AuthViewModel(userViewModel: UserViewModel()),
             userViewModel: UserViewModel(),
             reminderViewModel: ReminderViewModel(rappels: [Reminder(titre: "Math à 14h", description: "Je dois travailler le théoreme de pythagore", date: Date())]),
             rewardViewModel: RewardViewModel(userViewModel: UserViewModel()),

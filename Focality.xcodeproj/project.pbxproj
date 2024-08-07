@@ -19,7 +19,6 @@
 		70229E332C5D2FDA009AF806 /* FocusHeartCoherenceTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70229E2F2C5D2FDA009AF806 /* FocusHeartCoherenceTimer.swift */; };
 		703C66B82C47FBF300B0AF52 /* FocalityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66B72C47FBF300B0AF52 /* FocalityApp.swift */; };
 		703C66BA2C47FBF300B0AF52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66B92C47FBF300B0AF52 /* ContentView.swift */; };
-		703C66BC2C47FBF300B0AF52 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66BB2C47FBF300B0AF52 /* Item.swift */; };
 		703C66BE2C47FBF300B0AF52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703C66BD2C47FBF300B0AF52 /* Assets.xcassets */; };
 		703C66C12C47FBF300B0AF52 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703C66C02C47FBF300B0AF52 /* Preview Assets.xcassets */; };
 		70A69D492C61148A009FD298 /* GoalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D432C61148A009FD298 /* GoalRowView.swift */; };
@@ -84,7 +83,6 @@
 		703C66B42C47FBF300B0AF52 /* Focality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focality.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		703C66B72C47FBF300B0AF52 /* FocalityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocalityApp.swift; sourceTree = "<group>"; };
 		703C66B92C47FBF300B0AF52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		703C66BB2C47FBF300B0AF52 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		703C66BD2C47FBF300B0AF52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		703C66C02C47FBF300B0AF52 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		70A69D432C61148A009FD298 /* GoalRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalRowView.swift; sourceTree = "<group>"; };
@@ -124,7 +122,7 @@
 		A5F899B72C4C4B6D0052CBEB /* RewardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardRowView.swift; sourceTree = "<group>"; };
 		A5F899B92C4C4D520052CBEB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A5F899BB2C4C510B0052CBEB /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
-		E91108662C6357B700BD9E4A /* TimerDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerDetailView.swift; path = ../../../../../../Desktop/TimerDetailView.swift; sourceTree = "<group>"; };
+		E91108662C6357B700BD9E4A /* TimerDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerDetailView.swift; sourceTree = "<group>"; };
 		E92E8F0E2C493CFE004B0403 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		E95F359A2C58D2D40047BB19 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		E9B17B7C2C60F6D90019E4FE /* ReminderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListView.swift; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 			children = (
 				703C66B72C47FBF300B0AF52 /* FocalityApp.swift */,
 				703C66B92C47FBF300B0AF52 /* ContentView.swift */,
-				703C66BB2C47FBF300B0AF52 /* Item.swift */,
 				A50A04772C5B70C60057D436 /* SplashView.swift */,
 				E92E8F0D2C493CE6004B0403 /* Views */,
 				70F0EA9C2C480F3A0098A202 /* Models */,
@@ -428,7 +425,6 @@
 				E95F359B2C58D2D40047BB19 /* ReminderView.swift in Sources */,
 				A5F899B62C4C4AF50052CBEB /* RewardListView.swift in Sources */,
 				A5F899B22C4C37C70052CBEB /* ChallengeRowView.swift in Sources */,
-				703C66BC2C47FBF300B0AF52 /* Item.swift in Sources */,
 				E91108672C6357B700BD9E4A /* TimerDetailView.swift in Sources */,
 				70E0F9962C4918290085BDAA /* RewardViewModel.swift in Sources */,
 				70229E2C2C5D2013009AF806 /* OnboardingView.swift in Sources */,
