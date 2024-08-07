@@ -38,4 +38,8 @@ class User: Identifiable{
         self.point = point
         self.currentLevel = currentLevel
     }
+    
+    func addPoints(_ points: Int) {
+            self.point += points
+        }
 }

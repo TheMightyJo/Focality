@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Focality
-//
-//  Created by Apprenant 154 on 17/07/2024.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -14,7 +7,9 @@ struct ContentView: View {
     var body: some View {
         TabView {
             OnboardingView(
-                challengeViewModel: ChallengeViewModel(), timerViewModel: TimerViewModel(isRunning: false, currentTime: 0), authViewModel: AuthViewModel(userViewModel: UserViewModel()),
+                challengeViewModel: ChallengeViewModel(),
+                timerViewModel: TimerViewModel(isRunning: false, currentTime: 0),
+                authViewModel: authViewModel,
                 userViewModel: authViewModel.getUserViewModel(),
                 reminderViewModel: ReminderViewModel(),
                 rewardViewModel: RewardViewModel(userViewModel: authViewModel.getUserViewModel()),
@@ -31,7 +26,7 @@ struct ContentView: View {
                     Text("Timer")
                 }
             
-            FocusHeartCoherence()
+            FocusHeartCoherence(userViewModel: authViewModel.getUserViewModel(), user: authViewModel.getUserViewModel().users.first!)
                 .tabItem {
                     Image(systemName: "heart.fill")
                     Text("Focus")

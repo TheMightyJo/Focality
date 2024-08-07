@@ -1,135 +1,113 @@
-//
-//  FocusHeartCoherenceModal.swift
-//  Focality
-//
-//  Created by Apprenant 142 on 05/08/2024.
-//
-
 import SwiftUI
 
-
 struct FocusHeartCoherenceModal: View {
-    @ObservedObject  var viewModelsFocus : ViewModelsFocus
-    @State var temps = 0
+    @ObservedObject var viewModelsFocus: ViewModelsFocus
+    @State var temps: Int
     @State var objectif = 0
     @State var nombreDePoint = 0
-    
- 
+    @Environment(\.presentationMode) var presentationMode
+    var user: User
+
     var body: some View {
-        ZStack{
+        ZStack {
             RoundedRectangle(cornerRadius: 42)
                 .fill(
-                    LinearGradient(gradient: Gradient(colors: [.secondaire, .gray]), startPoint: .top, endPoint: .bottom))
+                    LinearGradient(gradient: Gradient(colors: [.secondaire, .gray]), startPoint: .top, endPoint: .bottom)
+                )
+                .edgesIgnoringSafeArea(.all)
             
-            
-            
-            VStack{
-//                
+            VStack(spacing: 20) {
                 Focus()
-//                Text("Félicitation ")
-//                    
-//                    .fontWeight(.semibold)
-//                    .font(.system(size: 20))
-//                    .padding(.bottom,100)
-//                    .foregroundColor(.white)
-//                    .padding(.top, 50)
-//                
-//                
-//                Text("Vous venez de terminer la séance \n Respiration Focus !")
-//                    
-//                    .fontWeight(.regular)
-//                    .font(.system(size: 14))
-//                    .padding(.bottom,100)
-//                    .foregroundColor(.white)
-//                    .frame(alignment: .center)
-//                
-                    List{
-                    
-                        HStack{
-                            VStack{
-                                Text("TEMPS")
-                                .font(.system(size: 10))
-                                .foregroundColor(.white)
-                                TextField("Temps", value: $temps, formatter: NumberFormatter())
-                                .keyboardType(.numberPad)
-                                .multilineTextAlignment(.center)
-                                
-                            }
-                            
-                            VStack{
-                                Text("POINTS")
-                                .foregroundColor(.white)
-                                .font(.system(size: 10))
-                                TextField("Nombre de points", value: $nombreDePoint, formatter: NumberFormatter())
-                                .keyboardType(.numberPad)
-                                .multilineTextAlignment(.center)
-                            }
-                            
-                            VStack{
-                                Text("OBJECTIF")
-                                .foregroundColor(.white)
-                                .font(.system(size: 10))
-                                TextField("Temps", value: $temps, formatter: NumberFormatter())
-                                .keyboardType(.numberPad)
-                                .multilineTextAlignment(.center)
-                            }
-                        }
-                       
-                        .listRowBackground(Color.clear)
-                    }
+                    .padding(.top, 40)
                 
-                    .scrollContentBackground(.hidden)
-                    .background(Color.clear)
-                    
+                Text("Félicitations!")
+                    .fontWeight(.semibold)
+                    .font(.system(size: 24))
+                    .padding(.bottom, 10)
+                    .foregroundColor(.white)
+                
+                Text("Vous venez de terminer la séance \n Respiration Focus !")
+                    .fontWeight(.regular)
+                    .font(.system(size: 18))
+                    .padding(.bottom, 40)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+
+                // Informations
+                HStack {
+                    Spacer()
+                    InfoView(title: "TEMPS", value: $temps)
+                    Spacer()
+                    InfoView(title: "POINTS", value: .constant(user.point)) // Afficher les points de l'utilisateur
+                    Spacer()
+                    InfoView(title: "OBJECTIF", value: $objectif)
+                    Spacer()
+                }
+                .padding(.bottom, 30)
                 
                 Text("Vous avez été guidés par ")
                     .fontWeight(.semibold)
-                    .font(.system(size: 10))
-                    .padding(.bottom,100)
+                    .font(.system(size: 14))
                     .foregroundColor(.white)
                 
                 Text("Focality")
                     .fontWeight(.semibold)
-                    .font(.system(size: 15))
-                    .padding(.bottom, 50)
+                    .font(.system(size: 18))
                     .foregroundColor(.white)
+                    .padding(.bottom, 20)
                 
                 Button(action: {
-                }, label:{
-                    ZStack{
+                    presentationMode.wrappedValue.dismiss() // Ferme la vue modale
+                }) {
+                    ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.orange)
                             .frame(width: 200, height: 50)
                         Text("Merci")
                             .foregroundColor(.white)
-                            
-                    }})
-                .padding(.bottom, 50)
+                            .fontWeight(.bold)
+                    }
+                }
+                .padding(.bottom, 30)
             }
-            
-            }
-            
-           
+            .padding(.horizontal, 20)
+        }
+    }
+}
+
+struct InfoView: View {
+    var title: String
+    @Binding var value: Int
+    
+    var body: some View {
+        VStack {
+            Text(title)
+                .font(.system(size: 14))
+                .foregroundColor(.white)
+            TextField("", value: $value, formatter: NumberFormatter())
+                .keyboardType(.numberPad)
+                .multilineTextAlignment(.center)
+                .frame(width: 60)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .background(Color.white.opacity(0.2))
+                .cornerRadius(10)
+        }
     }
 }
 
 #Preview {
-    FocusHeartCoherenceModal(viewModelsFocus : ViewModelsFocus())
-    
+    FocusHeartCoherenceModal(viewModelsFocus: ViewModelsFocus(), temps: 5, user: User(firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 10, currentLevel: 0))
 }
 
-struct Focus: UIViewControllerRepresentable{
-    
+struct Focus: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> some FocusViewController {
-        guard let focusVC = UIStoryboard(name: "FocusMain", bundle: .main).instantiateViewController(identifier: "FocusViewController") as? FocusViewController else{
-            fatalError("canot instanciate FocusViewController")
+        guard let focusVC = UIStoryboard(name: "FocusMain", bundle: .main).instantiateViewController(identifier: "FocusViewController") as? FocusViewController else {
+            fatalError("cannot instantiate FocusViewController")
         }
-       
         return focusVC
-            
     }
-    
+
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        // nothink to do
+        // nothing to do
     }
 }
