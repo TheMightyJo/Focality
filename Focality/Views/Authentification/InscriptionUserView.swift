@@ -71,22 +71,22 @@ struct InscriptionUserView : View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 
-                HStack{
-                    Text("Points")
-                    TextField("Points", value: $point, formatter: NumberFormatter())
-                    .keyboardType(.numberPad)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-               
-                HStack{
-                    Text("Current Level")
-                    TextField("Current Level", value: $currentLevel, formatter: NumberFormatter())
-                    .keyboardType(.numberPad)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                
+//                HStack{
+//                    Text("Points")
+//                    TextField("Points", value: $point, formatter: NumberFormatter())
+//                    .keyboardType(.numberPad)
+//                    .padding()
+//                    .textFieldStyle(RoundedBorderTextFieldStyle())
+//                }
+//               
+//                HStack{
+//                    Text("Current Level")
+//                    TextField("Current Level", value: $currentLevel, formatter: NumberFormatter())
+//                    .keyboardType(.numberPad)
+//                    .padding()
+//                    .textFieldStyle(RoundedBorderTextFieldStyle())
+//                }
+//                
                 ZStack{
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color.primaire)
