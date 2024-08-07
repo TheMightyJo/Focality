@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
-
+/// La vue InscriptionUserView permet aux utilisateurs de s'inscrire en entrant leurs informations personnelles.
+/// Elle utilise le modèle de vue UserViewModel pour gérer les données utilisateur.
 struct InscriptionUserView : View {
-    
+/// Le modèle de vue utilisé pour gérer les utilisateurs.
     @ObservedObject  var userViewModel : UserViewModel
+/// Propriétés d'état pour stocker les entrées utilisateur.
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var email = ""
@@ -22,15 +24,13 @@ struct InscriptionUserView : View {
 
         
         VStack{
-            
+    /// Titre 'inscription.
                 Text("Inscription")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .font(.system(size: 30))
                     .padding(.trailing, 200)
                 
-
-            
-            
+/// Logo de l'application.
                 Image("Logo")
                     .resizable()
                     .frame(width: 100, height: 100)
