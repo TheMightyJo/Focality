@@ -73,19 +73,29 @@ struct SettingModalView: View {
             }
             Spacer()
             HStack(spacing: 65){
-                Button("Annnuler") {
-                    print("Bouton tapé!")
-                }.frame(width: 130, height:  48,alignment:.center)
-                    .background(Color.primaire)
-                    .foregroundColor(Color.white)
-                    .cornerRadius(16)
-                
-                Button("OK") {
-                    print("Bouton tapé!")
-                }.frame(width: 129, height:  48,alignment:.center)
-                    .background(Color.secondaire)
-                    .foregroundColor(Color.white)
-                    .cornerRadius(16)
+                Button(action: {
+                    // Action pour fermer la modale
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Text("Annuler")
+                            .frame(width: 130, height:  48,alignment:.center)
+                            .background(Color.primaire)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(16)
+                    }
+                }
+                Button(action: {
+             
+                }) {
+                    HStack {
+                        Text("OK")
+                            .frame(width: 130, height:  48,alignment:.center)
+                            .background(Color.secondaire)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(16)
+                    }
+                }
             }
             .padding()
             Spacer()
