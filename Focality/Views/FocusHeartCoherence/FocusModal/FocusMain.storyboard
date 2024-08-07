@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Focus View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="FocusViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="FocusViewController" customModule="Focality" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Félicitation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLw-p0-sv9">
+                                <rect key="frame" x="146" y="99" width="101" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="74n-EN-ZRz"/>
+                                    <constraint firstAttribute="width" constant="101" id="d6v-z2-wyc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Vous venez de terminer la séance Respiration Focus" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qR4-h4-R15">
+                                <rect key="frame" x="76" y="141" width="240" height="57"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="T3Y-be-l6O"/>
+                                    <constraint firstAttribute="width" constant="240" id="gjV-oz-Gop"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flamme" translatesAutoresizingMaskIntoConstraints="NO" id="wb3-SL-eTt">
+                                <rect key="frame" x="160" y="219" width="73" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="V9Y-ns-lSv"/>
+                                    <constraint firstAttribute="width" constant="73" id="jps-BG-hMb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jLw-p0-sv9" secondAttribute="trailing" constant="146" id="6Kn-On-13X"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wb3-SL-eTt" secondAttribute="trailing" constant="160" id="Ass-0x-V2B"/>
+                            <constraint firstItem="jLw-p0-sv9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="146" id="GCO-6s-nwz"/>
+                            <constraint firstItem="qR4-h4-R15" firstAttribute="top" secondItem="jLw-p0-sv9" secondAttribute="bottom" constant="20" id="OwD-rA-hgC"/>
+                            <constraint firstItem="qR4-h4-R15" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="76" id="PNh-U7-nnN"/>
+                            <constraint firstItem="jLw-p0-sv9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="Q2z-gX-Zdv"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qR4-h4-R15" secondAttribute="trailing" constant="77" id="aXK-rG-Yj4"/>
+                            <constraint firstItem="wb3-SL-eTt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="160" id="en7-Dg-oXb"/>
+                            <constraint firstItem="wb3-SL-eTt" firstAttribute="top" secondItem="qR4-h4-R15" secondAttribute="bottom" constant="21" id="ykq-nd-TAv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="LabelView" destination="jLw-p0-sv9" id="JpH-V0-Z0a"/>
+                        <outlet property="imageView" destination="wb3-SL-eTt" id="1LI-o7-Edt"/>
+                        <outlet property="labelView" destination="jLw-p0-sv9" id="jFG-q3-K7q"/>
+                        <outlet property="textView" destination="qR4-h4-R15" id="qpx-yW-31N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="flamme" width="73" height="73"/>
+    </resources>
+</document>
