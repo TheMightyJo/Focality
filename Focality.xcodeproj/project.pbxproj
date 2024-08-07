@@ -368,11 +368,12 @@
 			};
 			buildConfigurationList = 703C66AF2C47FBF200B0AF52 /* Build configuration list for PBXProject "Focality" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = fr;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 703C66AB2C47FBF200B0AF52;
 			productRefGroup = 703C66B52C47FBF300B0AF52 /* Products */;
