@@ -12,7 +12,7 @@ struct GoalDetailView: UIViewControllerRepresentable {
         //
     }
     
-    var goals: Goal
+//    var goals: Goal
     
     func makeUIViewController(context: Context) -> some GoalViewController {
         let storyboard = UIStoryboard(name: "MainGoal", bundle: .main)
@@ -21,7 +21,7 @@ struct GoalDetailView: UIViewControllerRepresentable {
             fatalError("Cannot instanciate")
         }
         
-        goalVC.objectif = goals
+//        goalVC.objectif = goals
         
         return goalVC
     }

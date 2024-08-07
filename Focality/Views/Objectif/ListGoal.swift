@@ -30,7 +30,8 @@ struct ListGoal: View {
         List {
             ForEach(filteredGoals) { goal in
                 NavigationLink {
-                    GoalDetailView(goals: Goal(goalTitle: String(), startDate: Date(), endDate: Date(), goalDescription: String(), isCompleted: Bool()))
+                    GoalDetailView()
+
                 } label: {
                     HStack {
             Image(systemName: "circle.badge.checkmark.fill")
