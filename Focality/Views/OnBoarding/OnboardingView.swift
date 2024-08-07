@@ -80,7 +80,8 @@ struct OnboardingView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(goalViewModel.goals) { goal in
-                                NavigationLink(destination: GoalDetailView(goals: goal)) {
+                                NavigationLink(destination:
+                                    GoalDetailView()) {
                                     GoalCardView(goal: goal)
                                 }
                             }
