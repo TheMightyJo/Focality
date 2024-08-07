@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class Goal: Identifiable {
     var id = UUID()
     var goalTitle: String
@@ -13,6 +14,11 @@ class Goal: Identifiable {
     var endDate: Date
     var goalDescription: String
     var isCompleted: Bool = false
+    
+    var isInProgress: Bool {
+        let currentDate = Date()
+        return currentDate >= startDate && currentDate <= endDate
+    }
     
     init(goalTitle: String, startDate: Date, endDate: Date, goalDescription: String, isCompleted: Bool) {
         self.id = UUID()

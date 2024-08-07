@@ -1,31 +1,33 @@
-//
-//  PointsView.swift
-//  Focality
-//
-//  Created by Johan Quille on 20/07/2024.
-//
+import UIKit
 
-import SwiftUI
+class PointsView: UIView {
+    private let pointsLabel: UILabel
 
-struct PointsView: View {
-    @ObservedObject var userViewModel: UserViewModel
-
-    var body: some View {
-        if let user = userViewModel.users.first {
-            HStack {
-                Text("Points : ")
-                    .font(.subheadline).bold()
-                    .foregroundStyle(.white)
-                Text("\(user.point)")
-                    .font(.subheadline).bold()
-                    .foregroundColor(.accent)
-            }
-        }
+    init(points: Int) {
+        self.pointsLabel = UILabel()
+        super.init(frame: .zero)
+        self.pointsLabel.text = "Points : \(points)"
+        self.pointsLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        self.pointsLabel.textColor = .white
+        setupView()
     }
-}
 
-struct PointsView_Previews: PreviewProvider {
-    static var previews: some View {
-        PointsView(userViewModel: UserViewModel())
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupView() {
+        self.addSubview(pointsLabel)
+        pointsLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pointsLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            pointsLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            pointsLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            pointsLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+    }
+
+    func updatePoints(_ points: Int) {
+        self.pointsLabel.text = "Points : \(points)"
     }
 }

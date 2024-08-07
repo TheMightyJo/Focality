@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+/// Vue principale pour le chronomètre Pomodoro
 struct TimerView: View {
-    @ObservedObject var viewModel = TimerViewModel(isRunning: false, currentTime: 1500) // Instance du ViewModel pour gérer l'état
-    @State private var showingSheet = false // État pour déterminer si la feuille de paramètres est affichée
-    
+    /// Instance du ViewModel pour gérer l'état
+    @ObservedObject var viewModel = TimerViewModel(isRunning: false, currentTime: 1500)
+    /// État pour déterminer si la feuille de paramètres est affichée
+    @State private var showingSheet = false
     
     var body: some View {
         VStack {
@@ -29,13 +31,12 @@ struct TimerView: View {
                         .font(.title)
                 }
             }
-            Spacer()
             // Barre de contrôles (Play/Pause et Skip Forward)
             HStack {
                 // Bouton Play/Pause
                 Button(action: {
                     // Toggle entre démarrer et mettre en pause le timer
-                    viewModel.setCurrentTime()// ajouté avec zora
+                    viewModel.setCurrentTime()
                     if viewModel.isRunning {
                         viewModel.pauseTimer()
                     } else {
@@ -57,56 +58,42 @@ struct TimerView: View {
                 }
                 // Bouton Skip Forward
                 Button(action: {
-                   viewModel.skipForward()
+                    viewModel.skipForward()
                 }) {
-                   Image("Skip Forward")
+                    Image("Skip Forward")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 20, height: 25.26)
-                               }
-            }.padding(.leading,30)
-            Spacer()
-            HStack {
-                Ellipse()
-                    .fill(.primaire)
-                    .frame(width: 24, height: 24)
-                Ellipse()
-                    .fill(.primaire)
-                    .frame(width: 24, height: 24)
-                Ellipse()
-                    .fill(.primaire)
-                    .frame(width: 24, height: 24)
-                Ellipse()
-                    .fill(.primaire)
-                    .frame(width: 24, height: 24)
+                }
             }
-            Spacer()
-            Text("Focus Time")
-                .font(.largeTitle)
-                .foregroundStyle(.primaire)
-                .frame(width: 174, height: 39)
-            Spacer()
+            .padding(.leading, 30)
+            /// Integration UIKIT:  boutons de progressions  et statut (Focus Time)
+            TimerDetailView(timer: TimerPomodoro(focusTime: 25, shortBreak: 5, longBreak: 15))
+                .padding(.top, 70)
+            
             ZStack {
                 Ellipse()
-                    .fill(.primaire)
-                .frame(width: 40, height: 40)
+                    .fill(Color.primaire)
+                    .frame(width: 40, height: 40)
                 Image("Button Setting")
             }
             .onTapGesture {
                 showingSheet.toggle()
-                        }
+            }
             .sheet(isPresented: $showingSheet) {
                 SettingModalView(viewModel: viewModel)
-    
             }
-            Spacer()
+            .padding(.bottom, 50)
         }
     }
-    // Fonction pour formater le temps en minutes et secondes
+    
+    /// Fonction pour formater le temps en minutes et secondes
+    /// - Parameter seconds: Le temps en secondes
+    /// - Returns: Une chaîne formatée en minutes:secondes
     private func formatTime(_ seconds: Int) -> String {
         let minutes = seconds / 60
         let remainingSeconds = seconds % 60
-        return String(format: "%02d:%02d", minutes, remainingSeconds) // Formatage pour afficher sous forme MM:SS
+        return String(format: "%02d:%02d", minutes, remainingSeconds)
     }
 }
 

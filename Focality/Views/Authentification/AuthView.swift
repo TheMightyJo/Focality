@@ -33,13 +33,8 @@ struct AuthView: View {
                 }
                 .padding(.top, 10)
                 .navigationDestination(isPresented: $authViewModel.isSignInSuccess) {
-                    OnboardingView(
-                        challengeViewModel: ChallengeViewModel(),
-                        userViewModel: authViewModel.getUserViewModel(),
-                        reminderViewModel: ReminderViewModel(),
-                        rewardViewModel: RewardViewModel(userViewModel: authViewModel.getUserViewModel()),
-                        goalViewModel: GoalViewModel()
-                    )
+                    ContentView(
+                        authViewModel: AuthViewModel(userViewModel: UserViewModel()))
                     .navigationBarBackButtonHidden(true)
                 }
                 

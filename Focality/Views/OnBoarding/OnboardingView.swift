@@ -2,13 +2,15 @@ import SwiftUI
 
 struct OnboardingView: View {
     @ObservedObject var challengeViewModel: ChallengeViewModel
+    @ObservedObject var timerViewModel: TimerViewModel
+    @ObservedObject var authViewModel: AuthViewModel
     @ObservedObject var userViewModel: UserViewModel
     @ObservedObject var reminderViewModel: ReminderViewModel
     @ObservedObject var rewardViewModel: RewardViewModel
     @ObservedObject var goalViewModel: GoalViewModel
-    @StateObject private var timerViewModel1 = TimerViewModel(isRunning: false, currentTime: 0)
-    @StateObject private var timerViewModel2 = TimerViewModel(isRunning: false, currentTime: 0)
     @State private var showingAddGoalView = false
+    @State private var showingSettingModalView = false
+    @State private var showingAddReminderView = false
     
     var body: some View {
         ScrollView {
@@ -26,6 +28,11 @@ struct OnboardingView: View {
                                 .fontWeight(.semibold)
                                 .padding(.trailing, 10)
                         }
+                        if let user = userViewModel.users.first {
+                            Text("Mes Points : \(user.point)")
+                                .font(.title2).bold()
+                                .foregroundStyle(.accent)
+                        }
                     }
                     Image("ProfilePicture")
                         .resizable()
@@ -33,64 +40,139 @@ struct OnboardingView: View {
                         .frame(width: 90, height: 90)
                         .clipShape(Circle())
                 }
-                GamificationCardView(rewardViewModel: rewardViewModel, userViewModel: userViewModel)
                 
                 HStack {
-                    Text("Objectifs")
-                        .font(.title2).bold()
+                    NavigationLink(destination: ListGoalView()) {
+                        Text("🎯 Gamification")
+                            .font(.title2).bold()
+                            .foregroundStyle(.text)
+                    }
+                    Spacer()
+                }
+                .padding()
+                
+                GamificationCardView(rewardViewModel: rewardViewModel, userViewModel: userViewModel)
+                
+                Divider().padding(.vertical)
+                
+                HStack {
+                    NavigationLink(destination: ListGoalView()) {
+                        Text("🎯 Mes Objectifs")
+                            .font(.title2).bold()
+                            .foregroundStyle(.text)
+                    }
                     Spacer()
                     Button(action: {
                         showingAddGoalView = true
                     }) {
                         Image(systemName: "plus.circle.fill")
                             .font(.title)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.accent)
                     }
-//                    .sheet(isPresented: $showingAddGoalView) {
-//                        AddGoal(goalViewModel: goalViewModel)
-//                    }
+                    .sheet(isPresented: $showingAddGoalView) {
+                        AddGoal(viewModel: goalViewModel)
+                    }
                 }
                 .padding(.horizontal)
+                
                 
                 if goalViewModel.goals.count >= 1 {
-                    VStack(spacing: 20) {
-                        ForEach(goalViewModel.goals) { goal in
-                            GoalCardView(goal: goal)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(goalViewModel.goals) { goal in
+                                NavigationLink(destination: GoalDetailView(goals: goal)) {
+                                    GoalCardView(goal: goal)
+                                }
+                            }
                         }
                     }
+                    
                     .padding(.horizontal)
                 } else {
-                    Text("Pas d'objectifs disponibles.")
+                    Text("Pas d'objectifs disponibles 🤷")
+                        .font(.title2)
+                        .padding()
                 }
-                
-                
-                Text("Mes Timers :")
-                    .font(.title2).bold()
-                
-                HStack(spacing: 20) {
-                    TimerCardView(timerViewModel: timerViewModel1, focusTime: 15)
-                        .frame(width: UIScreen.main.bounds.width / 2 - 30, height: 200)
-                    
-                    TimerCardView(timerViewModel: timerViewModel2, focusTime: 25)
-                        .frame(width: UIScreen.main.bounds.width / 2 - 30, height: 200)
+            }
+            
+            Divider().padding(.vertical)
+            
+            HStack {
+                NavigationLink(destination: TimerView()) {
+                    Text("⏰ Mes Timers")
+                        .font(.title2).bold()
+                        .foregroundStyle(.text)
                 }
-                .padding(.horizontal)
-                
-                Text("Mes Rappels :")
-                    .font(.title2)
-                    .bold()
-                
+                Spacer()
+                Button(action: {
+                    showingSettingModalView = true
+                }) {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.title)
+                        .foregroundColor(.accent)
+                }
+                .sheet(isPresented: $showingSettingModalView) {
+                    SettingModalView(viewModel: TimerViewModel( isRunning: false, currentTime: 0))
+                }
+            }
+            .padding(.horizontal)
+            
+            Text("Pas de timers disponibles 🤷")
+                .font(.title2)
+                .padding()
+            
+            Divider().padding(.vertical)
+            
+            HStack {
+                NavigationLink(destination: ReminderView()) {
+                    Text("✔️ Mes Rappels")
+                        .font(.title2).bold()
+                        .foregroundStyle(.text)
+                }
+                Spacer()
+                Button(action: {
+                    showingAddReminderView = true
+                }) {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.title)
+                        .foregroundColor(.accent)
+                }
+                .sheet(isPresented: $showingAddReminderView) {
+                    AddReminderView(viewModel: reminderViewModel) {
+                        showingAddReminderView = false
+                    }
+                }
+            }
+            .padding(.horizontal)
+            
+            if reminderViewModel.rappels.count >= 1 {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
+                    HStack {
                         ForEach(reminderViewModel.rappels.prefix(4)) { reminder in
                             ReminderCardView(reminder: reminder)
                         }
                     }
-                    .padding(.horizontal)
                 }
+                .padding(.horizontal)
+            } else {
+                Text("Pas de rappels disponibles 🤷")
+                    .font(.title2)
+                    .padding()
             }
-            .padding()
+            
+            NavigationLink(destination: AuthView(userViewModel: UserViewModel())
+                .navigationBarBackButtonHidden(true)
+            ) {
+                Text("Se déconnecter")
+                    .font(.title2).bold()
+                    .foregroundColor(.red)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.white)
+                    .cornerRadius(10)
+            }
         }
+        
     }
 }
 
@@ -106,7 +188,7 @@ struct OnboardingView_Previews: PreviewProvider {
         let endDate = dateFormatter.date(from: "31/08/2024") ?? Date()
         
         return OnboardingView(
-            challengeViewModel: ChallengeViewModel(),
+            challengeViewModel: ChallengeViewModel(), timerViewModel: TimerViewModel( isRunning: false, currentTime: 0), authViewModel: AuthViewModel(userViewModel: UserViewModel()),
             userViewModel: UserViewModel(),
             reminderViewModel: ReminderViewModel(rappels: [Reminder(titre: "Math à 14h", description: "Je dois travailler le théoreme de pythagore", date: Date())]),
             rewardViewModel: RewardViewModel(userViewModel: UserViewModel()),

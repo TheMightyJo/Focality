@@ -3,15 +3,16 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Timer View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="TimerViewController" customModule="Focality" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,42 +21,75 @@
                                 <rect key="frame" x="96.666666666666686" y="75" width="200" height="35"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EllipseProg" translatesAutoresizingMaskIntoConstraints="NO" id="0Nz-1K-6Qr">
-                                        <rect key="frame" x="22" y="3.6666666666666714" width="28" height="28"/>
+                                        <rect key="frame" x="17" y="3.6666666666666714" width="28" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="3P2-VU-4yU"/>
                                             <constraint firstAttribute="width" constant="28" id="zHp-XC-8Lq"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EllipseProg" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xkh-wt-is7">
-                                        <rect key="frame" x="71.999999999999986" y="3.6666666666666714" width="28" height="28"/>
+                                        <rect key="frame" x="61.999999999999986" y="3.6666666666666714" width="28" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="foi-K6-nll"/>
                                             <constraint firstAttribute="width" constant="28" id="lIf-4H-tQU"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kOm-F7-Dyf">
-                                        <rect key="frame" x="9.3333333333333144" y="-47" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EllipseProg" translatesAutoresizingMaskIntoConstraints="NO" id="TdU-SI-PMp">
+                                        <rect key="frame" x="109.99999999999999" y="3.6666666666666714" width="28.000000000000014" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="0S4-MM-sYQ"/>
+                                            <constraint firstAttribute="width" constant="28" id="EsM-Xq-pDk"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EllipseProg" translatesAutoresizingMaskIntoConstraints="NO" id="shV-1l-LLB">
+                                        <rect key="frame" x="155" y="3.6666666666666714" width="28" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="3Tf-Fo-7N3"/>
+                                            <constraint firstAttribute="width" constant="28" id="dBx-lm-Rhh"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="Xkh-wt-is7" firstAttribute="centerY" secondItem="dHK-Oq-j8F" secondAttribute="centerY" id="0zr-GQ-jbb"/>
+                                    <constraint firstItem="TdU-SI-PMp" firstAttribute="centerY" secondItem="dHK-Oq-j8F" secondAttribute="centerY" id="1zj-L2-dhX"/>
                                     <constraint firstItem="0Nz-1K-6Qr" firstAttribute="centerY" secondItem="dHK-Oq-j8F" secondAttribute="centerY" id="4bg-hC-JAF"/>
-                                    <constraint firstItem="Xkh-wt-is7" firstAttribute="centerY" secondItem="dHK-Oq-j8F" secondAttribute="centerY" id="7rf-Mz-6Fv"/>
+                                    <constraint firstItem="shV-1l-LLB" firstAttribute="leading" secondItem="TdU-SI-PMp" secondAttribute="trailing" constant="17" id="DAW-aT-N8h"/>
                                     <constraint firstAttribute="height" constant="35" id="IFS-lL-JnZ"/>
-                                    <constraint firstItem="Xkh-wt-is7" firstAttribute="leading" secondItem="0Nz-1K-6Qr" secondAttribute="trailing" constant="22" id="KWp-m6-qKV"/>
-                                    <constraint firstItem="0Nz-1K-6Qr" firstAttribute="leading" secondItem="dHK-Oq-j8F" secondAttribute="leading" constant="22" id="iL4-6i-Ug2"/>
+                                    <constraint firstItem="Xkh-wt-is7" firstAttribute="leading" secondItem="0Nz-1K-6Qr" secondAttribute="trailing" constant="17" id="KWp-m6-qKV"/>
+                                    <constraint firstAttribute="trailing" secondItem="shV-1l-LLB" secondAttribute="trailing" constant="17" id="cHG-Bj-k3D"/>
+                                    <constraint firstItem="0Nz-1K-6Qr" firstAttribute="leading" secondItem="dHK-Oq-j8F" secondAttribute="leading" constant="17" id="iL4-6i-Ug2"/>
                                     <constraint firstAttribute="width" constant="200" id="jM8-nD-7RW"/>
+                                    <constraint firstItem="shV-1l-LLB" firstAttribute="centerY" secondItem="dHK-Oq-j8F" secondAttribute="centerY" id="pda-4O-WIz"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Focus Time " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SY-NH-d05">
+                                <rect key="frame" x="92.666666666666686" y="170" width="208" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="208" id="ANp-pr-dYD"/>
+                                    <constraint firstAttribute="height" constant="46" id="kuh-Pa-JjC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dHK-Oq-j8F" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="5sH-DN-unb"/>
                             <constraint firstItem="dHK-Oq-j8F" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Lee-eE-wOK"/>
+                            <constraint firstItem="3SY-NH-d05" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="iDP-1a-9Rp"/>
+                            <constraint firstItem="3SY-NH-d05" firstAttribute="top" secondItem="dHK-Oq-j8F" secondAttribute="bottom" constant="60" id="jcC-iB-5ks"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Statut" destination="3SY-NH-d05" id="lDX-pC-DBS"/>
+                        <outlet property="prog1" destination="0Nz-1K-6Qr" id="LzB-Wl-1Mi"/>
+                        <outlet property="prog2" destination="Xkh-wt-is7" id="Sxn-Xh-Lrk"/>
+                        <outlet property="prog3" destination="TdU-SI-PMp" id="27o-Ds-q6j"/>
+                        <outlet property="prog4" destination="shV-1l-LLB" id="zVF-v1-GxB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,6 +98,9 @@
     </scenes>
     <resources>
         <image name="EllipseProg" width="29" height="29"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.66299998760223389" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

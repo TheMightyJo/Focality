@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
-
+/// Vue pour la modale des paramètres
 struct SettingModalView: View {
     
-    // État pour déterminer si la feuille est affichée
-    @ObservedObject var viewModel: TimerViewModel // Référence au ViewModel pour mettre à jour les paramètres
-    @State private var showingSheet = false // État pour stocker l'objectif sélectionné
-    @State private var selectedObjectif = "Lecture"// Objectif sélectionné
+    /// Référence au ViewModel pour mettre à jour les paramètres
+    @ObservedObject var viewModel: TimerViewModel
+    /// État pour déterminer si la feuille est affichée
+    @State private var showingSheet = false
+    /// Objectif sélectionné
+    @State private var selectedObjectif = "Lecture"
+    /// Temps de concentration en minutes
     @State private var focusTime: String = "25" // Temps de concentration en minutes
     @State private var shortBreak: String = "5" // Temps de pause courte en minutes
     @State private var longBreak: String = "15" // Temps de pause longue en minutes
@@ -87,6 +90,7 @@ struct SettingModalView: View {
             .padding()
             Spacer()
         }
+        .padding()
     }
     // Vue pour les champs de saisie de temps
     struct TimeSettingView: View {
