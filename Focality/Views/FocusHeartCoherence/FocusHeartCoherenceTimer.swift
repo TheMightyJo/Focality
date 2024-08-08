@@ -2,7 +2,6 @@ import SwiftUI
 
 struct FocusHeartCoherenceTimer: View {
     @State private var initialCountdown = 3
-    @State private var timeRemaining: Int
     @State private var navigateBreathOut = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @ObservedObject var userViewModel: UserViewModel
@@ -11,7 +10,6 @@ struct FocusHeartCoherenceTimer: View {
     
     init(duration: Int, userViewModel: UserViewModel, user: User) {
         self.duration = duration
-        _timeRemaining = State(initialValue: duration * 60)
         self.userViewModel = userViewModel
         self.user = user
     }
@@ -41,14 +39,12 @@ struct FocusHeartCoherenceTimer: View {
                     .onReceive(timer) { _ in
                         if initialCountdown > 0 {
                             initialCountdown -= 1
-                        } else if timeRemaining > 0 {
-                            timeRemaining -= 1
                         } else {
                             navigateBreathOut = true
                         }
                     }
                 
-                Text(initialCountdown > 0 ? "\(initialCountdown)" : "\(timeRemaining / 60):\(String(format: "%02d", timeRemaining % 60))")
+                Text("\(initialCountdown)")
                     .font(.system(size: 60))
                     .foregroundStyle(.black)
                 
