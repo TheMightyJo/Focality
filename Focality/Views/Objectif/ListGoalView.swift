@@ -12,21 +12,18 @@ struct ListGoalView: View {
     @State private var showAddGoal = false
     
     var body: some View {
-       
         NavigationView {
-        
             VStack {
                 HStack(spacing: 140) {
-                    Text("Objectifs").font(.largeTitle)
+                    Text("Objectifs")
+                        .fontWeight(.bold)
+                        .font(.system(size: 30))
                     Button(action: {
                         showAddGoal.toggle()
                     }) {
-                        Text("+")
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .foregroundColor(.white)
-                            .background(Color.orange)
-                            .clipShape(Circle())
+                        Image(systemName: "plus.circle.fill")
+                            .font(.system(size: 60))
+                            .foregroundColor(.accent)
                     }
                     .padding()
                     .sheet(isPresented: $showAddGoal) {
@@ -67,7 +64,6 @@ struct ListGoalView: View {
                     .frame(width: 200, height: 200)
                 Spacer()
             }
-                
             }
         }
     }

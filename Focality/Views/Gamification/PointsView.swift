@@ -1,33 +1,40 @@
 import UIKit
 
+/// PointsView est une classe UIKit personnalisée qui affiche le nombre de points.
+/// Elle contient une méthode pour mettre à jour l'affichage des points.
 class PointsView: UIView {
     private let pointsLabel: UILabel
-
+    
+    /// Initialiseur qui configure la vue avec un nombre initial de points.
+    /// - Parameter points: Le nombre initial de points à afficher.
     init(points: Int) {
-        self.pointsLabel = UILabel()
+        pointsLabel = UILabel()
         super.init(frame: .zero)
-        self.pointsLabel.text = "Points : \(points)"
-        self.pointsLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        self.pointsLabel.textColor = .white
         setupView()
+        updatePoints(points)
     }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
+    
+    /// Configuration de la vue.
     private func setupView() {
-        self.addSubview(pointsLabel)
+        pointsLabel.textAlignment = .center
+        pointsLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        pointsLabel.textColor = UIColor(named: "Primaire")
+        addSubview(pointsLabel)
         pointsLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            pointsLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            pointsLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            pointsLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            pointsLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            pointsLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            pointsLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
-
+    
+    /// Méthode pour mettre à jour l'affichage des points.
+    /// - Parameter points: Le nouveau nombre de points à afficher.
     func updatePoints(_ points: Int) {
-        self.pointsLabel.text = "Points : \(points)"
+        pointsLabel.text = "Points: \(points)"
+    }
+    
+    /// Initialiseur requis par UIKit.
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

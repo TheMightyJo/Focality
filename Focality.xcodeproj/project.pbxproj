@@ -21,11 +21,10 @@
 		703C66BA2C47FBF300B0AF52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703C66B92C47FBF300B0AF52 /* ContentView.swift */; };
 		703C66BE2C47FBF300B0AF52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703C66BD2C47FBF300B0AF52 /* Assets.xcassets */; };
 		703C66C12C47FBF300B0AF52 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703C66C02C47FBF300B0AF52 /* Preview Assets.xcassets */; };
-		70A69D492C61148A009FD298 /* GoalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D432C61148A009FD298 /* GoalRowView.swift */; };
+		707A6D752C64BFD400C1AE71 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707A6D742C64BFD400C1AE71 /* ImagePicker.swift */; };
 		70A69D4A2C61148A009FD298 /* GoalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D442C61148A009FD298 /* GoalDetailView.swift */; };
 		70A69D4B2C61148A009FD298 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D452C61148A009FD298 /* GoalViewController.swift */; };
 		70A69D4C2C61148A009FD298 /* AddGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D462C61148A009FD298 /* AddGoal.swift */; };
-		70A69D4D2C61148A009FD298 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A69D472C61148A009FD298 /* GoalView.swift */; };
 		70A69D4F2C6116B9009FD298 /* MainGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A69D4E2C6116B9009FD298 /* MainGoal.storyboard */; };
 		70DA914B2C62608900252A56 /* PointsUIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA914A2C62608900252A56 /* PointsUIViewRepresentable.swift */; };
 		70E0F9942C49181C0085BDAA /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0F9932C49181B0085BDAA /* UserViewModel.swift */; };
@@ -86,11 +85,10 @@
 		703C66B92C47FBF300B0AF52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		703C66BD2C47FBF300B0AF52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		703C66C02C47FBF300B0AF52 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		70A69D432C61148A009FD298 /* GoalRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalRowView.swift; sourceTree = "<group>"; };
+		707A6D742C64BFD400C1AE71 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		70A69D442C61148A009FD298 /* GoalDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailView.swift; sourceTree = "<group>"; };
 		70A69D452C61148A009FD298 /* GoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		70A69D462C61148A009FD298 /* AddGoal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoal.swift; sourceTree = "<group>"; };
-		70A69D472C61148A009FD298 /* GoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		70A69D4E2C6116B9009FD298 /* MainGoal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainGoal.storyboard; sourceTree = "<group>"; };
 		70DA914A2C62608900252A56 /* PointsUIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsUIViewRepresentable.swift; sourceTree = "<group>"; };
 		70E0F9932C49181B0085BDAA /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -228,8 +226,6 @@
 				7686649B2C620C48002A991F /* ListGoalView.swift */,
 				7686649D2C620E65002A991F /* ListGoal.swift */,
 				70A69D442C61148A009FD298 /* GoalDetailView.swift */,
-				70A69D432C61148A009FD298 /* GoalRowView.swift */,
-				70A69D472C61148A009FD298 /* GoalView.swift */,
 				70A69D4E2C6116B9009FD298 /* MainGoal.storyboard */,
 				70A69D452C61148A009FD298 /* GoalViewController.swift */,
 			);
@@ -280,6 +276,7 @@
 			children = (
 				A5F899B92C4C4D520052CBEB /* CustomButton.swift */,
 				A50A047A2C5BBC0D0057D436 /* TextFieldView.swift */,
+				707A6D742C64BFD400C1AE71 /* ImagePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -418,7 +415,6 @@
 				70A69D4A2C61148A009FD298 /* GoalDetailView.swift in Sources */,
 				615656D52C625F33007BE6C5 /* FocusViewController.swift in Sources */,
 				615656CB2C620CF1007BE6C5 /* ModelFocusModal.swift in Sources */,
-				70A69D4D2C61148A009FD298 /* GoalView.swift in Sources */,
 				A50A047B2C5BBC0D0057D436 /* TextFieldView.swift in Sources */,
 				7686649C2C620C48002A991F /* ListGoalView.swift in Sources */,
 				70FC1C422C60CBD900B86F38 /* TimerCardView.swift in Sources */,
@@ -454,8 +450,8 @@
 				A5F899BA2C4C4D520052CBEB /* CustomButton.swift in Sources */,
 				70E0F99E2C4918AA0085BDAA /* TimerViewModel.swift in Sources */,
 				70E0F99C2C49189C0085BDAA /* ChallengeViewModel.swift in Sources */,
+				707A6D752C64BFD400C1AE71 /* ImagePicker.swift in Sources */,
 				70F0EAAA2C4810490098A202 /* TimerPomodoro.swift in Sources */,
-				70A69D492C61148A009FD298 /* GoalRowView.swift in Sources */,
 				70A69D4C2C61148A009FD298 /* AddGoal.swift in Sources */,
 				70F0EAA22C48101A0098A202 /* Reward.swift in Sources */,
 				70229E332C5D2FDA009AF806 /* FocusHeartCoherenceTimer.swift in Sources */,

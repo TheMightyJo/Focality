@@ -15,38 +15,33 @@ struct AddGoal: View {
     @State private var dateFin = Date()
     @State private var description = ""
     @State private var completer = false
-   
-
+    
+    
     var body: some View {
-        
-        
         NavigationView {
             VStack {
-            Form {
-                Text("Quel est ton objectif ?")
-                   
-                  
-                TextField("Titre", text: $titre)
-                    .padding(.bottom)
-                    .padding(.top)
-                Text("Periode de temps :")
-                  
-                HStack {
-                    Text("Du :")
-                DatePicker("", selection: $dateDebut, displayedComponents: .date)
-                    Text("au :")
-                DatePicker("", selection: $dateFin, displayedComponents: .date)
+                Form {
+                    Text("Quel est ton objectif ?")
+                    TextField("Titre", text: $titre)
+                        .padding(.bottom)
+                        .padding(.top)
+                    Text("Periode de temps :")
+                    HStack {
+                        Text("Du :")
+                        DatePicker("", selection: $dateDebut, displayedComponents: .date)
+                        Text("au :")
+                        DatePicker("", selection: $dateFin, displayedComponents: .date)
+                    }
+                    
+                    Text("Details de ton objectif :")
+                    
+                    TextField("Description", text: $description)
+                        .padding(.bottom).padding(.bottom)
+                        .padding(.bottom)   .padding(.bottom)
+                    Toggle(isOn: $completer) {
+                        Text("Completer")
+                    }
                 }
-                
-                Text("Details de ton objectif :")
-                  
-                TextField("Description", text: $description)
-                    .padding(.bottom).padding(.bottom)
-                    .padding(.bottom)   .padding(.bottom)
-                Toggle(isOn: $completer) {
-                    Text("Completer")
-                }
-            }
                 Button(action: {
                     viewModel.addGoal(goalTitle: titre, startDate: dateDebut, endDate: dateFin, goalDescription: description, isCompleted: completer)
                     presentationMode.wrappedValue.dismiss()
@@ -54,9 +49,9 @@ struct AddGoal: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 150, height: 50)
-                    Text("Ajouter")
+                        Text("Ajouter")
                             .font(.title)
-                        .foregroundStyle(.black)
+                            .foregroundStyle(.black)
                     }
                 })
             }

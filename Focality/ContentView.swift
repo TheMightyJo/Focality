@@ -6,10 +6,9 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
+            // Profil Tab
             OnboardingView(
                 challengeViewModel: ChallengeViewModel(),
-                timerViewModel: TimerViewModel(isRunning: false, currentTime: 0),
-                authViewModel: authViewModel,
                 userViewModel: authViewModel.getUserViewModel(),
                 reminderViewModel: ReminderViewModel(),
                 rewardViewModel: RewardViewModel(userViewModel: authViewModel.getUserViewModel()),
@@ -19,26 +18,36 @@ struct ContentView: View {
                 Image(systemName: "house.fill")
                 Text("Profil")
             }
-
+            .tag(0)
+            
+            // Timer Tab
             TimerView()
                 .tabItem {
                     Image(systemName: "fitness.timer.fill")
                     Text("Timer")
                 }
-
+                .tag(1)
+            
+            // Focus Tab
             if let currentUser = authViewModel.getCurrentUser() {
-                FocusHeartCoherence(userViewModel: authViewModel.getUserViewModel(), user: currentUser)
-                    .tabItem {
-                        Image(systemName: "heart.fill")
-                        Text("Focus")
-                    }
+                FocusHeartCoherence(
+                    userViewModel: authViewModel.getUserViewModel(),
+                    user: currentUser
+                )
+                .tabItem {
+                    Image(systemName: "heart.fill")
+                    Text("Focus")
+                }
+                .tag(2)
             }
-
+            
+            // Reminder Tab
             ReminderView()
                 .tabItem {
                     Image(systemName: "checklist")
                     Text("Rappels")
                 }
+                .tag(3)
         }
     }
 }
