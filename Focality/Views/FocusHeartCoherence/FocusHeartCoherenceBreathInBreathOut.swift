@@ -6,19 +6,22 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
     @State private var elapsedTime: Double = 0
     @State private var isTimerRunning = false
     @State private var showModal = false
+    @State private var showAlert = false
+    @State private var isPaused = false
     let totalTime: Double
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModelsFocus: ViewModelsFocus
     @ObservedObject var userViewModel: UserViewModel
     var user: User
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 Button(action: {
-                    presentationMode.wrappedValue.dismiss()
+                    isTimerRunning = false // Pause the timer
+                    showAlert = true
                 }) {
                     Image(systemName: "xmark.circle.fill")
                         .resizable()
@@ -26,6 +29,18 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
                         .foregroundColor(.red)
                 }
                 .padding(.trailing, 20)
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Quitter le Focus"),
+                        message: Text("Voulez-vous vraiment arrêter le focus ?"),
+                        primaryButton: .destructive(Text("Oui")) {
+                            presentationMode.wrappedValue.dismiss()
+                        },
+                        secondaryButton: .cancel(Text("Non")) {
+                            isTimerRunning = !isPaused
+                        }
+                    )
+                }
             }
 
             HStack {
@@ -63,11 +78,8 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
                 .padding(.bottom, 90)
             
             Button {
-                if isTimerRunning {
-                    isTimerRunning = false
-                } else {
-                    startTimer()
-                }
+                isTimerRunning.toggle()
+                isPaused = !isTimerRunning
             } label: {
                 Image(systemName: isTimerRunning ? "stop.fill" : "play.fill")
                     .resizable()
@@ -104,8 +116,9 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
             }
         }
         .sheet(isPresented: $showModal) {
-            FocusHeartCoherenceModal(viewModelsFocus: viewModelsFocus, temps: Int(totalTime), user: user)
+            FocusHeartCoherenceModal(viewModelsFocus: viewModelsFocus, temps: Int(totalTime / 60), user: user)
         }
+        .navigationBarBackButtonHidden(true) // Hide back button
     }
     
     private func startTimer() {

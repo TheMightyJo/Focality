@@ -5,8 +5,8 @@ struct FocusHeartCoherenceModal: View {
     @State var temps: Int
     @State var objectif = 0
     @State var nombreDePoint = 0
-    @Environment(\.presentationMode) var presentationMode
     var user: User
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         ZStack {
@@ -38,7 +38,7 @@ struct FocusHeartCoherenceModal: View {
                     Spacer()
                     InfoView(title: "TEMPS", value: $temps)
                     Spacer()
-                    InfoView(title: "POINTS", value: .constant(user.point)) // Afficher les points de l'utilisateur
+                    InfoView(title: "POINTS", value: $nombreDePoint)
                     Spacer()
                     InfoView(title: "OBJECTIF", value: $objectif)
                     Spacer()
@@ -96,7 +96,7 @@ struct InfoView: View {
 }
 
 #Preview {
-    FocusHeartCoherenceModal(viewModelsFocus: ViewModelsFocus(), temps: 5, user: User(firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 10, currentLevel: 0))
+    FocusHeartCoherenceModal(viewModelsFocus: ViewModelsFocus(), temps: 5, user: User(firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 0, currentLevel: 0))
 }
 
 struct Focus: UIViewControllerRepresentable {

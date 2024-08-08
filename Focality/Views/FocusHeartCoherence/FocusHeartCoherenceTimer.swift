@@ -48,9 +48,10 @@ struct FocusHeartCoherenceTimer: View {
                     .font(.system(size: 60))
                     .foregroundStyle(.black)
                 
-                NavigationLink(destination: FocusHeartCoherenceBreathInBreathOut(totalTime: Double(duration * 60), viewModelsFocus: ViewModelsFocus(), userViewModel: userViewModel, user: user), isActive: $navigateBreathOut) {
-                    EmptyView()
-                }
+                NavigationLink(destination: FocusHeartCoherenceBreathInBreathOut(totalTime: Double(duration * 60), viewModelsFocus: ViewModelsFocus(), userViewModel: userViewModel, user: user)
+                    .navigationBarBackButtonHidden(true),isActive: $navigateBreathOut) {
+                        EmptyView()
+                    }
             }
         }
     }
