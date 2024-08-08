@@ -18,8 +18,9 @@ struct TimerView: View {
         VStack {
             ZStack {
                 Ellipse()
-                    .stroke(Color.primaire, lineWidth: 4) // Bordure de l'ellipse
+                    .stroke(Color.primaire, lineWidth:4) // Bordure de l'ellipse
                     .fill(.white)
+                    .shadow(color: Color.secondaire.opacity(0.8), radius: 20, x: 0, y: 10)
                     .frame(width: 227, height: 227)
                 VStack {
                     Text(formatTime(viewModel.currentTime)) // Affichage du temps formaté
@@ -30,7 +31,7 @@ struct TimerView: View {
                         .foregroundColor(Color.black)
                         .font(.title)
                 }
-            }
+            }.padding(.top,20)
             // Barre de contrôles (Play/Pause et Skip Forward)
             HStack {
                 // Bouton Play/Pause
@@ -83,7 +84,7 @@ struct TimerView: View {
             .sheet(isPresented: $showingSheet) {
                 SettingModalView(viewModel: viewModel)
             }
-            .padding(.bottom, 50)
+            .padding(.bottom, 70)
         }
     }
     

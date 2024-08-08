@@ -16,12 +16,16 @@ struct SettingModalView: View {
     /// Objectif sélectionné
     @State private var selectedObjectif = "Lecture"
     /// Temps de concentration en minutes
-    @State private var focusTime: String = "25" // Temps de concentration en minutes
-    @State private var shortBreak: String = "5" // Temps de pause courte en minutes
+    @State private var focusTime: String = "25"
+    /// Temps de pause courte en minutes
+    @State private var shortBreak: String = "5"
+    /// Temps de pause longue en minutes
     @State private var longBreak: String = "15" // Temps de pause longue en minutes
     
+    /// Liste des objectifs disponibles en dur
     let objectif = ["Math", "Lecture", "Anglais", "Histoire"]
     
+    /// Accéder au mode de présentation depuis l'environnement
     @Environment(\.presentationMode) var presentationMode // Accéder au mode de présentation depuis l'environnement
     
     var body: some View {
@@ -102,10 +106,12 @@ struct SettingModalView: View {
         }
         .padding()
     }
-    // Vue pour les champs de saisie de temps
+    /// Vue pour les champs de saisie de temps
     struct TimeSettingView: View {
-        var label: String // Label pour le champ de saisie
-        @Binding var text: String // Liaison des données pour le champ de saisie
+        /// Label pour le champ de saisie
+        var label: String
+        /// Liaison des données pour le champ de saisie
+        @Binding var text: String
         
         var body: some View {
             VStack {
