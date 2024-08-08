@@ -3,7 +3,7 @@ import SwiftData
 
 struct ContentView: View {
     @ObservedObject var authViewModel: AuthViewModel
-    
+
     var body: some View {
         TabView {
             OnboardingView(
@@ -19,19 +19,21 @@ struct ContentView: View {
                 Image(systemName: "house.fill")
                 Text("Profil")
             }
-            
+
             TimerView()
                 .tabItem {
                     Image(systemName: "fitness.timer.fill")
                     Text("Timer")
                 }
-            
-            FocusHeartCoherence(userViewModel: authViewModel.getUserViewModel(), user: authViewModel.getUserViewModel().users.first!)
-                .tabItem {
-                    Image(systemName: "heart.fill")
-                    Text("Focus")
-                }
-            
+
+            if let currentUser = authViewModel.getCurrentUser() {
+                FocusHeartCoherence(userViewModel: authViewModel.getUserViewModel(), user: currentUser)
+                    .tabItem {
+                        Image(systemName: "heart.fill")
+                        Text("Focus")
+                    }
+            }
+
             ReminderView()
                 .tabItem {
                     Image(systemName: "checklist")

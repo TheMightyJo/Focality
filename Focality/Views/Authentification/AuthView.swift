@@ -33,21 +33,20 @@ struct AuthView: View {
                 }
                 .padding(.top, 10)
                 .navigationDestination(isPresented: $authViewModel.isSignInSuccess) {
-                    ContentView(
-                        authViewModel: AuthViewModel(userViewModel: UserViewModel()))
-                    .navigationBarBackButtonHidden(true)
+                    ContentView(authViewModel: authViewModel)
+                        .navigationBarBackButtonHidden(true)
                 }
                 
-                NavigationLink(destination: InscriptionUserView(userViewModel: authViewModel.getUserViewModel())) {
+                NavigationLink(destination: InscriptionUserView(userViewModel: authViewModel.getUserViewModel(), authViewModel: authViewModel)) {
                     Text("Pas encore inscrit ? S'inscrire")
                         .font(.footnote)
-                        .foregroundColor(.secondaire).bold()
+                        .foregroundColor(.secondary).bold()
                 }
                 
                 NavigationLink(destination: ForgotPasswordView(authViewModel: authViewModel)) {
                     Text("Mot de passe oublié ?")
                         .font(.footnote)
-                        .foregroundColor(.secondaire).bold()
+                        .foregroundColor(.secondary).bold()
                 }
                 
                 Spacer()
