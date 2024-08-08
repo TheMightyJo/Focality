@@ -99,14 +99,27 @@ struct InfoView: View {
     FocusHeartCoherenceModal(viewModelsFocus: ViewModelsFocus(), temps: 5, user: User(firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 0, currentLevel: 0))
 }
 
+/// Focus est une structure qui permet d'intégrer un contrôleur de vue UIKit (FocusViewController) dans une vue SwiftUI.
+/// Cette structure implémente le protocole UIViewControllerRepresentable pour gérer la création et la mise à jour du contrôleur de vue UIKit.
+
 struct Focus: UIViewControllerRepresentable {
+/// Méthode pour créer et initialiser le contrôleur de vue UIKit.
+
+/// Parameter context: Le contexte SwiftUI utilisé pour la création du contrôleur de vue.
+/// Returns: Une instance de FocusViewController configurée.
     func makeUIViewController(context: Context) -> some FocusViewController {
+/// Instancie le contrôleur de vue à partir du storyboard nommé "FocusMain".
         guard let focusVC = UIStoryboard(name: "FocusMain", bundle: .main).instantiateViewController(identifier: "FocusViewController") as? FocusViewController else {
+/// Si l'instanciation échoue, une erreur fatale est générée.
             fatalError("cannot instantiate FocusViewController")
         }
+/// Retourne le contrôleur de vue instancié.
         return focusVC
     }
 
+/// Méthode pour mettre à jour le contrôleur de vue UIKit.
+
+/// Cette méthode est appelée lorsque l'état de la vue change. Cependant, dans ce cas précis, aucune mise à jour n'est nécessaire.
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         // nothing to do
     }
