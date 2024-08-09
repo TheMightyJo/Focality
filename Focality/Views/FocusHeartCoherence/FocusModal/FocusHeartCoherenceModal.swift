@@ -17,21 +17,22 @@ struct FocusHeartCoherenceModal: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 20) {
+                Focus()
                 
-                Image("flamme")
-                
-                Text("Félicitations!")
-                    .fontWeight(.semibold)
-                    .font(.system(size: 24))
-                    .padding(.bottom, 10)
-                    .foregroundColor(.white)
-                
-                Text("Vous venez de terminer la séance \n Respiration Focus !")
-                    .fontWeight(.regular)
-                    .font(.system(size: 18))
-                    .padding(.bottom, 40)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
+                //                Image("flamme")
+                //
+                //                Text("Félicitations!")
+                //                    .fontWeight(.semibold)
+                //                    .font(.system(size: 24))
+                //                    .padding(.bottom, 10)
+                //                    .foregroundColor(.white)
+                //
+                //                Text("Vous venez de terminer la séance \n Respiration Focus !")
+                //                    .fontWeight(.regular)
+                //                    .font(.system(size: 18))
+                //                    .padding(.bottom, 40)
+                //                    .foregroundColor(.white)
+                //                    .multilineTextAlignment(.center)
                 
                 // Informations
                 HStack {
