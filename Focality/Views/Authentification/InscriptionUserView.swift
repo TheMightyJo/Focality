@@ -1,11 +1,11 @@
 import SwiftUI
 
-///La vue InscriptionUserView permet aux utilisateurs de s'inscrire en entrant leurs informations personnelles.
+/// La vue InscriptionUserView permet aux utilisateurs de s'inscrire en entrant leurs informations personnelles.
 /// Elle utilise le modèle de vue UserViewModel pour gérer les données utilisateur.
 struct InscriptionUserView: View {
     /// Le modèle de vue utilisé pour gérer les utilisateurs.
     @ObservedObject var userViewModel: UserViewModel
-    /// Le modèle de vue utilisé pour gérer l'authentification
+    /// Le modèle de vue utilisé pour gérer l'authentification.
     @ObservedObject var authViewModel: AuthViewModel
     /// Propriétés d'état pour stocker les entrées utilisateur.
     @State private var firstName = "Emiliano"
@@ -13,8 +13,6 @@ struct InscriptionUserView: View {
     @State private var email = "emiliano@gmail.com"
     @State private var password = "Teamcook5*"
     @State private var birthday = Date()
-    @State private var selectedImage: UIImage? = UIImage(named: "ProfilePicture") // Image par défaut d'Emiliano
-    @State private var isImagePickerPresented = false
     @State private var navigateToContentView = false
     
     var body: some View {
@@ -24,30 +22,12 @@ struct InscriptionUserView: View {
                 .fontWeight(.bold)
                 .font(.system(size: 30))
                 .padding(.trailing, 200)
+            
             /// Logo de l'application.
             Image("Logo")
                 .resizable()
                 .frame(width: 100, height: 100)
             
-            Button(action: {
-                isImagePickerPresented = true
-            }) {
-                if let image = selectedImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 150, height: 150)
-                        .clipShape(Circle())
-                } else {
-                    Image(systemName: "person.circle.fill")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
-                }
-            }
-            .sheet(isPresented: $isImagePickerPresented) {
-                ImagePicker(selectedImage: $selectedImage)
-            }
             List {
                 /// Champ de texte pour le prénom.
                 HStack {
@@ -56,6 +36,7 @@ struct InscriptionUserView: View {
                         .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
+                
                 /// Champ de texte pour le nom de famille.
                 HStack {
                     Text("LastName")
@@ -63,6 +44,7 @@ struct InscriptionUserView: View {
                         .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
+                
                 /// Champ de texte pour l'email.
                 HStack {
                     Text("Email")
@@ -70,6 +52,7 @@ struct InscriptionUserView: View {
                         .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
+                
                 /// Champ de texte pour le mot de passe.
                 HStack {
                     Text("Password")
@@ -77,25 +60,30 @@ struct InscriptionUserView: View {
                         .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
+                
                 /// Sélecteur de date pour la date de naissance.
                 HStack {
                     DatePicker("Birthday", selection: $birthday, displayedComponents: .date)
                         .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
+                
                 /// Bouton pour créer un utilisateur.
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color.primaire)
                         .frame(width: 300, height: 50)
+                    
                     Button(action: {
+                        /// Mise à jour des informations utilisateur dans le ViewModel d'authentification.
                         authViewModel.firstName = firstName
                         authViewModel.lastName = lastName
                         authViewModel.email = email
                         authViewModel.password = password
                         authViewModel.birthday = birthday
-                        authViewModel.selectedImage = selectedImage
                         authViewModel.signUp()
+                        
+                        /// Si l'inscription réussit, navigation vers la vue principale.
                         if authViewModel.isSignUpSuccess {
                             navigateToContentView = true
                         }
@@ -108,12 +96,12 @@ struct InscriptionUserView: View {
             }
             .scrollContentBackground(.hidden)
             
-            NavigationLink(destination: ContentView(authViewModel: authViewModel), isActive: $navigateToContentView) {
+            /// Navigation vers ContentView si l'inscription est réussie.
+            NavigationLink(destination: ContentView(authViewModel: authViewModel)
+                           .navigationBarBackButtonHidden(true),
+                           isActive: $navigateToContentView) {
                 EmptyView()
             }
-        }
-        .sheet(isPresented: $isImagePickerPresented) {
-            ImagePicker(selectedImage: $selectedImage)
         }
     }
 }
