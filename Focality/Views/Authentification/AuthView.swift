@@ -37,7 +37,7 @@ struct AuthView: View {
                         .navigationBarBackButtonHidden(true)
                 }
                 
-                NavigationLink(destination: InscriptionUserView(userViewModel: authViewModel.getUserViewModel(), authViewModel: authViewModel)) {
+                NavigationLink(destination: InscriptionUserView(userViewModel: UserViewModel())) {
                     Text("Pas encore inscrit ? S'inscrire")
                         .font(.footnote)
                         .foregroundColor(.secondary).bold()

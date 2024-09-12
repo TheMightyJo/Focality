@@ -13,10 +13,10 @@ struct ChallengeRowView: View {
                 .font(.headline)
             Text(challenge.description)
                 .font(.subheadline)
-            if let user = userViewModel.users.first {
-                PointsUIViewRepresentable(points: user.point)
-                    .frame(height: 20) // Adjust the frame as needed
-            }
+//            if let user = userViewModel.users.first {
+//                PointsUIViewRepresentable(points: user.point)
+//                    .frame(height: 20) // Adjust the frame as needed
+//            }
         }
         .padding()
         .foregroundStyle(.white)

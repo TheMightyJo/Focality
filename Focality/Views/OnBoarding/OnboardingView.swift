@@ -28,7 +28,7 @@ struct OnboardingView: View {
                                 .fontWeight(.semibold)
                                 .padding(.trailing, 10)
                             if let user = userViewModel.users.first {
-                                Text("Mes Points : \(user.point)")
+                                Text("Mes Points : \(user.points)")
                                     .font(.title2).bold()
                                     .foregroundStyle(.accent)
                             }

@@ -22,7 +22,7 @@ class AuthViewModel: ObservableObject {
     @Published var lastName: String = ""
     
     /// La date de naissance de l'utilisateur.
-    @Published var birthday: Date = Date()
+    @Published var birthDate: Date = Date()
     
     /// Indique si l'utilisateur est authentifié.
     @Published var isAuthenticated: Bool = false
@@ -89,17 +89,17 @@ class AuthViewModel: ObservableObject {
     ///
     /// Met à jour `isSignUpSuccess` à `true` si l'inscription est réussie,
     /// sinon met à jour `errorMessage` avec un message d'erreur.
-    func signUp() {
-        guard !email.isEmpty, !password.isEmpty, password.count >= minimumPasswordLength else {
-            errorMessage = signUpErrorMessage
-            return
-        }
-        
-        let newUser = User(id: "1", firstName: firstName, lastName: lastName, email: email, password: password, birthday: birthday, point: 0, currentLevel: 0)
-        userViewModel.users.append(newUser)
-        isSignUpSuccess = true
-        errorMessage = nil
-    }
+//    func signUp() {
+//        guard !email.isEmpty, !password.isEmpty, password.count >= minimumPasswordLength else {
+//            errorMessage = signUpErrorMessage
+//            return
+//        }
+//        
+//        let newUser = User(id: "1", firstName: firstName, lastName: lastName, email: email, password: password, birthDate: birthDate, point: 0, currentLevel: 0)
+//        userViewModel.users.append(newUser)
+//        isSignUpSuccess = true
+//        errorMessage = nil
+//    }
     
     /// Réinitialise le mot de passe de l'utilisateur avec l'email fourni.
     ///

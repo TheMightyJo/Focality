@@ -32,7 +32,7 @@ struct RewardListView: View {
                         .frame(width: 70, height: 70)
                         .clipShape(Circle())
                     VStack {
-                        Text("\(rewardViewModel.user?.point ?? 0)")
+                        Text("\(rewardViewModel.user?.points ?? 0)")
                             .foregroundStyle(.accent)
                             .font(.system(size: 50)).bold()
                         Text("Points")

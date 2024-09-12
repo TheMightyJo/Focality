@@ -145,6 +145,6 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
     }
 }
 
-#Preview {
-    FocusHeartCoherenceBreathInBreathOut(totalTime: 300, viewModelsFocus: ViewModelsFocus(), userViewModel: UserViewModel(), user: User(id: "1", firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 0, currentLevel: 0))
-}
+//#Preview {
+//    FocusHeartCoherenceBreathInBreathOut(totalTime: 300, viewModelsFocus: ViewModelsFocus(), userViewModel: UserViewModel(), user: User(id: "1", firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthDate: "11/01/1999", points: "0", currentLevel: "0"))
+//}

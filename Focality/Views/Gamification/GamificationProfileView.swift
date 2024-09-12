@@ -31,7 +31,7 @@ struct GamificationProfileView: View {
                         .resizable()
                         .frame(width: 70, height: 70)
                     VStack {
-                        Text("\(rewardViewModel.user?.point ?? 0)")
+                        Text("\(rewardViewModel.user?.points ?? 0)")
                             .foregroundStyle(.accent)
                             .font(.system(size: 50)).bold()
                         Text("Points")
