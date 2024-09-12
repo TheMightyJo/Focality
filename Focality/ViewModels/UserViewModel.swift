@@ -13,7 +13,7 @@ class UserViewModel: ObservableObject{
 /// users est un objets User. Cette propriété est observable et toute modification entraînera une mise à jour de l'interface utilisateur.
     @Published var users: [User] = []
 
-   private let baseURL = "http://localhost:3000/User"
+   private let baseURL = "http://10.80.55.104:3000/User"
     
     func fetchUser() {
         guard let url = URL(string: baseURL) else {

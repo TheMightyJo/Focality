@@ -201,7 +201,7 @@ struct OnboardingView_Previews: PreviewProvider {
         return OnboardingView(
             challengeViewModel: ChallengeViewModel(),
             userViewModel: UserViewModel(),
-            reminderViewModel: ReminderViewModel(rappels: [Reminder(titre: "Math à 14h", description: "Je dois travailler le théoreme de pythagore", date: Date())]),
+            reminderViewModel: ReminderViewModel(rappels: [Reminder(titre: "Math à 14h", description: "Je dois travailler le théoreme de pythagore", date: "19/10/2024")]),
             rewardViewModel: RewardViewModel(userViewModel: UserViewModel()),
             goalViewModel: GoalViewModel(goals: [Goal(goalTitle: "Apprendre SwiftUI", startDate: startDate, endDate: endDate, goalDescription: "Suivre un cours en ligne pour maîtriser SwiftUI", isCompleted: false)])
         )

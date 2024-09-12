@@ -14,7 +14,7 @@ class ReminderViewModel: ObservableObject {
         self.rappels = rappels
     }
 
-    func addRappel(titre: String, description: String, date: Date) {
+    func addRappel(titre: String, description: String, date: String) {
         let newRappel = Reminder(titre: titre, description: description, date: date)
         rappels.append(newRappel)
     }
@@ -29,15 +29,37 @@ class ReminderViewModel: ObservableObject {
         rappels.remove(atOffsets: offsets)
     }
 
-    var todayRappels: [Reminder] {
-        let today = Calendar.current.startOfDay(for: Date())
-        return rappels.filter { Calendar.current.isDate($0.date, inSameDayAs: today) }
-    }
+
 
     var completedRappels: [Reminder] {
         rappels.filter { $0.isCompleted }
     }
+    func fetchReminder() {
+        guard let url = URL(string: "http://localhost:3000/Reminder") else {
+            print("Invalid URL")
+            return
+        }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                do {
+                    let decodedData = try JSONDecoder().decode([Reminder].self, from: data)
+                    DispatchQueue.main.async{
+                        self.rappels = decodedData
+                    }
+                    
+                } catch {
+                    print("Error decoding data: \(error)")
+                }
+            } else if let error = error {
+                print("Error fetching data: \(error)")
+            }
+        }.resume()
+    }
+    
+    
+    
 }
+
 
 
 

@@ -8,7 +8,6 @@ struct ReminderCardView: View {
             Text(reminder.titre)
                 .font(.headline)
                 .foregroundStyle(.accent)
-            Text("Date: \(reminder.date, formatter: dateFormatter)")
                 .font(.subheadline)
                 .foregroundColor(.white)
             Text(reminder.description)
@@ -31,7 +30,7 @@ private let dateFormatter: DateFormatter = {
 
 struct ReminderCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ReminderCardView(reminder: Reminder(titre: "Math à 14h", description: "Je dois travailler le théoreme de pythagore", date: Date()))
+        ReminderCardView(reminder: Reminder(titre: "Math à 14h", description: "Je dois travailler le théoreme de pythagore", date: "19/01/2024"))
             .previewLayout(.sizeThatFits)
             .padding()
     }

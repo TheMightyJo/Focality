@@ -14,9 +14,11 @@ struct ReminderView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
                 Reminderrr()
+                
                 VStack {
-                    NavigationLink(destination: ReminderListView(viewModel: viewModel, filter: .today)) {
+                    NavigationLink(destination: ReminderListView(viewModel: viewModel, filter: .all)) {
                         Rectangle()
                             .fill(Color.blue)
                             .frame(height: 100)
@@ -59,7 +61,9 @@ struct ReminderView: View {
                 }
                 Spacer()
             }
-            
+            .onAppear{
+                viewModel.fetchReminder()
+            }
         }
     }
 }

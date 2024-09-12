@@ -12,7 +12,7 @@ struct AddReminderView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var titre = ""
     @State private var description = ""
-    @State private var date = Date()
+    @State private var date = ""
     
     var onSave: (() -> Void)?
 
@@ -22,7 +22,7 @@ struct AddReminderView: View {
             Form {
                 TextField("Titre", text: $titre)
                 TextField("Description", text: $description)
-                DatePicker("Date", selection: $date, displayedComponents: .date)
+                TextField("Date", text: $date)
             }
             
             .navigationTitle("Ajouter un Rappel")
