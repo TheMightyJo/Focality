@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SplashView: View {
     @State private var isActive: Bool = false // État pour gérer la navigation vers la vue d'authentification
-    
+
     var body: some View {
         VStack {
             if isActive {
@@ -17,8 +17,8 @@ struct SplashView: View {
                         .frame(width: 200, height: 200)
                 }
                 .onAppear {
-                    // Déclencher la navigation après 10 secondes
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    // Déclenchement de l'animation lors de l'apparition de la vue
+                    withAnimation(.easeIn(duration: 2.0)) {
                         self.isActive = true
                     }
                 }
