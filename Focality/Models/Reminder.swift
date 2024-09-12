@@ -13,4 +13,6 @@ struct Reminder: Identifiable, Codable {
     var description: String
     var date: String
     var isCompleted: Bool = false
+    
+    
 }

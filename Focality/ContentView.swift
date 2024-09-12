@@ -48,7 +48,7 @@ struct ContentView: View {
                     Text("Rappels")
                 }
                 .tag(3)
-        }
+        } .navigationBarBackButtonHidden(true)
     }
 }
 

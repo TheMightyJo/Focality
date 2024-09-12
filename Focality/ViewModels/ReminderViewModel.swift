@@ -34,8 +34,12 @@ class ReminderViewModel: ObservableObject {
     var completedRappels: [Reminder] {
         rappels.filter { $0.isCompleted }
     }
+    
+    private let baseURL = "http://localhost:3000/Reminder"
+    
+    
     func fetchReminder() {
-        guard let url = URL(string: "http://localhost:3000/Reminder") else {
+        guard let url = URL(string: baseURL) else {
             print("Invalid URL")
             return
         }
@@ -56,7 +60,30 @@ class ReminderViewModel: ObservableObject {
         }.resume()
     }
     
-    
+    func addReminder(_ rappel: Reminder) {
+            guard let url = URL(string: baseURL) else {
+                print("Invalid URL")
+                return
+            }
+
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            do {
+                let data = try JSONEncoder().encode(rappel)
+                request.httpBody = data
+            } catch {
+                print("Error encoding contact: \(error)")
+                return
+            }
+
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("Error updating contact: \(error)")
+                    return
+                }
+                self.fetchReminder()
+            }.resume()
+        }
     
 }
 

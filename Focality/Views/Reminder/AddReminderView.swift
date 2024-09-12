@@ -13,6 +13,7 @@ struct AddReminderView: View {
     @State private var titre = ""
     @State private var description = ""
     @State private var date = ""
+    @State private var isCompleted = Bool()
     
     var onSave: (() -> Void)?
 
@@ -27,12 +28,14 @@ struct AddReminderView: View {
             
             .navigationTitle("Ajouter un Rappel")
             .navigationBarItems(trailing: Button("Enregistrer") {
-                viewModel.addRappel(titre: titre, description: description, date: date)
+                let newReminder = Reminder(id: UUID(), titre: titre, description: description, date: date, isCompleted: isCompleted )
+                viewModel.addReminder(newReminder)
                 presentationMode.wrappedValue.dismiss()
             })
             
         }
     }
+        
 }
 
 struct AddRappelView_Previews: PreviewProvider {
