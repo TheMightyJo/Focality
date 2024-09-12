@@ -54,19 +54,21 @@ struct InscriptionUserView: View {
             .scrollContentBackground(.hidden)
             
             
-            
+            Button(action: {
+                let newUser = User(id: UUID().uuidString, firstName: firstName, lastName: lastName, email: email, password: password, birthDate: Date(), points: 0, currentLevel: 0)
+                userViewModel.addUser(newUser)
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                NavigationLink(destination: ContentView(authViewModel: AuthViewModel(userViewModel: UserViewModel()))){
+                    Text("Continuer")
+                }
+                
+            }
+            .foregroundColor(.white).bold()
+            .padding()
+            .background(.secondaire)
+            .cornerRadius(10)
         }
-        Button(action: {
-            let newUser = User(id: UUID().uuidString, firstName: firstName, lastName: lastName, email: email, password: password, birthDate: Date(), points: 0, currentLevel: 0)
-            userViewModel.addUser(newUser)
-            presentationMode.wrappedValue.dismiss()
-        }) {
-            Text("Continuer")
-        }
-        .foregroundColor(.white).bold()
-        .padding()
-        .background(.secondaire)
-        .cornerRadius(10)
     }
 }
 
