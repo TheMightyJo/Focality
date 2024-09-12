@@ -34,19 +34,7 @@ struct OnboardingView: View {
                             }
                         }
                     }
-                    if let user = userViewModel.users.last, let image = user.image {
-                        Image(uiImage: image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 90, height: 90)
-                            .clipShape(Circle())
-                    } else {
-                        Image("ProfilePicture") // Image par défaut pour Emiliano
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 90, height: 90)
-                            .clipShape(Circle())
-                    }
+                    
                 }
             }
             HStack {

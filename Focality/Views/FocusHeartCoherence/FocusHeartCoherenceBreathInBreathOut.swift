@@ -107,7 +107,7 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
             } else {
                 isTimerRunning = false
                 showModal = true
-                userViewModel.addPoints(to: user, points: 10)
+               
             }
         }
         .onReceive(breathingTimer) { _ in
@@ -146,5 +146,5 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
 }
 
 #Preview {
-    FocusHeartCoherenceBreathInBreathOut(totalTime: 300, viewModelsFocus: ViewModelsFocus(), userViewModel: UserViewModel(), user: User(firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 0, currentLevel: 0))
+    FocusHeartCoherenceBreathInBreathOut(totalTime: 300, viewModelsFocus: ViewModelsFocus(), userViewModel: UserViewModel(), user: User(id: "1", firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 0, currentLevel: 0))
 }

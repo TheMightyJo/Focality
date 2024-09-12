@@ -72,5 +72,5 @@ struct FocusHeartCoherence: View {
 
 // Prévisualisation de la vue avec un utilisateur fictif
 #Preview {
-    FocusHeartCoherence(userViewModel: UserViewModel(), user: User(firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 0, currentLevel: 0))
+    FocusHeartCoherence(userViewModel: UserViewModel(), user: User(id: "1", firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 0, currentLevel: 0))
 }

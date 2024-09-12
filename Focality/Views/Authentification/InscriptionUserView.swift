@@ -8,10 +8,10 @@ struct InscriptionUserView: View {
     /// Le modèle de vue utilisé pour gérer l'authentification.
     @ObservedObject var authViewModel: AuthViewModel
     /// Propriétés d'état pour stocker les entrées utilisateur.
-    @State private var firstName = "Emiliano"
-    @State private var lastName = "Babar"
-    @State private var email = "emiliano@gmail.com"
-    @State private var password = "Teamcook5*"
+    @State private var firstName = ""
+    @State private var lastName = ""
+    @State private var email = ""
+    @State private var password = ""
     @State private var birthday = Date()
   
     

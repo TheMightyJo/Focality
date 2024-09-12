@@ -96,7 +96,7 @@ struct InfoView: View {
 }
 
 #Preview {
-    FocusHeartCoherenceModal(viewModelsFocus: ViewModelsFocus(), temps: 5, user: User(firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 0, currentLevel: 0))
+    FocusHeartCoherenceModal(viewModelsFocus: ViewModelsFocus(), temps: 5, user: User(id: "1", firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 0, currentLevel: 0))
 }
 
 /// Focus est une structure qui permet d'intégrer un contrôleur de vue UIKit (FocusViewController) dans une vue SwiftUI.

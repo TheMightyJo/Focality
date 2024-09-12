@@ -95,7 +95,7 @@ class AuthViewModel: ObservableObject {
             return
         }
         
-        let newUser = User(firstName: firstName, lastName: lastName, email: email, password: password, birthday: birthday, point: 0, currentLevel: 0, image: selectedImage)
+        let newUser = User(id: "1", firstName: firstName, lastName: lastName, email: email, password: password, birthday: birthday, point: 0, currentLevel: 0)
         userViewModel.users.append(newUser)
         isSignUpSuccess = true
         errorMessage = nil

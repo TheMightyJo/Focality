@@ -12,38 +12,58 @@ import SwiftUI
 class UserViewModel: ObservableObject{
 /// users est un objets User. Cette propriété est observable et toute modification entraînera une mise à jour de l'interface utilisateur.
     @Published var users: [User] = []
-/// Initialisation de la classe UserViewModel.
-/// Création et ajoute d'une liste initiale d'utilisateurs à la propriété users.
-        
-    init() {
-        self.users = [
-            User( firstName: "Dembo", lastName: "Babar", email: "dembo@gmail.com", password: "Teamcook5*", birthday: Date(), point: 55, currentLevel: 150),
-            User( firstName: "Patrice", lastName: "Babar", email: "paterice@gmail.com", password: "Teamcook5*", birthday: Date(), point: 55, currentLevel: 150),
-            User( firstName: "Sofian", lastName: "Babar", email: "sofian@gmail.com", password: "Teamcook5*", birthday: Date(), point: 55, currentLevel: 150),
-            User( firstName: "Johan", lastName: "Babar", email: "johan@gmail.com", password: "Teamcook5*", birthday: Date(), point: 55, currentLevel: 150),
-            User( firstName: "Emiliano", lastName: "Babar", email: "emiliano@gmail.com", password: "Teamcook5*", birthday: Date(), point: 55, currentLevel: 150)
-        ]
-    }
 
+   private let baseURL = "http://localhost:3000/User"
+    
+    func fetchUser() {
+        guard let url = URL(string: baseURL) else {
+            print("Invalid URL")
+            return
+        }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                do {
+                    let decodedUsers = try JSONDecoder().decode([User].self,from: data)
+                    DispatchQueue.main.async {
+                        self.users = decodedUsers
+                    }
+                } catch {
+                    print("Error decoding data: \(error)")
+                }
+                
+            } else if let error = error {
+                print("error fetching data: \(error)")
+            }
+            
+        }.resume()
+    }
+    
+    func addUser(_ user: User) {
+            guard let url = URL(string: baseURL) else {
+                print("Invalid URL")
+                return
+            }
 
-/// Ajoute un nouvel utilisateur à la liste users.
-///
-    func addPoints(to user: User, points: Int) {
-        if let index = users.firstIndex(where: { $0.id == user.id }) {
-            users[index].point += points
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            do {
+                let data = try JSONEncoder().encode(user)
+                request.httpBody = data
+            } catch {
+                print("Error encoding contact: \(error)")
+                return
+            }
+
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("Error adding contact: \(error)")
+                    return
+                }
+                self.fetchUser()
+            }.resume()
         }
-    }
-    func addUser(firstName: String, lastName: String,email: String, password: String, birthday: Date){
-/// On vérifie que l'email contient un "@" et un ".", et que le mot de passe a au moins 8 caractères avant d'ajouter l'utilisateur.
-        if email.contains("@") && email.contains(".") && password.count >= 8 {
-            let newUser = User(firstName: firstName, lastName: lastName, email: email, password: password, birthday: birthday, point: 0, currentLevel: 0)
-            users.append(newUser)
-        }else{
-            print("le mot de passe et l'email ne correspondent pas aux éléments requis")
-        }
-        
-        
-    }
+    
+   
     
     
     
