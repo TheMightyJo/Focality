@@ -7,81 +7,66 @@ struct InscriptionUserView: View {
     /// Le modèle de vue utilisé pour gérer les utilisateurs.
     @ObservedObject var userViewModel: UserViewModel
     /// Le modèle de vue utilisé pour gérer l'authentification.
-//    @ObservedObject var authViewModel: AuthViewModel
+    //    @ObservedObject var authViewModel: AuthViewModel
     /// Propriétés d'état pour stocker les entrées utilisateur.
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var email = ""
     @State private var password = ""
-    @State private var birthDate = ""
-//  @State private var currentLevel = ""
-//    @State private var points = ""
-   
+    @State private var passwordConfirmation = ""
+    @State private var birthDate = Date()
+    
     var body: some View {
-        NavigationView {
-            
-            VStack {
-               
-                
-                /// Logo de l'application.
-                Image("Logo")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                
-                Form {
-                    /// Champ de texte pour le prénom.
-                    HStack {
-                        Text("Prenom")
-                        TextField("FirstName", text: $firstName)
-                            
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                    }
-                    
-                    /// Champ de texte pour le nom de famille.
-                    HStack {
-                        Text("Nom")
-                        TextField("LastName", text: $lastName)
-                          
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                    }
-                    
-                    /// Champ de texte pour l'email.
-                    HStack {
-                        Text("Email")
-                        TextField("Email", text: $email)
-                           
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                    }
-                    
-                    /// Champ de texte pour le mot de passe.
-                    HStack {
-                        Text("Mot de passe")
-                        SecureField("Password", text: $password)
-                           
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                    }
-                    
-                    /// Sélecteur de date pour la date de naissance.
-                    HStack {
-                       Text("Date de naissance")
-                        TextField("Date de naissance", text: $birthDate)
-                          
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                    }
-                }.listRowSpacing(30.0)
-                .navigationTitle("Inscription")
-                .scrollContentBackground(.hidden)
-                .navigationBarItems(trailing: Button(action: {
-                    let newUser = User(id: UUID().uuidString, firstName: firstName, lastName: lastName, email: email, password: password, birthDate: birthDate, points: 0, currentLevel: 0)
-                    userViewModel.addUser(newUser)
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Save")
-                })
-              
+        NavigationStack {
+            Image("Logo")
+                .resizable()
+                .frame(width: 100, height: 100)
+            Form {
+                Section(header: Text("Prénom")) {
+                    TextField("", text: $firstName)
+                }
+                Section(header: Text("Nom")) {
+                    TextField("", text: $lastName)
+                }
+                Section(header: Text("Email")) {
+                    TextField("", text: $email)
+                        .textInputAutocapitalization(.never)
+                }
+                Section(header: Text("Mot de passe")) {
+                    SecureField("", text: $password)
+                        .textInputAutocapitalization(.never)
+                }
+                Section(header: Text("Confirmer votre Mot de passe")) {
+                    SecureField("", text: $passwordConfirmation)
+                        .textInputAutocapitalization(.never)
+                }
+                Section(header: Text("Date de naisssance")) {
+                    DatePicker("Choisir une date", selection: $birthDate,displayedComponents: .date)
+                }
                 
             }
+            .font(.system(size: 15))
+            .foregroundColor(.secondaire)
+            .tint(.primaire).bold()
+            .textFieldStyle(.roundedBorder)
+            .disableAutocorrection(true)
+            .navigationTitle("Inscription")
+            .scrollContentBackground(.hidden)
+            
+            
+            
         }
+        Button(action: {
+            let newUser = User(id: UUID().uuidString, firstName: firstName, lastName: lastName, email: email, password: password, birthDate: Date(), points: 0, currentLevel: 0)
+            userViewModel.addUser(newUser)
+            presentationMode.wrappedValue.dismiss()
+        }) {
+            Text("Continuer")
+        }
+        .foregroundColor(.white).bold()
+        .padding()
+        .background(.secondaire)
+        .cornerRadius(10)
     }
 }
 

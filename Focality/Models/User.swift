@@ -7,7 +7,7 @@ struct User: Identifiable, Codable {
      var lastName: String
      var email: String
      var password: String
-     var birthDate: String
+     var birthDate: Date
      var points: Int
      var currentLevel: Int
 }
