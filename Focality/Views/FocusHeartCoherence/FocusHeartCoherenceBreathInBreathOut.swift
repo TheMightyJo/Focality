@@ -55,8 +55,8 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
                 .onAppear {
                     startTimer()
                 }
-                .onChange(of: isTimerRunning) { running in
-                    if running {
+                .onChange(of: isTimerRunning) {
+                    if isTimerRunning {
                         withAnimation(Animation.easeInOut(duration: 4.0).repeatForever(autoreverses: true)) {
                             self.scale = 1.5
                         }

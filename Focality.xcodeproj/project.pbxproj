@@ -189,8 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				703C66B72C47FBF300B0AF52 /* FocalityApp.swift */,
-				703C66B92C47FBF300B0AF52 /* ContentView.swift */,
-				A50A04772C5B70C60057D436 /* SplashView.swift */,
 				E92E8F0D2C493CE6004B0403 /* Views */,
 				70F0EA9C2C480F3A0098A202 /* Models */,
 				70F0EA9D2C480F410098A202 /* ViewModels */,
@@ -311,6 +309,8 @@
 		E92E8F0D2C493CE6004B0403 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				703C66B92C47FBF300B0AF52 /* ContentView.swift */,
+				A50A04772C5B70C60057D436 /* SplashView.swift */,
 				70FC1C402C60CB4300B86F38 /* OnBoarding */,
 				70229E302C5D2FDA009AF806 /* FocusHeartCoherence */,
 				A59A41972C58E5A900029633 /* Authentification */,

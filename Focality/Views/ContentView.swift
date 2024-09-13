@@ -3,10 +3,9 @@ import SwiftData
 
 struct ContentView: View {
     @ObservedObject var authViewModel: AuthViewModel
-    @State private var selectedTab = 0
     
     var body: some View {
-        TabView(selection: $selectedTab) {
+        TabView {
             OnboardingView(
                 challengeViewModel: ChallengeViewModel(),
                 userViewModel: authViewModel.getUserViewModel(),
@@ -15,7 +14,7 @@ struct ContentView: View {
                 goalViewModel: GoalViewModel()
             )
             .tabItem {
-                Image(systemName: "house.fill")
+                Image(systemName: "person.fill")
                 Text("Profil")
             }
             .tag(0)
@@ -37,7 +36,8 @@ struct ContentView: View {
                     Text("Rappels")
                 }
                 .tag(3)
-        } .navigationBarBackButtonHidden(true)
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
