@@ -14,7 +14,7 @@ enum RappelFilter {
 struct ReminderListView: View {
     @ObservedObject var viewModel: ReminderViewModel
     var filter: RappelFilter
-
+    
     var filteredRappels: [Reminder] {
         switch filter {
         case .all:
@@ -23,7 +23,7 @@ struct ReminderListView: View {
             return viewModel.completedRappels
         }
     }
-
+    
     var body: some View {
         List {
             ForEach(filteredRappels) { rappel in
@@ -34,13 +34,13 @@ struct ReminderListView: View {
                 }
             }
             .onDelete(perform: viewModel.removeRappel)
+            
         }
         .navigationTitle(title)
     }
-
+    
     var title: String {
         switch filter {
-
         case .all:
             return "Tous les rappels"
         case .completed:

@@ -11,7 +11,6 @@ class ReminderViewModel: ObservableObject {
     @Published var rappels: [Reminder]
     @Published var dateFormat: DateFormatterToFR?
     @Published var errorDate: String? = nil
-    private let erreurDate = "Format de date incorrecte"
     
     init(rappels: [Reminder] = [], dateFormat: DateFormatterToFR) {
         self.rappels = rappels
@@ -19,12 +18,8 @@ class ReminderViewModel: ObservableObject {
     }
     
     func addRappel(titre: String, description: String, date: String) {
-        if dateFormat == nil {
-            errorDate = erreurDate
-        } else {
-            let newRappel = Reminder(titre: titre, description: description, date: date)
-            rappels.append(newRappel)
-        }
+        let newRappel = Reminder(titre: titre, description: description, date: date)
+        rappels.append(newRappel)
     }
     
     func markAsCompleted(rappel: Reminder) {
@@ -32,19 +27,15 @@ class ReminderViewModel: ObservableObject {
             rappels[index].isCompleted = true
         }
     }
-    
     func removeRappel(at offsets: IndexSet) {
         rappels.remove(atOffsets: offsets)
     }
-    
-    
     
     var completedRappels: [Reminder] {
         rappels.filter { $0.isCompleted }
     }
     
     private let baseURL = "http://localhost:3000/Reminder"
-    
     
     func fetchReminder() {
         guard let url = URL(string: baseURL) else {
@@ -93,11 +84,24 @@ class ReminderViewModel: ObservableObject {
         }.resume()
     }
     
-    
-    
-    
-    
-    
+    func deleteReminder(_ rappel: Reminder) {
+        guard let url = URL(string: "\(baseURL)/\(rappel.id)") else {
+            print("Invalid URL")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error deleting reminder: \(error)")
+                return
+            }
+            
+            self.fetchReminder()
+        }.resume()
+    }
 }
 
 

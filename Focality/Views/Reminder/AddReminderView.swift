@@ -17,30 +17,25 @@ struct AddReminderView: View {
     @State private var isCompleted = Bool()
     
     var onSave: (() -> Void)?
-
+    
     var body: some View {
         NavigationView {
-            
             Form {
                 TextField("Titre", text: $titre)
                 TextField("Description", text: $description)
                 TextField("Date", text: $date)
-                
-              
             }
-            
             .navigationTitle("Ajouter un Rappel")
             .navigationBarItems(trailing: Button("Enregistrer") {
                 let newReminder = Reminder(id: UUID(), titre: titre, description: description, date: dateForm.dateFormatter(from: date) ?? "Format de date incorrecte", isCompleted: isCompleted )
                 viewModel.addReminder(newReminder)
-               
                 presentationMode.wrappedValue.dismiss()
                 viewModel.addRappel(titre: titre, description: description, date: dateForm.dateFormatter(from: date) ?? "nil")
             })
             
         }
     }
-        
+    
 }
 
 struct AddRappelView_Previews: PreviewProvider {
