@@ -3,7 +3,7 @@ import SwiftData
 
 struct ContentView: View {
     @ObservedObject var authViewModel: AuthViewModel
-
+    
     var body: some View {
         TabView {
             // Profil Tab
@@ -29,17 +29,12 @@ struct ContentView: View {
                 .tag(1)
             
             // Focus Tab
-            if let currentUser = authViewModel.getCurrentUser() {
-                FocusHeartCoherence(
-                    userViewModel: authViewModel.getUserViewModel(),
-                    user: currentUser
-                )
+            FocusHeartCoherence()
                 .tabItem {
                     Image(systemName: "heart.fill")
                     Text("Focus")
                 }
                 .tag(2)
-            }
             
             // Reminder Tab
             ReminderView()

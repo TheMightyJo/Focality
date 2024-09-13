@@ -5,7 +5,6 @@ struct FocusHeartCoherenceModal: View {
     @State var temps: Int
     @State var objectif = 0
     @State var nombreDePoint = 0
-    var user: User
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {

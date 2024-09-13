@@ -5,12 +5,6 @@ struct FocusHeartCoherence: View {
     // Variable d'état pour suivre la durée sélectionnée
     @State private var selectedDuration: Int = 5
     
-    // ObservedObject pour observer les changements dans les données utilisateur
-    @ObservedObject var userViewModel: UserViewModel
-    
-    // Modèle de données utilisateur
-    var user: User
-
     var body: some View {
         // NavigationStack permet la navigation entre les vues
         NavigationStack {
@@ -52,7 +46,7 @@ struct FocusHeartCoherence: View {
                 .padding(.bottom, 30)
                 
                 // Lien de navigation vers le minuteur de cohérence cardiaque
-                NavigationLink(destination: FocusHeartCoherenceTimer(duration: selectedDuration, userViewModel: userViewModel, user: user)) {
+                NavigationLink(destination: FocusHeartCoherenceTimer(duration: selectedDuration)) {
                     ZStack {
                         // Rectangle arrondi pour le bouton "Commencer"
                         RoundedRectangle(cornerRadius: 10)

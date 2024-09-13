@@ -122,11 +122,4 @@ class AuthViewModel: ObservableObject {
     func getUserViewModel() -> UserViewModel {
         return userViewModel
     }
-    
-    /// Renvoie l'utilisateur actuellement connecté.
-    ///
-    /// - Returns: L'utilisateur actuellement connecté, ou `nil` si aucun utilisateur n'est connecté.
-    func getCurrentUser() -> User? {
-        return userViewModel.users.first(where: { $0.email == email && $0.password == password })
-    }
 }

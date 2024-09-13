@@ -15,8 +15,6 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
     let breathingTimer = Timer.publish(every: 4, on: .main, in: .common).autoconnect()
     
     @ObservedObject var viewModelsFocus: ViewModelsFocus
-    @ObservedObject var userViewModel: UserViewModel
-    var user: User
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -107,7 +105,7 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
             } else {
                 isTimerRunning = false
                 showModal = true
-               
+                
             }
         }
         .onReceive(breathingTimer) { _ in
@@ -117,7 +115,7 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
             isInhaling.toggle()
         }
         .sheet(isPresented: $showModal) {
-            FocusHeartCoherenceModal(viewModelsFocus: viewModelsFocus, temps: 1, user: user)
+            FocusHeartCoherenceModal(viewModelsFocus: viewModelsFocus, temps: 1)
         }
         .alert(isPresented: $showAlert) {
             Alert(
