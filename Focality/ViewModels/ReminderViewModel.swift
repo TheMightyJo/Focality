@@ -28,7 +28,11 @@ class ReminderViewModel: ObservableObject {
         }
     }
     func removeRappel(at offsets: IndexSet) {
-        rappels.remove(atOffsets: offsets)
+        for index in offsets {
+            let rappel = rappels[index]
+            deleteReminder(rappel) // Supprimer de l'API
+            rappels.remove(at: index) // Supprimer localement
+        }
     }
     
     var completedRappels: [Reminder] {
@@ -98,8 +102,10 @@ class ReminderViewModel: ObservableObject {
                 print("Error deleting reminder: \(error)")
                 return
             }
+            DispatchQueue.main.async {
+                self.fetchReminder() // Recharger les rappels après suppression
+            }
             
-            self.fetchReminder()
         }.resume()
     }
 }

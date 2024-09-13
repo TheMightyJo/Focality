@@ -47,6 +47,9 @@ struct ReminderListView: View {
             return "Rappels terminés"
         }
     }
+    private func removeRappel(at offsets: IndexSet) {
+        viewModel.removeRappel(at: offsets)
+    }
 }
 
 struct RappelsListView_Previews: PreviewProvider {
