@@ -3,10 +3,10 @@ import SwiftData
 
 struct ContentView: View {
     @ObservedObject var authViewModel: AuthViewModel
+    @State private var selectedTab = 0
     
     var body: some View {
-        TabView {
-            // Profil Tab
+        TabView(selection: $selectedTab) {
             OnboardingView(
                 challengeViewModel: ChallengeViewModel(),
                 userViewModel: authViewModel.getUserViewModel(),
@@ -19,24 +19,18 @@ struct ContentView: View {
                 Text("Profil")
             }
             .tag(0)
-            
-            // Timer Tab
             TimerView()
                 .tabItem {
                     Image(systemName: "fitness.timer.fill")
                     Text("Timer")
                 }
                 .tag(1)
-            
-            // Focus Tab
             FocusHeartCoherence()
                 .tabItem {
                     Image(systemName: "heart.fill")
                     Text("Focus")
                 }
                 .tag(2)
-            
-            // Reminder Tab
             ReminderView()
                 .tabItem {
                     Image(systemName: "checklist")

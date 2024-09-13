@@ -56,7 +56,7 @@ struct FocusHeartCoherenceTimer: View {
                     .foregroundStyle(.black)
                 
                 // Lien de navigation vers la vue de respiration, activé à la fin du compte à rebours
-                NavigationLink(destination: FocusHeartCoherenceBreathInBreathOut(totalTime: Double(duration * 60), viewModelsFocus: ViewModelsFocus())
+                NavigationLink(destination: FocusHeartCoherenceBreathInBreathOut(selectedTab: .constant(2), totalTime: Double(duration * 60), viewModelsFocus: ViewModelsFocus())
                     .navigationBarBackButtonHidden(true), isActive: $navigateBreathOut) {
                         EmptyView()
                     }
