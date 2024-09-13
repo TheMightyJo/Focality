@@ -45,6 +45,7 @@
 		70FC1C482C61024100B86F38 /* GoalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FC1C472C61024100B86F38 /* GoalCardView.swift */; };
 		7686649C2C620C48002A991F /* ListGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7686649B2C620C48002A991F /* ListGoalView.swift */; };
 		7686649E2C620E65002A991F /* ListGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7686649D2C620E65002A991F /* ListGoal.swift */; };
+		76B866162C94216500EAED03 /* DateFormatterToFR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B866152C94216500EAED03 /* DateFormatterToFR.swift */; };
 		A50A04782C5B70C60057D436 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A04772C5B70C60057D436 /* SplashView.swift */; };
 		A50A047B2C5BBC0D0057D436 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A047A2C5BBC0D0057D436 /* TextFieldView.swift */; };
 		A50A047E2C5BBCF90057D436 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A047D2C5BBCF90057D436 /* ForgotPasswordView.swift */; };
@@ -109,6 +110,7 @@
 		70FC1C472C61024100B86F38 /* GoalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardView.swift; sourceTree = "<group>"; };
 		7686649B2C620C48002A991F /* ListGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGoalView.swift; sourceTree = "<group>"; };
 		7686649D2C620E65002A991F /* ListGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGoal.swift; sourceTree = "<group>"; };
+		76B866152C94216500EAED03 /* DateFormatterToFR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterToFR.swift; sourceTree = "<group>"; };
 		A50A04772C5B70C60057D436 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		A50A047A2C5BBC0D0057D436 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		A50A047D2C5BBCF90057D436 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				70F0EA9F2C4810070098A202 /* User.swift */,
 				70F0EAA12C48101A0098A202 /* Reward.swift */,
 				70F0EAA32C4810240098A202 /* Reminder.swift */,
+				76B866152C94216500EAED03 /* DateFormatterToFR.swift */,
 				70F0EAA52C48102E0098A202 /* Goal.swift */,
 				70F0EAA72C4810380098A202 /* Challenge.swift */,
 				70F0EAA92C4810490098A202 /* TimerPomodoro.swift */,
@@ -422,6 +425,7 @@
 				A5F899B82C4C4B6D0052CBEB /* RewardRowView.swift in Sources */,
 				E9B17B7F2C60F7300019E4FE /* AddReminderView.swift in Sources */,
 				A5F899B42C4C37D60052CBEB /* NextRewardCardView.swift in Sources */,
+				76B866162C94216500EAED03 /* DateFormatterToFR.swift in Sources */,
 				E95F359B2C58D2D40047BB19 /* ReminderView.swift in Sources */,
 				A5F899B62C4C4AF50052CBEB /* RewardListView.swift in Sources */,
 				A5F899B22C4C37C70052CBEB /* ChallengeRowView.swift in Sources */,

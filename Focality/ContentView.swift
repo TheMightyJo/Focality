@@ -10,7 +10,7 @@ struct ContentView: View {
             OnboardingView(
                 challengeViewModel: ChallengeViewModel(),
                 userViewModel: authViewModel.getUserViewModel(),
-                reminderViewModel: ReminderViewModel(),
+                reminderViewModel: ReminderViewModel( dateFormat: DateFormatterToFR()),
                 rewardViewModel: RewardViewModel(userViewModel: authViewModel.getUserViewModel()),
                 goalViewModel: GoalViewModel()
             )

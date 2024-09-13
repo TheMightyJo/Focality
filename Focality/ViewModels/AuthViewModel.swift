@@ -42,6 +42,8 @@ class AuthViewModel: ObservableObject {
     /// Image sélectionnée pour l'utilisateur.
     @Published var selectedImage: UIImage? = nil
     
+    
+    
     // MARK: - Private Properties
     
     /// ViewModel pour gérer les utilisateurs.
@@ -76,7 +78,7 @@ class AuthViewModel: ObservableObject {
     /// Met à jour `isSignInSuccess` à `true` si les informations d'identification sont correctes,
     /// sinon met à jour `errorMessage` avec un message d'erreur.
     func signIn() {
-        if let user = userViewModel.users.first(where: { $0.email == email && $0.password == password }) {
+        if userViewModel.users.first(where: { $0.email == email && $0.password == password }) != nil {
             isAuthenticated = true
             isSignInSuccess = true
             errorMessage = nil

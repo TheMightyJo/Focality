@@ -30,7 +30,7 @@ struct ReminderListView: View {
                 VStack(alignment: .leading) {
                     Text(rappel.titre).font(.headline)
                     Text(rappel.description).font(.subheadline)
-
+                    Text(rappel.date)
                 }
             }
             .onDelete(perform: viewModel.removeRappel)
@@ -51,6 +51,6 @@ struct ReminderListView: View {
 
 struct RappelsListView_Previews: PreviewProvider {
     static var previews: some View {
-        ReminderListView(viewModel: ReminderViewModel(), filter: .all)
+        ReminderListView(viewModel: ReminderViewModel( dateFormat: DateFormatterToFR()), filter: .all)
     }
 }
