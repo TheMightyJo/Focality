@@ -9,7 +9,7 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
     @State private var showAlert = false
     @State private var isPaused = false
     @State private var isInhaling = true
-    @Binding var selectedTab: Int
+    @State private var navigateToFocus = false
     
     let totalTime: Double
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -34,6 +34,25 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
                         .foregroundColor(.red)
                 }
                 .padding(.trailing, 20)
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Quitter le Focus"),
+                        message: Text("Voulez-vous vraiment arrêter le focus ?"),
+                        primaryButton: .destructive(Text("Oui")) {
+                            navigateToFocus = true
+                        },
+                        secondaryButton: .cancel(Text("Non")) {
+                            isTimerRunning = isPaused
+                        }
+                    )
+                }
+                
+                NavigationLink(
+                    destination: FocusHeartCoherence(), // Vue vers laquelle naviguer lorsque l'utilisateur appuie sur "Non"
+                    isActive: $navigateToFocus
+                ) {
+                    EmptyView()
+                }
             }
             
             // Animation et contenu
@@ -117,19 +136,6 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
         .sheet(isPresented: $showModal) {
             FocusHeartCoherenceModal(viewModelsFocus: viewModelsFocus, temps: 1)
         }
-        .alert(isPresented: $showAlert) {
-            Alert(
-                title: Text("Quitter le Focus"),
-                message: Text("Voulez-vous vraiment arrêter le focus ?"),
-                primaryButton: .destructive(Text("Oui")) {
-                    presentationMode.wrappedValue.dismiss()
-                    selectedTab = 2
-                },
-                secondaryButton: .cancel(Text("Non")) {
-                    isTimerRunning = isPaused
-                }
-            )
-        }
     }
     
     private func startTimer() {
@@ -145,5 +151,5 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
 }
 
 #Preview {
-    FocusHeartCoherenceBreathInBreathOut(selectedTab: .constant(2), totalTime: 300, viewModelsFocus: ViewModelsFocus())
+    FocusHeartCoherenceBreathInBreathOut(totalTime: 300, viewModelsFocus: ViewModelsFocus())
 }

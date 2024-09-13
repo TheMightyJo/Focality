@@ -46,10 +46,11 @@ struct FocusHeartCoherence: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
         .padding()
     }
 }
 
-#Preview {
+#Preview {  
     FocusHeartCoherence()
 }
