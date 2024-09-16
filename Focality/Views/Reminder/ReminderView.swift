@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ReminderView: View {
-    @StateObject private var viewModel = ReminderViewModel()
+    @StateObject private var viewModel = ReminderViewModel( dateFormat: DateFormatterToFR())
     @State private var showingAddRappelView = false
 
     var body: some View {
         NavigationView {
             VStack {
+                
                 Reminderrr()
+                
                 VStack {
-                    NavigationLink(destination: ReminderListView(viewModel: viewModel, filter: .today)) {
+                    NavigationLink(destination: ReminderListView(viewModel: viewModel, filter: .all)) {
                         Rectangle()
                             .fill(Color.blue)
                             .frame(height: 100)
@@ -55,11 +57,13 @@ struct ReminderView: View {
                 }
                 .padding()
                 .sheet(isPresented: $showingAddRappelView) {
-                    AddReminderView(viewModel: viewModel)
+                    AddReminderView(dateForm: DateFormatterToFR(), viewModel: viewModel)
                 }
                 Spacer()
             }
-            
+            .onAppear{
+                viewModel.fetchReminder()
+            }
         }
     }
 }

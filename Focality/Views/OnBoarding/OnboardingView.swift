@@ -28,25 +28,13 @@ struct OnboardingView: View {
                                 .fontWeight(.semibold)
                                 .padding(.trailing, 10)
                             if let user = userViewModel.users.first {
-                                Text("Mes Points : \(user.point)")
+                                Text("Mes Points : \(user.points)")
                                     .font(.title2).bold()
                                     .foregroundStyle(.accent)
                             }
                         }
                     }
-                    if let user = userViewModel.users.last, let image = user.image {
-                        Image(uiImage: image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 90, height: 90)
-                            .clipShape(Circle())
-                    } else {
-                        Image("ProfilePicture") // Image par défaut pour Emiliano
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 90, height: 90)
-                            .clipShape(Circle())
-                    }
+                    
                 }
             }
             HStack {
@@ -159,7 +147,7 @@ struct OnboardingView: View {
                         .foregroundColor(.accent)
                 }
                 .sheet(isPresented: $showingAddReminderView) {
-                    AddReminderView(viewModel: reminderViewModel) {
+                    AddReminderView(dateForm: DateFormatterToFR(), viewModel: reminderViewModel) {
                         showingAddReminderView = false
                     }
                 }
@@ -213,7 +201,7 @@ struct OnboardingView_Previews: PreviewProvider {
         return OnboardingView(
             challengeViewModel: ChallengeViewModel(),
             userViewModel: UserViewModel(),
-            reminderViewModel: ReminderViewModel(rappels: [Reminder(titre: "Math à 14h", description: "Je dois travailler le théoreme de pythagore", date: Date())]),
+            reminderViewModel: ReminderViewModel(rappels: [Reminder(titre: "Math à 14h", description: "Je dois travailler le théoreme de pythagore", date: "19/10/2024")], dateFormat: DateFormatterToFR()),
             rewardViewModel: RewardViewModel(userViewModel: UserViewModel()),
             goalViewModel: GoalViewModel(goals: [Goal(goalTitle: "Apprendre SwiftUI", startDate: startDate, endDate: endDate, goalDescription: "Suivre un cours en ligne pour maîtriser SwiftUI", isCompleted: false)])
         )

@@ -8,35 +8,38 @@
 import SwiftUI
 
 struct AddReminderView: View {
+    @ObservedObject var dateForm: DateFormatterToFR
     @ObservedObject var viewModel: ReminderViewModel
     @Environment(\.presentationMode) var presentationMode
     @State private var titre = ""
     @State private var description = ""
-    @State private var date = Date()
+    @State private var date = ""
+    @State private var isCompleted = Bool()
     
     var onSave: (() -> Void)?
-
+    
     var body: some View {
         NavigationView {
-            
             Form {
                 TextField("Titre", text: $titre)
                 TextField("Description", text: $description)
-                DatePicker("Date", selection: $date, displayedComponents: .date)
+                TextField("Date", text: $date)
             }
-            
             .navigationTitle("Ajouter un Rappel")
             .navigationBarItems(trailing: Button("Enregistrer") {
-                viewModel.addRappel(titre: titre, description: description, date: date)
+                let newReminder = Reminder(id: UUID(), titre: titre, description: description, date: dateForm.dateFormatter(from: date) ?? "Format de date incorrecte", isCompleted: isCompleted )
+                viewModel.addReminder(newReminder)
                 presentationMode.wrappedValue.dismiss()
+                viewModel.addRappel(titre: titre, description: description, date: dateForm.dateFormatter(from: date) ?? "nil")
             })
             
         }
     }
+    
 }
 
 struct AddRappelView_Previews: PreviewProvider {
     static var previews: some View {
-        AddReminderView(viewModel: ReminderViewModel())
+        AddReminderView(dateForm: DateFormatterToFR(), viewModel: ReminderViewModel( dateFormat: DateFormatterToFR()))
     }
 }

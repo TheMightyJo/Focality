@@ -7,10 +7,12 @@
 
 import Foundation
 
-struct Reminder: Identifiable {
+struct Reminder: Identifiable, Codable {
     var id = UUID()
     var titre: String
     var description: String
-    var date: Date
+    var date: String
     var isCompleted: Bool = false
+    
+   
 }

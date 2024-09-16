@@ -22,22 +22,15 @@ struct AuthView: View {
                 TextFieldView(placeholder: "Email", text: $authViewModel.email, isSecure: false)
                 TextFieldView(placeholder: "Mot de passe", text: $authViewModel.password, isSecure: true)
                 
-                if let errorMessage = authViewModel.errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                        .padding()
+                NavigationLink(destination: ContentView(authViewModel: AuthViewModel(userViewModel: UserViewModel()))){
+                    Text("Connexion")
                 }
+                .foregroundColor(.white).bold()
+                .padding()
+                .background(.secondaire)
+                .cornerRadius(10)
                 
-                CustomButton(title: "Se connecter", backgroundColor: .blue) {
-                    authViewModel.signIn()
-                }
-                .padding(.top, 10)
-                .navigationDestination(isPresented: $authViewModel.isSignInSuccess) {
-                    ContentView(authViewModel: authViewModel)
-                        .navigationBarBackButtonHidden(true)
-                }
-                
-                NavigationLink(destination: InscriptionUserView(userViewModel: authViewModel.getUserViewModel(), authViewModel: authViewModel)) {
+                NavigationLink(destination: InscriptionUserView(userViewModel: UserViewModel())) {
                     Text("Pas encore inscrit ? S'inscrire")
                         .font(.footnote)
                         .foregroundColor(.secondary).bold()

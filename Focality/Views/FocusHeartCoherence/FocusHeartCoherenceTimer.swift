@@ -9,20 +9,12 @@ struct FocusHeartCoherenceTimer: View {
     // Timer qui se déclenche toutes les secondes
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
-    // ObservedObject pour observer les changements dans les données utilisateur
-    @ObservedObject var userViewModel: UserViewModel
-    
-    // Modèle de données utilisateur
-    var user: User
-    
     // Durée sélectionnée pour l'exercice
     var duration: Int
     
     // Initialisation avec les paramètres
-    init(duration: Int, userViewModel: UserViewModel, user: User) {
+    init(duration: Int) {
         self.duration = duration
-        self.userViewModel = userViewModel
-        self.user = user
     }
     
     var body: some View {
@@ -49,7 +41,7 @@ struct FocusHeartCoherenceTimer: View {
                                          endRadius: 200))
                     .frame(width: 200, height: 200)
                     .padding(.bottom, 30)
-                    // Action à chaque déclenchement du timer
+                // Action à chaque déclenchement du timer
                     .onReceive(timer) { _ in
                         if initialCountdown > 0 {
                             initialCountdown -= 1
@@ -64,16 +56,23 @@ struct FocusHeartCoherenceTimer: View {
                     .foregroundStyle(.black)
                 
                 // Lien de navigation vers la vue de respiration, activé à la fin du compte à rebours
-                NavigationLink(destination: FocusHeartCoherenceBreathInBreathOut(totalTime: Double(duration * 60), viewModelsFocus: ViewModelsFocus(), userViewModel: userViewModel, user: user)
-                    .navigationBarBackButtonHidden(true), isActive: $navigateBreathOut) {
-                        EmptyView()
-                    }
+                NavigationLink(
+                    destination: FocusHeartCoherenceBreathInBreathOut(
+                        totalTime: Double(duration * 60),
+                        viewModelsFocus: ViewModelsFocus()
+                    )
+                    .navigationBarBackButtonHidden(true),
+                    isActive: $navigateBreathOut
+                ) {
+                    EmptyView()
+                }
+                
             }
         }
     }
 }
 
 // Prévisualisation de la vue avec un utilisateur fictif
-#Preview {
-    FocusHeartCoherenceTimer(duration: 5, userViewModel: UserViewModel(), user: User(firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 0, currentLevel: 0))
-}
+//#Preview {
+//    FocusHeartCoherenceTimer(duration: 5, userViewModel: UserViewModel(), user: User(id: "1", firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthDate: "11/01/1999", points: "0", currentLevel: "0"))
+//}

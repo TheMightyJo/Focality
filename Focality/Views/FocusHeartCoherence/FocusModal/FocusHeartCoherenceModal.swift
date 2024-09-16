@@ -5,7 +5,6 @@ struct FocusHeartCoherenceModal: View {
     @State var temps: Int
     @State var objectif = 0
     @State var nombreDePoint = 0
-    var user: User
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -96,9 +95,9 @@ struct InfoView: View {
     }
 }
 
-#Preview {
-    FocusHeartCoherenceModal(viewModelsFocus: ViewModelsFocus(), temps: 5, user: User(firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 0, currentLevel: 0))
-}
+//#Preview {
+//    FocusHeartCoherenceModal(viewModelsFocus: ViewModelsFocus(), temps: 5, user: User(id: "1", firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthDate: "11/01/1999", points: "0", currentLevel: "0"))
+//}
 
 /// Focus est une structure qui permet d'intégrer un contrôleur de vue UIKit (FocusViewController) dans une vue SwiftUI.
 /// Cette structure implémente le protocole UIViewControllerRepresentable pour gérer la création et la mise à jour du contrôleur de vue UIKit.

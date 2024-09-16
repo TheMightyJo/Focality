@@ -52,16 +52,7 @@ class RewardViewModel: ObservableObject {
             }
         }
     }
-
-    /// Ajoute des points à l'utilisateur et vérifie les récompenses.
-    ///
-    /// - Parameter points: Le nombre de points à ajouter.
-    func addPoints(_ points: Int) {
-        guard let user = user else { return }
-        user.point += points
-        unlockRewardIfNeeded(points: user.point)
-    }
-
+  
     /// Ajoute une nouvelle récompense.
     ///
     /// - Parameters:

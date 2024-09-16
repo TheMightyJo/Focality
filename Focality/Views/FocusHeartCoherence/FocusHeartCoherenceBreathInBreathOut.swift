@@ -8,20 +8,19 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
     @State private var showModal = false
     @State private var showAlert = false
     @State private var isPaused = false
-    @State private var isInhaling = true // Etat pour indiquer l'inspiration et l'expiration
+    @State private var isInhaling = true
+    @State private var navigateToFocus = false
     
     let totalTime: Double
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let breathingTimer = Timer.publish(every: 4, on: .main, in: .common).autoconnect()
     
     @ObservedObject var viewModelsFocus: ViewModelsFocus
-    @ObservedObject var userViewModel: UserViewModel
-    var user: User
-    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
+            // Bouton pour fermer et montrer l'alerte
             HStack {
                 Spacer()
                 Button(action: {
@@ -35,21 +34,38 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
                         .foregroundColor(.red)
                 }
                 .padding(.trailing, 20)
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Quitter le Focus"),
+                        message: Text("Voulez-vous vraiment arrêter le focus ?"),
+                        primaryButton: .destructive(Text("Oui")) {
+                            navigateToFocus = true
+                        },
+                        secondaryButton: .cancel(Text("Non")) {
+                            isTimerRunning = isPaused
+                        }
+                    )
+                }
+                
+                NavigationLink(
+                    destination: FocusHeartCoherence(), // Vue vers laquelle naviguer lorsque l'utilisateur appuie sur "Non"
+                    isActive: $navigateToFocus
+                ) {
+                    EmptyView()
+                }
             }
             
-            HStack {
-                Image("Logo")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .padding(.bottom, 30)
-            }
+            // Animation et contenu
+            Image("Logo")
+                .resizable()
+                .frame(width: 100, height: 100)
+                .padding(.bottom, 30)
             
             Text(isInhaling ? "Inspirez" : "Expirez")
                 .fontWeight(.bold)
                 .font(.system(size: 30))
                 .padding(.bottom, 60)
                 .padding(.top, 20)
-            
             
             Circle()
                 .fill(RadialGradient(gradient: Gradient(colors: [Color.primaire, .secondaire, Color.secondaire.opacity(0.1)]), center: .center, startRadius: 5, endRadius: 200))
@@ -58,8 +74,8 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
                 .onAppear {
                     startTimer()
                 }
-                .onChange(of: isTimerRunning) { running in
-                    if running {
+                .onChange(of: isTimerRunning) {
+                    if isTimerRunning {
                         withAnimation(Animation.easeInOut(duration: 4.0).repeatForever(autoreverses: true)) {
                             self.scale = 1.5
                         }
@@ -71,6 +87,7 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
                 }
                 .padding(.bottom, 80)
             
+            // Bouton de pause ou lecture
             Button {
                 if isTimerRunning {
                     isTimerRunning = false
@@ -85,6 +102,7 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
                     .frame(width: 48, height: 48)
             }
             
+            // Affichage du temps et barre de progression
             VStack {
                 HStack {
                     Text(timeString(time: elapsedTime))
@@ -107,7 +125,6 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
             } else {
                 isTimerRunning = false
                 showModal = true
-                userViewModel.addPoints(to: user, points: 10)
             }
         }
         .onReceive(breathingTimer) { _ in
@@ -117,19 +134,7 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
             isInhaling.toggle()
         }
         .sheet(isPresented: $showModal) {
-            FocusHeartCoherenceModal(viewModelsFocus: viewModelsFocus, temps: 1, user: user)
-        }
-        .alert(isPresented: $showAlert) {
-            Alert(
-                title: Text("Quitter le Focus"),
-                message: Text("Voulez-vous vraiment arrêter le focus ?"),
-                primaryButton: .destructive(Text("Oui")) {
-                    presentationMode.wrappedValue.dismiss()
-                },
-                secondaryButton: .cancel(Text("Non")) {
-                    isTimerRunning = isPaused
-                }
-            )
+            FocusHeartCoherenceModal(viewModelsFocus: viewModelsFocus, temps: 1)
         }
     }
     
@@ -146,5 +151,5 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
 }
 
 #Preview {
-    FocusHeartCoherenceBreathInBreathOut(totalTime: 300, viewModelsFocus: ViewModelsFocus(), userViewModel: UserViewModel(), user: User(firstName: "John", lastName: "Doe", email: "john.doe@example.com", password: "password", birthday: Date(), point: 0, currentLevel: 0))
+    FocusHeartCoherenceBreathInBreathOut(totalTime: 300, viewModelsFocus: ViewModelsFocus())
 }

@@ -25,7 +25,7 @@ struct AddGoal: View {
                     TextField("Titre", text: $titre)
                         .padding(.bottom)
                         .padding(.top)
-                    Text("Periode de temps :")
+                    Text("Période de temps :")
                     HStack {
                         Text("Du :")
                         DatePicker("", selection: $dateDebut, displayedComponents: .date)
@@ -33,7 +33,7 @@ struct AddGoal: View {
                         DatePicker("", selection: $dateFin, displayedComponents: .date)
                     }
                     
-                    Text("Details de ton objectif :")
+                    Text("Détails de ton objectif :")
                     
                     TextField("Description", text: $description)
                         .padding(.bottom).padding(.bottom)
@@ -55,7 +55,7 @@ struct AddGoal: View {
                     }
                 })
             }
-            .navigationTitle("Defini ton objectif")
+            .navigationTitle("Défini ton objectif")
         }
     }
 }
