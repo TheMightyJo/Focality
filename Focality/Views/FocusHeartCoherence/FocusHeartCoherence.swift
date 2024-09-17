@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FocusHeartCoherence: View {
-    @State private var selectedDuration: Int = 1
+    @State private var selectedDurationInMinutes: Int = 1
     
     var body: some View {
         // NavigationStack permet la navigation entre les vues
@@ -22,18 +22,17 @@ struct FocusHeartCoherence: View {
                     .font(.system(size: 20))
                 
                 // Sélecteur de durée
-                Picker("Durée", selection: $selectedDuration) {
+                Picker("Durée", selection: $selectedDurationInMinutes) {
                     // Boucle pour créer des options de 1 à 5 minutes
                     ForEach(1..<6) { minute in
                         Text("\(minute) minutes").tag(minute)
                     }
                 }
-                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .pickerStyle(WheelPickerStyle())
                 .padding(.horizontal)
                 
                 // Lien de navigation vers le minuteur de cohérence cardiaque
-                NavigationLink(destination: FocusHeartCoherenceTimer(duration: selectedDuration)) {
+                NavigationLink(destination: FocusHeartCoherenceTimer(duration: selectedDurationInMinutes)) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.secondaire)
@@ -45,9 +44,9 @@ struct FocusHeartCoherence: View {
                     .padding()
                 }
             }
+            .padding()
         }
         .navigationBarBackButtonHidden(true)
-        .padding()
     }
 }
 
