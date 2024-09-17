@@ -62,7 +62,7 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
         }
         .navigationDestination(isPresented: $navigateToFocus) {
             FocusHeartCoherence()
-            .navigationBarBackButtonHidden(true)
+                .navigationBarBackButtonHidden(true)
         }
     }
     
@@ -85,7 +85,16 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
                 .scaleEffect(scale)
                 .animation(isTimerRunning ? .easeInOut(duration: 4).repeatForever(autoreverses: true) : .default, value: scale)
                 .onAppear {
-                    scale = 1.5
+                    if isTimerRunning {
+                        animateBreathing()
+                    }
+                }
+                .onChange(of: isTimerRunning) { newValue in
+                    if newValue {
+                        animateBreathing()
+                    } else {
+                        stopBreathingAnimation()
+                    }
                 }
                 .padding(.bottom, 80)
         }
@@ -168,6 +177,18 @@ struct FocusHeartCoherenceBreathInBreathOut: View {
         let minutes = Int(time) / 60
         let seconds = Int(time) % 60
         return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+    private func animateBreathing() {
+        withAnimation(Animation.easeInOut(duration: 4.0).repeatForever(autoreverses: true)) {
+            self.scale = 1.5
+        }
+    }
+    
+    private func stopBreathingAnimation() {
+        withAnimation {
+            self.scale = 1.0
+        }
     }
 }
 
